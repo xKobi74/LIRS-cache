@@ -3,19 +3,25 @@
 struct cache_storage_t;
 
 //function that writes data of file to cacheunit
-typedef void (*fgetdata_t)(int filenumber, void *cacheunit);
+typedef void (*fgetdata_t)(void *cacheunit, int filenumber);
 
 //create and return pointer on struct cache_storage_t
 struct cache_storage_t *cache_storage_init(int capacity, int unitsize, fgetdata_t);
+
 //free memory of struct cache_storage_t by pointer  
 void cache_storage_delete(struct cache_storage_t *);
+
 //1 - full, 0 - there is empty space
 char cache_storage_isfull(struct cache_storage_t *);
+
 //return number of used cache units 
 int cache_storage_used(struct cache_storage_t *);
-//write data of file in cache_storage_t
-void *cache_unit_write(struct cache_storage_t *, int filenumber);
+
+//add data of file in cache_storage_t and return pointer on it (or NULL if cache storage is full)
+void *cache_unit_add(struct cache_storage_t *, int filenumber);
+
 //writes zeros in cache unit by pointer
 void cache_unit_clear(struct cache_storage_t *, void *cacheunit);
+
 //replace data in cache unit to data of newfilenumber
 void cache_unit_change(struct cache_storage_t *, void *cacheunit, int newfilenumber);
