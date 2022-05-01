@@ -39,11 +39,17 @@ int cache_storage_used(struct cache_storage_t *cachestorage) {
 	return cachestorage->used;
 }
 
-void *cache_unit_add(struct cache_storage_t *cachestorage, int filenumber) {
-	char *cacheunit;
-	if (cache_storage_isfull(cachestorage))
+void *cache_unit_pointer(struct cache_storage_t *cachestorage, int cacheunitindex) {
+	char *cacheunitptr;
+	if (cacheunitindex < 0 || cacheunitindex >= cachestorage->capacity) 
 		return NULL;
-	cacheunit = cachestorage->data + cachestorage->unitsize * cachestorage->used;
+	return cachestorage->data + cachestorage->unitsize * cacheunitindex;
+}
+
+void *cache_unit_add(struct cache_storage_t *cachestorage, int filenumber) {
+	char *cacheunit = cache_unit_pointer(cachestorage, cachestorage->used);
+	if (cacheunit == NULL)
+		return NULL;
 	(cachestorage->fgetdata)(cacheunit, filenumber);
 	++(cachestorage->used);
 	return cacheunit;

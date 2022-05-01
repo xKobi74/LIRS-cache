@@ -17,6 +17,9 @@ char cache_storage_isfull(struct cache_storage_t *);
 //return number of used cache units 
 int cache_storage_used(struct cache_storage_t *);
 
+//return pointer of cacheunit by its index (or NULL if number is uncorrect)
+void *cache_unit_pointer(struct cache_storage_t *, int cacheunitindex);
+
 //add data of file in cache_storage_t and return pointer on it (or NULL if cache storage is full)
 void *cache_unit_add(struct cache_storage_t *, int filenumber);
 
