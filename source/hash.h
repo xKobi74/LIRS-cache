@@ -1,16 +1,19 @@
 const int len_hash = 5;
 
+enum what_object{
+    Stack,
+    List
+};
+
 struct element_hash {
     int name;
-    struct stack_element *stack;
-    struct list_element *list;
+    struct dlinked_list_element *stack;
+    struct dlinked_list_element *list;
     struct element_hash *next;
 };
 
 struct element_hash **make_hash();
 char delete_element_hash(int name, struct element_hash **hash);
-struct element_hash *new_element(int name, struct stack_element *address);
-struct list_element *element_in_list(int name, struct element_hash **hash);
-struct stack_element *element_in_stack(int name, struct element_hash **hash);
-void change_list(int name, struct list_element *address, struct element_hash **hash);
-void change_stack(int name, struct stack_element *address, struct element_hash **hash);
+struct element_hash *new_element(int name, struct dlinked_list_element *address);
+struct dlinked_list_element *find_element(int name, struct element_hash **hash, enum what_object object);
+void change_in_hash(int name, struct dlinked_list_element *address, struct element_hash **hash, enum what_object object);
