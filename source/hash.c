@@ -4,6 +4,8 @@
 #include "hash.h"
 #include "stack.h"
 
+const int len_hash = 5;
+
 #if 0
 int main() {
     
@@ -11,29 +13,42 @@ int main() {
     struct element_hash **hash = make_hash();
     struct dlinked_list_element a;
 
-    change_stack(11, NULL, hash);
-    change_stack(6, NULL, hash);
-    change_stack(16, NULL, hash);
+    change_in_hash(11, NULL, hash, Stack);
+    change_in_hash(6, NULL, hash, Stack);
+    change_in_hash(16, NULL, hash, Stack);
+    change_in_hash(3, NULL, hash, Stack);
+    change_in_hash(72, NULL, hash, Stack);
+    change_in_hash(84, NULL, hash, Stack);
+    change_in_hash(37, NULL, hash, Stack);
     //element = new_element(3, NULL);
 
-    printf("adress 11: %p\n", (hash[1])->stack);
-    change_stack(11, &a, hash);
-    printf("adress 11: %p\n", (hash[1])->stack);
-    printf("adress 11: %p\n", element_in_stack(11, hash));
+    /*printf("adress 11: %p\n", (hash[1])->list);
+    change_in_hash(11, &a, hash, List);
+    printf("adress 11: %p\n", (hash[1])->list);
+    printf("adress 11: %p\n", find_element(11, hash, List));*/
 
+    printf("\n\n");
+    print_hash(hash);
+    printf("\n\n");
 
     printf("%d\n", hash[1]->name);
     printf("%d\n", (hash[1]->next)->name);
     printf("%d\n\n", ((hash[1]->next)->next)->name);
 
-    delete_element_hash(6, hash);
-    printf("%d\n", delete_element_hash(13, hash));
-    printf("%d\n", delete_element_hash(11, hash));
+    free_hash(hash);
+
+    printf("\n\n");
+    print_hash(hash);
+    printf("\n\n");
+
+    //delete_element_hash(6, hash);
+    //printf("%d\n", delete_element_hash(13, hash));
+    //printf("%d\n", delete_element_hash(11, hash));
 
     //printf("%d\n", hash[1]->name);
     //printf("%d\n", (hash[1]->next)->name);   
 
-    delete_element_hash(16, hash); 
+    //delete_element_hash(16, hash); 
 
     //printf("%d\n", hash[1]->name);
 
@@ -56,7 +71,7 @@ struct element_hash **make_hash() {
 
 struct element_hash *new_element(int name, struct dlinked_list_element *address) {
     
-    assert(address != NULL);
+    //assert(address != NULL);
 
     struct element_hash *new;
     new = (struct element_hash *) calloc(1, sizeof(struct element_hash));
@@ -73,7 +88,6 @@ struct element_hash *new_element(int name, struct dlinked_list_element *address)
 void change_in_hash(int name, struct dlinked_list_element *address, struct element_hash **hash, enum what_object object) {
 
     assert(hash != NULL);
-    assert(address != NULL);
     
     int number = name % len_hash;
     struct element_hash **current = &(hash[number]);
@@ -84,10 +98,9 @@ void change_in_hash(int name, struct dlinked_list_element *address, struct eleme
                 (*current)->stack = address;;
                 return;
             }
-            else {
-                (*current)->list = address;
-                return;
-            }
+            (*current)->list = address;
+            return;
+            
         }
         current = &((*current)->next);
     }
@@ -108,9 +121,7 @@ struct dlinked_list_element *find_element(int name, struct element_hash **hash, 
             if (object == Stack) {
                 return current->stack;
             }
-            else {
-                return current->list;
-            }
+            return current->list;
         }
         current = current->next;
     }
@@ -148,4 +159,34 @@ char delete_element_hash(int name, struct element_hash **hash) {
     }
 
     return 0;
+}
+
+void free_hash(struct element_hash **hash) {
+
+    for (int i = 0; i < len_hash; ++i) {
+        if (hash[i] != NULL) {
+
+            while (hash[i] != NULL) {
+                delete_element_hash(hash[i]->name, hash);
+            }
+        }
+    }
+}
+
+void print_hash(struct element_hash **hash) {
+
+    struct element_hash *current;
+
+    for (int i = 0; i < len_hash; ++i) {
+        if (hash[i] != NULL) {
+            
+            printf("Cell number: %d\n", i);
+            current = hash[i];
+            while (current != NULL) {
+                printf("\tName: %d, Stack: %p, List: %p\n", current->name, current->stack, current->list);
+                current = current->next;
+            }
+        
+        }
+    }
 }
