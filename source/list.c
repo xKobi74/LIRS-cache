@@ -103,8 +103,15 @@ struct element move_up_list(int name, struct dlinked_list_element **upper_in_lis
     struct dlinked_list_element *move_elem = find_element(name, hash, List); 
     assert(move_elem != NULL);
 
+    if ((move_elem->previous) == NULL){
+        return move_elem->element;
+    }
+
+    if ((move_elem->next)!= NULL){
+        (move_elem->next)->previous = move_elem->previous;
+    }
+    
     (move_elem->previous)->next = move_elem->next;
-    (move_elem->next)->previous = move_elem->previous;
 
     move_elem->previous = NULL;
     move_elem->next = (*upper_in_list);
@@ -127,7 +134,7 @@ void change_in_list(struct element add, int name_delite, struct dlinked_list_ele
     delete_element(&del_elem, hash); 
 }
 
-#ifdef 0
+#if 1
 int main() {
     
     struct dlinked_list_element *upper = NULL;
@@ -139,33 +146,44 @@ int main() {
     change_elem.location_in_cache = NULL;
     change_elem.state_element = Resident_HIR; 
 
+    struct element check_struct;
+    check_struct.location_in_cache = NULL;
+    check_struct.name = 0;
+    check_struct.state_element = LIR;
+
+
     new_in_list(1, NULL, &upper, &down, hash);
     new_in_list(2, NULL, &upper, &down, hash);
     new_in_list(3, NULL, &upper, &down, hash);
     new_in_list(4, NULL, &upper, &down, hash);
     new_in_list(5, NULL, &upper, &down, hash);
-    add_in_list(6, &upper, &down, hash);
 
-
+    printf("Before functions:\n");
     print_stack_down(upper);
+
+
+    // check_struct = add_in_list(6, &upper, &down, hash);
+
+    // printf("\n");
+    // print_stack_down(upper);
+    // printf("Return name after add: %d\n", check_struct.name);
+
+
+    check_struct = move_up_list(3, &upper, hash);
+
     printf("\n");
-
-    
-
-
-    change_in_list(change_elem, 3, &upper, hash);
-
-
+    print_stack_down(upper);
+    printf("Return name after move: %d\n", check_struct.name);
 
 
     printf("\n");  
     
     print_hash(hash);
     
-    printf("\n");
-    print_stack_down(upper);
-    printf("\n");
-    print_stack_up(down);
+    // printf("\n");
+    // print_stack_down(upper);
+    // printf("\n");
+    // print_stack_up(down);
 
     free_hash(hash);
     free(hash);
