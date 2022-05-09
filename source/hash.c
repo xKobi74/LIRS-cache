@@ -4,9 +4,10 @@
 #include "hash.h"
 #include "stack.h"
 
-const int len_hash = 5;
+#define LEN_HASH 5 
 
-#if 1
+
+#if 0
 int main() {
     
     struct element_hash *element;
@@ -63,7 +64,7 @@ int main() {
 struct element_hash **make_hash() {
     
     struct element_hash **hash;
-    hash = (struct element_hash **) calloc(len_hash, sizeof(struct element_hash *));
+    hash = (struct element_hash **) calloc(LEN_HASH, sizeof(struct element_hash *));
     assert(hash != NULL);
 
     return hash;
@@ -71,14 +72,13 @@ struct element_hash **make_hash() {
 
 struct element_hash *new_element(int name, struct dlinked_list_element *address, enum what_object object) {
     
-    //assert(address != NULL);
+    assert(address != NULL);
 
     struct element_hash *new;
     new = (struct element_hash *) calloc(1, sizeof(struct element_hash));
     assert(new != NULL);
 
     new->name = name;
-    new->next = NULL;
 
     if (object == Stack) {
         new->stack = address;
@@ -95,7 +95,7 @@ void change_in_hash(int name, struct dlinked_list_element *address, struct eleme
 
     assert(hash != NULL);
     
-    int number = name % len_hash;
+    int number = abs(name % LEN_HASH);
     struct element_hash **current = &(hash[number]);
 
     while ((*current) != NULL) {
@@ -119,7 +119,7 @@ struct dlinked_list_element *find_element(int name, struct element_hash **hash, 
     
     assert(hash != NULL);
     
-    int number = name % len_hash;
+    int number = abs(name % LEN_HASH);
     struct element_hash *current = hash[number];
 
     while (current != NULL) {
@@ -139,7 +139,7 @@ char delete_element_hash(int name, struct element_hash **hash) {
 
     assert(hash != NULL);
 
-    int number = name % len_hash;
+    int number = abs(name % LEN_HASH);
     struct element_hash *current = hash[number];
     struct element_hash *previous = hash[number];
 
@@ -169,11 +169,16 @@ char delete_element_hash(int name, struct element_hash **hash) {
 
 void free_hash(struct element_hash **hash) {
 
-    for (int i = 0; i < len_hash; ++i) {
+    assert(hash != NULL);
+
+    int delete = 0;
+
+    for (int i = 0; i < LEN_HASH; ++i) {
         if (hash[i] != NULL) {
 
             while (hash[i] != NULL) {
-                delete_element_hash(hash[i]->name, hash);
+                delete = delete_element_hash(hash[i]->name, hash);
+                assert(delete == 1);
             }
         }
     }
@@ -183,7 +188,7 @@ void print_hash(struct element_hash **hash) {
 
     struct element_hash *current;
 
-    for (int i = 0; i < len_hash; ++i) {
+    for (int i = 0; i < LEN_HASH; ++i) {
         if (hash[i] != NULL) {
             
             printf("Cell number: %d\n", i);
