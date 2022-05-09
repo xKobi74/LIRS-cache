@@ -1,5 +1,3 @@
-const int len_hash = 5;
-
 enum what_object{
     Stack,
     List
@@ -13,6 +11,8 @@ struct element_hash {
 };
 
 struct element_hash **make_hash();
+void free_hash(struct element_hash **hash);
+void print_hash(struct element_hash **hash);
 char delete_element_hash(int name, struct element_hash **hash);
 struct element_hash *new_element(int name, struct dlinked_list_element *address);
 struct dlinked_list_element *find_element(int name, struct element_hash **hash, enum what_object object);
