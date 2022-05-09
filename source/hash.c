@@ -6,20 +6,20 @@
 
 const int len_hash = 5;
 
-#if 0
+#if 1
 int main() {
     
     struct element_hash *element;
     struct element_hash **hash = make_hash();
-    struct dlinked_list_element a;
+    struct dlinked_list_element a, b, c, d ,e, f, g, h;
 
-    change_in_hash(11, NULL, hash, Stack);
-    change_in_hash(6, NULL, hash, Stack);
-    change_in_hash(16, NULL, hash, Stack);
-    change_in_hash(3, NULL, hash, Stack);
-    change_in_hash(72, NULL, hash, Stack);
-    change_in_hash(84, NULL, hash, Stack);
-    change_in_hash(37, NULL, hash, Stack);
+    change_in_hash(11, &a, hash, List);
+    change_in_hash(6, &b, hash, Stack);
+    change_in_hash(16, &c, hash, Stack);
+    change_in_hash(3, &d, hash, List);
+    change_in_hash(72, &e, hash, Stack);
+    change_in_hash(84, &f, hash, List);
+    change_in_hash(37, &g, hash, Stack);
     //element = new_element(3, NULL);
 
     /*printf("adress 11: %p\n", (hash[1])->list);
@@ -69,7 +69,7 @@ struct element_hash **make_hash() {
     return hash;
 }
 
-struct element_hash *new_element(int name, struct dlinked_list_element *address) {
+struct element_hash *new_element(int name, struct dlinked_list_element *address, enum what_object object) {
     
     //assert(address != NULL);
 
@@ -78,8 +78,14 @@ struct element_hash *new_element(int name, struct dlinked_list_element *address)
     assert(new != NULL);
 
     new->name = name;
-    new->stack = address;
     new->next = NULL;
+
+    if (object == Stack) {
+        new->stack = address;
+    }
+    else {
+        new->list = address;
+    }
 
     return new;
 }
@@ -105,7 +111,7 @@ void change_in_hash(int name, struct dlinked_list_element *address, struct eleme
         current = &((*current)->next);
     }
 
-    (*current) = new_element(name, address);
+    (*current) = new_element(name, address, object);
 
 }
 
