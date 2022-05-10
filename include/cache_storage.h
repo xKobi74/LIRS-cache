@@ -28,3 +28,6 @@ void cache_unit_clear(struct cache_storage_t *, void *cacheunit);
 
 //replace data in cache unit to data of newfilenumber
 void cache_unit_change(struct cache_storage_t *, void *cacheunit, int newfilenumber);
+
+//print cache_storage data
+void cache_storage_data_print(struct cache_storage_t *cachestorage);

@@ -67,3 +67,10 @@ void cache_unit_change(struct cache_storage_t *cachestorage, void *cacheunit, in
 	cache_unit_clear(cachestorage, cacheunit);
 	(cachestorage->fgetdata)(cacheunit, newfilenumber);
 }
+
+void cache_storage_data_print(struct cache_storage_t *cachestorage) {
+	int i;
+	for (i = 0; i < cachestorage->used)
+		printf("%s ", cache_unit_pointer(cachestorage, i));
+	printf("\n");
+}
