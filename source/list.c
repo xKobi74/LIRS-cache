@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>
-#include "hash.h"
-#include "stack.h"
-#include "list.h"
+#include "../include/hash.h"
+#include "../include/stack.h"
+#include "../include/list.h"
 
 
 void new_in_list(int name, void *location_in_cash, struct list list, struct element_hash **hash) {
