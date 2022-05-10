@@ -6,7 +6,7 @@
 //#include "cache_storage.h"
 #include "stack.h"
 
-#if 0
+#if 1
 int main(){
 
     struct dlinked_list_element result;
@@ -56,8 +56,8 @@ int main(){
     printf("\n");
 
     //printf("Delete: %p\n", stack(18, len_Lir, &upper_element, &down_element, hash, cache, &upper_element_list, &down_element_list));
-    stack(5, len_Lir, &upper_element, &down_element, hash, cache, &upper_element_list, &down_element_list);
-    stack(6, len_Lir, &upper_element, &down_element, hash, cache, &upper_element_list, &down_element_list);
+    LIRS_algorithm(5, len_Lir, &upper_element, &down_element, hash, cache, &upper_element_list, &down_element_list);
+    LIRS_algorithm(6, len_Lir, &upper_element, &down_element, hash, cache, &upper_element_list, &down_element_list);
 
     print_hash(hash);
     printf("\n");
@@ -123,14 +123,25 @@ int main(){
 }
 #endif
 
-#if 1
-void *stack(int name, int len_LIR, struct dlinked_list_element **upper_element, struct dlinked_list_element **down_element, struct element_hash **hash, struct  cache_storage_t *cache, struct dlinked_list_element **upper_in_list, struct dlinked_list_element **down_in_list) {
+char cache_storage_isfull(struct  cache_storage_t *cache) {
+    return 1;
+}
+
+void *cache_unit_add(struct  cache_storage_t *cache, int name) {
+    return NULL;
+}
+
+int cache_storage_used(struct  cache_storage_t *cache) {
+    return 2;
+}
+
+void *LIRS_algorithm(int name, int len_LIR, struct dlinked_list_element **upper_element, struct dlinked_list_element **down_element, struct element_hash **hash, struct  cache_storage_t *cache, struct dlinked_list_element **upper_in_list, struct dlinked_list_element **down_in_list) {
 
     struct dlinked_list_element *in_stack = find_element(name, hash, Stack);
 
     if (in_stack == NULL) {
         if (find_element(name, hash, List) == NULL) {
-            if (cache_storage_isfull(cache) == 1) {
+            if (cache_storage_isfull(cache) != 0) {
 
                 return first_entry(name, upper_element, down_element, hash, upper_in_list, down_in_list);
             }
@@ -149,7 +160,6 @@ void *stack(int name, int len_LIR, struct dlinked_list_element **upper_element, 
     else {
 
         move_up_stack(upper_element, down_element, in_stack);
-        *upper_element = in_stack;
     
         if (in_stack->element.state_element == LIR) {
             
@@ -163,11 +173,10 @@ void *stack(int name, int len_LIR, struct dlinked_list_element **upper_element, 
         }
         else {
 
-            return non_resident_in_stack(name, down_element, hash, upper_in_list, down_in_list, in_stack);
+            return non_resident_in_stack(down_element, hash, upper_in_list, down_in_list, in_stack);
         }   
     }
 }
-#endif
 
 void first_filling(int name, int len_LIR, struct dlinked_list_element **upper_element, struct dlinked_list_element **down_element, struct element_hash **hash, struct  cache_storage_t *cache, struct dlinked_list_element **upper_in_list, struct dlinked_list_element **down_in_list) {
     
@@ -232,7 +241,7 @@ void resident_in_stack(int name, struct dlinked_list_element **down_element, str
     *down_element = clear_stack_to_LIR(*down_element, hash);
 }
 
-void *non_resident_in_stack(int name, struct dlinked_list_element **down_element, struct element_hash **hash, struct dlinked_list_element **upper_in_list, struct dlinked_list_element **down_in_list, struct dlinked_list_element *in_stack) {
+void *non_resident_in_stack(struct dlinked_list_element **down_element, struct element_hash **hash, struct dlinked_list_element **upper_in_list, struct dlinked_list_element **down_in_list, struct dlinked_list_element *in_stack) {
 
     struct element delete;
 
@@ -296,6 +305,8 @@ void move_up_stack(struct dlinked_list_element **upper_element, struct dlinked_l
 
     lift_element->previous = NULL;
     lift_element->next = upper_elem;
+
+    *upper_element = lift_element;
 }
 
 char element_is_LIR(struct dlinked_list_element *down_element) {
@@ -318,7 +329,7 @@ struct dlinked_list_element *clear_stack_to_LIR(struct dlinked_list_element *dow
         
         previous = current->previous;
         change_in_hash(current->element.name, NULL, hash, Stack);
-        free_element_stack(current, hash);
+        free_element_stack(current);
         current = previous;
     }
 
@@ -327,33 +338,10 @@ struct dlinked_list_element *clear_stack_to_LIR(struct dlinked_list_element *dow
     return current;
 }
 
-void free_stack(struct dlinked_list_element *upper_element, struct element_hash **hash){
+void free_element_stack(struct dlinked_list_element *element) {
     
-    assert(upper_element != NULL);
-
-    struct dlinked_list_element *current = upper_element;
-    struct dlinked_list_element *next;
-
-    while (current != NULL) {
-        
-        next = current->next;
-
-        free_element_stack(current, hash);
-
-        current = next;
-    }
-    
-}
-
-void free_element_stack(struct dlinked_list_element *element, struct element_hash **hash) {
-    
-    int delete = 0;
-    printf("name: %d\n", element->element.name);
-
     free(element->element.location_in_cache);
     free(element);
-    
-
 }
 
 void to_non_resident(int name, struct element_hash **hash) {
