@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
+
 #include "../include/hash.h"
 #include "../include/list.h"
 //#include "../include/cache_storage.h"
@@ -243,6 +244,8 @@ void only_in_list(int name, struct stack stack, struct list list, struct element
 
 void resident_in_stack(int name, struct stack stack, struct list list, struct element_hash **hash, struct dlinked_list_element *element_in_stack) {
 
+    assert(element_in_stack != NULL);
+
     struct dlinked_list_element *down_elem = *stack.down_element;
 
     change_in_list(down_elem->element, name, list, hash);
@@ -256,6 +259,8 @@ void resident_in_stack(int name, struct stack stack, struct list list, struct el
 }
 
 void *non_resident_in_stack(struct stack stack, struct list list, struct element_hash **hash, struct dlinked_list_element *element_in_stack) {
+
+    assert(element_in_stack != NULL);
 
     struct element delete;
 
@@ -272,9 +277,13 @@ void *non_resident_in_stack(struct stack stack, struct list list, struct element
     return delete.location_in_cache;
 }
 
-struct dlinked_list_element *new_upper_element(int name, enum state state_element, void *location_in_cache, struct stack stack, struct element_hash **hash) {
+struct dlinked_list_element *new_upper_element(int name, enum state state_element, void *location_in_cache, struct stack stack, 
+                                               struct element_hash **hash) {
+
+    //assert(location_in_cache != NULL);
 
     struct dlinked_list_element *new = (struct dlinked_list_element *) calloc(1, sizeof(struct dlinked_list_element));
+    assert(new != NULL);
 
     if ((*stack.down_element) == NULL) {
         *stack.down_element = new;
@@ -353,6 +362,8 @@ struct dlinked_list_element *clear_stack_to_LIR(struct dlinked_list_element *dow
 }
 
 void free_element_stack(struct dlinked_list_element *element) {
+
+    assert(element != NULL);
     
     free(element->element.location_in_cache);
     free(element);
