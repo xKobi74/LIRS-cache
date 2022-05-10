@@ -45,7 +45,6 @@ struct dlinked_list_element *create_elem(int name, void *location_in_cache) {
 void delete_element(struct dlinked_list_element **del_elem, struct element_hash **hash) {
 
     change_in_hash((*del_elem)->element.name, NULL, hash, List);
-    free((*del_elem)->element.location_in_cache);
     free(*del_elem);
     
 }
