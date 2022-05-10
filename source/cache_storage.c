@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -70,7 +71,7 @@ void cache_unit_change(struct cache_storage_t *cachestorage, void *cacheunit, in
 
 void cache_storage_data_print(struct cache_storage_t *cachestorage) {
 	int i;
-	for (i = 0; i < cachestorage->used)
+	for (i = 0; i < cachestorage->used; ++i)
 		printf("%s ", cache_unit_pointer(cachestorage, i));
 	printf("\n");
 }

@@ -55,6 +55,7 @@ struct element add_in_list(int name, struct list list, struct element_hash **has
     struct element del_elem = (*list.down_element)->element;
     struct dlinked_list_element *new_down_in_list = (*list.down_element)->previous;
 
+    printf("%d\n", new_down_in_list->element.name);
     (new_down_in_list)->next = NULL;
     delete_element(list.down_element, hash);
     

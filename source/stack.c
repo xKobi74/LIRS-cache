@@ -4,7 +4,7 @@
 
 #include "../include/hash.h"
 #include "../include/list.h"
-//#include "../include/cache_storage.h"
+#include "../include/cache_storage.h"
 #include "../include/stack.h"
 
 #if 0
@@ -280,7 +280,7 @@ void *non_resident_in_stack(struct stack stack, struct list list, struct element
 struct dlinked_list_element *new_upper_element(int name, enum state state_element, void *location_in_cache, struct stack stack, 
                                                struct element_hash **hash) {
 
-    //assert(location_in_cache != NULL);
+    assert(location_in_cache != NULL);
 
     struct dlinked_list_element *new = (struct dlinked_list_element *) calloc(1, sizeof(struct dlinked_list_element));
     assert(new != NULL);
