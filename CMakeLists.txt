@@ -13,6 +13,8 @@ set (SOURCES
     source/hash.c
     source/stack.c
     source/list.c
+    source/cache_storage.c
+    source/main.c
 )
 
 add_executable (${EXEC_FILE} ${SOURCES})
