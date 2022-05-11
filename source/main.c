@@ -6,8 +6,8 @@
 #include "cache_storage.h"
 #include "stack.h"
 
-#define LEN_CACHE 6
-#define LEN_LIR 3
+#define LEN_CACHE 3
+#define LEN_LIR 2
 
 void fgetdata(void *cacheunit, int filenumber) {
     ((char *)cacheunit) [0] = filenumber % 10 + '0';
@@ -28,7 +28,7 @@ int main() {
     struct element_hash **hash = make_hash();
     int input[10] = {1, 4, 2, 3, 2, 1, 4, 1, 5, 4};
 
-    for (int i = 0; i < 11; ++i) {
+    for (int i = 0; i < 10; ++i) {
         iteration(input[i], LEN_LIR, stack, list, hash, cachestorage);
         
     }
