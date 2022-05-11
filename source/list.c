@@ -85,28 +85,34 @@ void delete_element(struct dlinked_list_element **del_elem, struct element_hash 
 struct element add_in_list(int name, struct list list, struct element_hash **hash) {
 
     void *loc_in_cash = (*list.down_element)->element.location_in_cache;
-    struct element del_elem = (*list.down_element)->element;
+    struct element delite = (*list.down_element)->element;    
+    struct dlinked_list_element **del_elem;
+    
     struct dlinked_list_element *new_down_in_list;
-    new_in_list(name, loc_in_cash, list, hash);
+    del_elem = list.down_element;
 
     if ((*list.upper_element)->next == NULL) {
+        new_in_list(name, loc_in_cash, list, hash);
         (*list.upper_element)->next = NULL;
         new_down_in_list = (*list.upper_element);
+        
     }
     else {
+        new_in_list(name, loc_in_cash, list, hash);
         new_down_in_list = (*list.down_element)->previous;
         (new_down_in_list)->next = NULL;
     }
 
-    delete_element(list.down_element, hash);
+    
+    delete_element(del_elem, hash);
     *list.down_element = new_down_in_list;
     change_in_hash(name, (*list.upper_element), hash, List);
-    return del_elem;
+
+    return delite;
 }
 
 struct element move_up_list(int name, struct list list, struct element_hash **hash) {
 
-    assert((*list.upper_element)->next != NULL);
     struct dlinked_list_element *move_elem = find_element(name, hash, List);
     assert(move_elem != NULL);
 
@@ -115,6 +121,9 @@ struct element move_up_list(int name, struct list list, struct element_hash **ha
     }
     if ((move_elem->next) != NULL) {
         (move_elem->next)->previous = move_elem->previous;
+    }
+    else {
+        *list.down_element = move_elem->previous;
     }
 
     (move_elem->previous)->next = move_elem->next;
@@ -136,6 +145,9 @@ void change_in_list(struct element add, int name_delite, struct list list, struc
     }
     if ((del_elem->next) != NULL) {
         del_elem->next->previous = del_elem->previous;
+    }
+    if ((del_elem->next) == NULL) {
+        *list.down_element = del_elem->previous;
     }
     delete_element(&del_elem, hash);
 }
