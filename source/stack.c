@@ -199,7 +199,7 @@ void first_filling(int name, int len_LIR, struct stack stack, struct list list, 
     new_in_cash = cache_unit_add(cache, name);
     //assert(new_in_cash != NULL);
     
-    if (cache_storage_used(cache) < len_LIR) {
+    if (cache_storage_used(cache) <= len_LIR) {
 
         new = new_upper_element(name, LIR, new_in_cash, stack, hash);
         change_in_hash(name, new, hash, Stack);
@@ -365,7 +365,7 @@ void free_element_stack(struct dlinked_list_element *element) {
 
     assert(element != NULL);
     
-    free(element->element.location_in_cache);
+    //free(element->element.location_in_cache);
     free(element);
 }
 
