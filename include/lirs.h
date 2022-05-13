@@ -21,4 +21,7 @@ void *lirs_getfilewithlog(struct lirs_t *lirs, int filenumber);
 //get current rate of cache missing
 float get_rate_of_lirs_cache_missing(struct lirs_t *lirs);
 
+//get count of cache hits
+unsigned long long get_count_of_lirs_cache_hit(struct lirs_t *lirs);
+
 #endif

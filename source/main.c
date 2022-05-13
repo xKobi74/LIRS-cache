@@ -39,7 +39,7 @@ int main() {
     for (i = 0; i < filescount; ++i)
         lirs_getfile(lirs, input_filenumber());
     
-    printf("Percents of cache predict missings: %.2f%%\n", get_rate_of_lirs_cache_missing(lirs) * 100.0);
+    printf("%llu\n", get_count_of_lirs_cache_hit(lirs));
 
     lirs_delete(lirs);
     return 0;
