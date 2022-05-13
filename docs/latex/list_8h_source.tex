@@ -1,0 +1,22 @@
+\hypertarget{list_8h_source}{}\doxysection{list.\+h}
+\label{list_8h_source}\index{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/list.h@{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/list.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_\_LIST\_H\_\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_\_LIST\_H\_\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{struct }\mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}};}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keywordtype}{void} new\_in\_list(\textcolor{keywordtype}{int} name, \textcolor{keywordtype}{void} *location\_in\_cash, \textcolor{keyword}{struct} \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash);}
+\DoxyCodeLine{7 \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *create\_elem(\textcolor{keywordtype}{int} name, \textcolor{keywordtype}{void} *location\_in\_cache);}
+\DoxyCodeLine{8 \textcolor{keywordtype}{void} delete\_element(\textcolor{keyword}{struct} \mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} **det\_elem, \textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash);}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{struct }\mbox{\hyperlink{structelement}{element}} add\_in\_list(int name, struct \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, struct \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash); \textcolor{comment}{//return struct delete element}}
+\DoxyCodeLine{11 \textcolor{comment}{//Добавление пришедшего элемента сверху, удаление нижнего, возвращение копии удаленной структуры}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{struct }\mbox{\hyperlink{structelement}{element}} move\_up\_list(int name, struct \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, struct \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash); \textcolor{comment}{// return move element}}
+\DoxyCodeLine{15 \textcolor{comment}{}}
+\DoxyCodeLine{16 \textcolor{keywordtype}{void} change\_in\_list(\textcolor{keyword}{struct} \mbox{\hyperlink{structelement}{element}} add, \textcolor{keywordtype}{int} name\_delete, \textcolor{keyword}{struct} \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash);}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

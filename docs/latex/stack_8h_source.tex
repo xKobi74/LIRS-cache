@@ -1,0 +1,64 @@
+\hypertarget{stack_8h_source}{}\doxysection{stack.\+h}
+\label{stack_8h_source}\index{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/stack.h@{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/stack.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_\_STACK\_H\_\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_\_STACK\_H\_\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{enum} state \{}
+\DoxyCodeLine{5     LIR,}
+\DoxyCodeLine{6     Resident\_HIR,}
+\DoxyCodeLine{7     Non\_resident\_HIR}
+\DoxyCodeLine{8 \};}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{struct }\mbox{\hyperlink{structelement}{element}} \{}
+\DoxyCodeLine{11     \textcolor{keywordtype}{int} name;}
+\DoxyCodeLine{12     \textcolor{keyword}{enum} state state\_element;}
+\DoxyCodeLine{13     \textcolor{keywordtype}{void} *location\_in\_cache;}
+\DoxyCodeLine{14 \};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} \{}
+\DoxyCodeLine{17     \textcolor{keyword}{struct }\mbox{\hyperlink{structelement}{element}} \mbox{\hyperlink{structelement}{element}};}
+\DoxyCodeLine{18     \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *next;}
+\DoxyCodeLine{19     \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *previous;}
+\DoxyCodeLine{20 \};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{struct }\mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} \{}
+\DoxyCodeLine{23     \textcolor{keywordtype}{int} capacity;}
+\DoxyCodeLine{24     \textcolor{keywordtype}{int} used;}
+\DoxyCodeLine{25     \textcolor{keywordtype}{int} unitsize;}
+\DoxyCodeLine{26     \textcolor{keywordtype}{char} *data;}
+\DoxyCodeLine{27 \};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{struct }\mbox{\hyperlink{structstack}{stack}} \{}
+\DoxyCodeLine{30     \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} **upper\_element;}
+\DoxyCodeLine{31     \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} **down\_element;}
+\DoxyCodeLine{32 \};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{struct }\mbox{\hyperlink{structlist}{list}} \{}
+\DoxyCodeLine{35     \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} **upper\_element;}
+\DoxyCodeLine{36     \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} **down\_element;}
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keywordtype}{void} to\_non\_resident(\textcolor{keywordtype}{int} name, \textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash);}
+\DoxyCodeLine{40 \textcolor{keywordtype}{void} free\_element\_stack(\textcolor{keyword}{struct} \mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *\mbox{\hyperlink{structelement}{element}});}
+\DoxyCodeLine{41 \textcolor{keywordtype}{char} element\_is\_LIR(\textcolor{keyword}{struct} \mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *down\_element);}
+\DoxyCodeLine{42 \textcolor{keywordtype}{void} print\_stack\_up(\textcolor{keyword}{struct} \mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *down\_element);}
+\DoxyCodeLine{43 \textcolor{keywordtype}{void} print\_stack\_down(\textcolor{keyword}{struct} \mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *upper\_element);}
+\DoxyCodeLine{44 \textcolor{keywordtype}{void} move\_up\_stack(\textcolor{keyword}{struct} \mbox{\hyperlink{structstack}{stack}} \mbox{\hyperlink{structstack}{stack}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *lift\_element);}
+\DoxyCodeLine{45 \textcolor{keywordtype}{void} only\_in\_list(\textcolor{keywordtype}{int} name, \textcolor{keyword}{struct} \mbox{\hyperlink{structstack}{stack}} \mbox{\hyperlink{structstack}{stack}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash);}
+\DoxyCodeLine{46 \textcolor{keywordtype}{void} *first\_entry\_in\_full(\textcolor{keywordtype}{int} name, \textcolor{keyword}{struct} \mbox{\hyperlink{structstack}{stack}} \mbox{\hyperlink{structstack}{stack}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash);}
+\DoxyCodeLine{47 \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *clear\_stack\_to\_LIR(\textcolor{keyword}{struct} \mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *down\_element, \textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash);}
+\DoxyCodeLine{48 \textcolor{keywordtype}{void} *non\_resident\_in\_stack(\textcolor{keyword}{struct} \mbox{\hyperlink{structstack}{stack}} \mbox{\hyperlink{structstack}{stack}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash, \textcolor{keyword}{struct} \mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *in\_stack);}
+\DoxyCodeLine{49 \textcolor{keywordtype}{void} *in\_stack(\textcolor{keywordtype}{int} name, \textcolor{keyword}{struct} \mbox{\hyperlink{structstack}{stack}} \mbox{\hyperlink{structstack}{stack}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash, \textcolor{keyword}{struct} \mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *element\_in\_stack);}
+\DoxyCodeLine{50 \textcolor{keywordtype}{void} resident\_in\_stack(\textcolor{keywordtype}{int} name, \textcolor{keyword}{struct} \mbox{\hyperlink{structstack}{stack}} \mbox{\hyperlink{structstack}{stack}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash, \textcolor{keyword}{struct} \mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *in\_stack);}
+\DoxyCodeLine{51 \textcolor{keywordtype}{void} *first\_entery(\textcolor{keywordtype}{int} name, \textcolor{keywordtype}{int} len\_LIR, \textcolor{keyword}{struct} \mbox{\hyperlink{structstack}{stack}} \mbox{\hyperlink{structstack}{stack}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash, \textcolor{keyword}{struct}  \mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *cache);}
+\DoxyCodeLine{52 \textcolor{keywordtype}{void} first\_filling(\textcolor{keywordtype}{int} name, \textcolor{keywordtype}{int} len\_LIR, \textcolor{keyword}{struct} \mbox{\hyperlink{structstack}{stack}} \mbox{\hyperlink{structstack}{stack}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash, \textcolor{keyword}{struct}  \mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *cache);}
+\DoxyCodeLine{53 \textcolor{keywordtype}{void} *not\_in\_stack(\textcolor{keywordtype}{int} name, \textcolor{keywordtype}{int} len\_LIR, \textcolor{keyword}{struct} \mbox{\hyperlink{structstack}{stack}} \mbox{\hyperlink{structstack}{stack}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash, \textcolor{keyword}{struct}  \mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *cache);}
+\DoxyCodeLine{54 \textcolor{keywordtype}{void} *LIRS\_algorithm(\textcolor{keywordtype}{int} name, \textcolor{keywordtype}{int} len\_LIR, \textcolor{keyword}{struct} \mbox{\hyperlink{structstack}{stack}} \mbox{\hyperlink{structstack}{stack}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash, \textcolor{keyword}{struct}  \mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *cache);}
+\DoxyCodeLine{55 \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *new\_upper\_element(\textcolor{keywordtype}{int} name, \textcolor{keyword}{enum} state state\_element, \textcolor{keywordtype}{void} *location\_in\_cache, }
+\DoxyCodeLine{56                                                \textcolor{keyword}{struct} \mbox{\hyperlink{structstack}{stack}} \mbox{\hyperlink{structstack}{stack}}, \textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
