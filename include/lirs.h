@@ -1,7 +1,10 @@
 #ifndef __LIRS_H__
 #define __LIRS_H__
 
-struct lirs_t;
+struct lirs_t {
+	unsigned long long count_of_rewritings;
+    unsigned long long count_of_accessing;
+};
 
 //function that writes data of file to cacheunit
 typedef void (*fgetdata_t)(void *cacheunit, int filenumber);

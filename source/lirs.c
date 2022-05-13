@@ -15,6 +15,9 @@ struct lirs_t {
 	struct stack stack;
 	struct list list;
 	struct element_hash **hash;
+
+    unsigned long long count_of_rewritings;
+    unsigned long long count_of_accessing;
 };
 
 struct lirs_t *lirs_init(int lircapacity, int hircapacity, int datasize, fgetdata_t fgetdata) {
@@ -32,6 +35,9 @@ struct lirs_t *lirs_init(int lircapacity, int hircapacity, int datasize, fgetdat
     ((lirs->list).down_element) = (struct dlinked_list_element **) calloc(1, sizeof(struct dlinked_list_element *));
     
     lirs->hash = make_hash();
+
+    lirs->count_of_rewritings = 0;
+    lirs->count_of_accessing = 0;
 
     return lirs;
 }
@@ -51,7 +57,10 @@ void lirs_delete(struct lirs_t *lirs) {
 
 void *lirs_getfile(struct lirs_t *lirs, int filenumber) {
 	char *ptr;
+    ++(lirs-> count_of_accessing);
     ptr = LIRS_algorithm(filenumber, lirs->lircapacity, lirs->stack, lirs->list, lirs->hash, lirs->cachestorage);
+    if (ptr == NULL)
+        ++(lirs->count_of_rewritings);
     cache_unit_change(lirs->cachestorage, ptr, filenumber);
 
     struct dlinked_list_element *objptr = find_element(filenumber, lirs->hash, List);
@@ -63,12 +72,7 @@ void *lirs_getfile(struct lirs_t *lirs, int filenumber) {
 }
 
 void *lirs_getfilewithlog(struct lirs_t *lirs, int filenumber) {
-	char *ptr;
-
-    ptr = LIRS_algorithm(filenumber, lirs->lircapacity, lirs->stack, lirs->list, lirs->hash, lirs->cachestorage);
-    cache_unit_change(lirs->cachestorage, ptr, filenumber);
-    if (ptr == NULL)
- 		ptr = cache_unit_pointer(lirs->cachestorage, cache_storage_used(lirs->cachestorage) - 1);
+    char *ptr = lirs_getfile(lirs, filenumber);
  	
     printf("\n-------------------------------------------------------------------\n");
     cache_storage_data_print(lirs->cachestorage);
