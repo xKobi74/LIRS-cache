@@ -14,6 +14,7 @@ set (SOURCES
     source/stack.c
     source/list.c
     source/cache_storage.c
+    source/lirs.c
     source/main.c
 )
 

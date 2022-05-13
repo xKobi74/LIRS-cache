@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../include/cache_storage.h"
+#include "cache_storage.h"
 
 struct cache_storage_t {
 	int capacity;
@@ -41,7 +41,6 @@ int cache_storage_used(struct cache_storage_t *cachestorage) {
 }
 
 void *cache_unit_pointer(struct cache_storage_t *cachestorage, int cacheunitindex) {
-	char *cacheunitptr;
 	if (cacheunitindex < 0 || cacheunitindex >= cachestorage->capacity) 
 		return NULL;
 	return cachestorage->data + cachestorage->unitsize * cacheunitindex;
@@ -72,6 +71,6 @@ void cache_unit_change(struct cache_storage_t *cachestorage, void *cacheunit, in
 void cache_storage_data_print(struct cache_storage_t *cachestorage) {
 	int i;
 	for (i = 0; i < cachestorage->used; ++i)
-		printf("%s ", cache_unit_pointer(cachestorage, i));
+		printf("%s ", (char *) cache_unit_pointer(cachestorage, i));
 	printf("\n");
 }
