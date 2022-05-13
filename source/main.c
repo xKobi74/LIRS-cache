@@ -42,6 +42,5 @@ int main() {
     printf("Percents of cache predict missings: %.2f%%\n", get_rate_of_lirs_cache_missing(lirs) * 100.0);
 
     lirs_delete(lirs);
-
     return 0;
 }

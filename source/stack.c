@@ -315,6 +315,9 @@ void move_up_stack(struct stack stack, struct dlinked_list_element *lift_element
     assert(upper_elem != NULL);
     assert(lift_element != NULL);
 
+    if (*stack.upper_element == lift_element)
+        return;
+
     if (*stack.down_element == lift_element) {
         *stack.down_element = lift_element->previous;
     }

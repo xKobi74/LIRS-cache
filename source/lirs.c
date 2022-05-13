@@ -73,7 +73,7 @@ void *lirs_getfile(struct lirs_t *lirs, int filenumber) {
 
 void *lirs_getfilewithlog(struct lirs_t *lirs, int filenumber) {
     char *ptr = lirs_getfile(lirs, filenumber);
- 	
+    
     printf("\n-------------------------------------------------------------------\n");
     cache_storage_data_print(lirs->cachestorage);
     print_hash(lirs->hash);
