@@ -283,7 +283,8 @@ struct dlinked_list_element *new_upper_element(int name, enum state state_elemen
     assert(location_in_cache != NULL);
 
     struct dlinked_list_element *new = (struct dlinked_list_element *) calloc(1, sizeof(struct dlinked_list_element));
-    assert(new != NULL);
+    if (new == NULL)
+        abort();
 
     if ((*stack.down_element) == NULL) {
         *stack.down_element = new;

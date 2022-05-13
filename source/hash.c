@@ -66,7 +66,8 @@ struct element_hash **make_hash() {
     
     struct element_hash **hash;
     hash = (struct element_hash **) calloc(LEN_HASH, sizeof(struct element_hash *));
-    assert(hash != NULL);
+    if (hash == NULL)
+        abort();
 
     return hash;
 }
@@ -77,7 +78,8 @@ struct element_hash *new_element(int name, struct dlinked_list_element *address,
 
     struct element_hash *new;
     new = (struct element_hash *) calloc(1, sizeof(struct element_hash));
-    assert(new != NULL);
+    if (new == NULL)
+        abort();
 
     new->name = name;
 
@@ -194,7 +196,7 @@ void print_hash(struct element_hash **hash) {
             printf("Cell number: %d\n", i);
             current = hash[i];
             while (current != NULL) {
-                printf("\tName: %d, Stack: %p, List: %p\n", current->name, current->stack, current->list);
+                printf("\tName: %d, Stack: %p, List: %p\n", current->name, (void *) current->stack, (void *) current->list);
                 current = current->next;
             }
         

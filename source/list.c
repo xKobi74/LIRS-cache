@@ -62,6 +62,8 @@ struct dlinked_list_element *create_elem(int name, void *location_in_cache) {
     assert(location_in_cache != NULL);
 
     struct dlinked_list_element *new_elem = (struct dlinked_list_element *)calloc(1, sizeof(struct dlinked_list_element));
+    if (new_elem == NULL)
+        abort();
     assert(new_elem != NULL);
     new_elem->element.name = name;
     new_elem->element.state_element = Resident_HIR;

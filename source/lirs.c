@@ -21,7 +21,9 @@ struct lirs_t {
 };
 
 struct lirs_t *lirs_init(int lircapacity, int hircapacity, int datasize, fgetdata_t fgetdata) {
-	struct lirs_t *lirs = calloc(1, sizeof(struct lirs_t));
+    struct lirs_t *lirs = calloc(1, sizeof(struct lirs_t));
+    if (lirs == NULL)
+        abort();
 
 	lirs->lircapacity = lircapacity;
 	lirs->hircapacity = hircapacity;
@@ -29,11 +31,19 @@ struct lirs_t *lirs_init(int lircapacity, int hircapacity, int datasize, fgetdat
 	lirs->cachestorage = cache_storage_init(lircapacity + hircapacity, datasize, fgetdata);
     
     ((lirs->stack).upper_element) = (struct dlinked_list_element **) calloc(1, sizeof(struct dlinked_list_element *));
+    if (((lirs->stack).upper_element) == NULL)
+        abort();
     ((lirs->stack).down_element) = (struct dlinked_list_element **) calloc(1, sizeof(struct dlinked_list_element *));
-    
+    if (((lirs->stack).down_element) == NULL)
+        abort();
+
     ((lirs->list).upper_element) = (struct dlinked_list_element **) calloc(1, sizeof(struct dlinked_list_element *));
+    if (((lirs->list).upper_element) == NULL)
+        abort();
     ((lirs->list).down_element) = (struct dlinked_list_element **) calloc(1, sizeof(struct dlinked_list_element *));
-    
+    if (((lirs->list).down_element) == NULL)
+        abort();
+
     lirs->hash = make_hash();
 
     lirs->count_of_rewritings = 0;
@@ -53,6 +63,8 @@ void lirs_delete(struct lirs_t *lirs) {
     free(lirs->list.down_element);
 
     cache_storage_delete(lirs->cachestorage);
+
+    free(lirs);
 }
 
 void *lirs_getfile(struct lirs_t *lirs, int filenumber) {
@@ -73,7 +85,7 @@ void *lirs_getfile(struct lirs_t *lirs, int filenumber) {
 
 void *lirs_getfilewithlog(struct lirs_t *lirs, int filenumber) {
     char *ptr = lirs_getfile(lirs, filenumber);
-    
+
     printf("\n-------------------------------------------------------------------\n");
     cache_storage_data_print(lirs->cachestorage);
     print_hash(lirs->hash);
