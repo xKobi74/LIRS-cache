@@ -6,10 +6,6 @@
 #include "stack.h"
 #include "list.h"
 
-// #include "../include/hash.h"
-// #include "../include/stack.h"
-// #include "../include/list.h"
-
 #if 0
 void print_stack_down(struct dlinked_list_element *upper_element) {
 
@@ -85,7 +81,7 @@ void delete_element(struct dlinked_list_element **del_elem, struct element_hash 
 struct element add_in_list(int name, struct list list, struct element_hash **hash) {
 
     void *loc_in_cash = (*list.down_element)->element.location_in_cache;
-    struct element delite = (*list.down_element)->element;    
+    struct element delete = (*list.down_element)->element;    
     struct dlinked_list_element **del_elem;
     
     struct dlinked_list_element *new_down_in_list;
@@ -108,7 +104,7 @@ struct element add_in_list(int name, struct list list, struct element_hash **has
     *list.down_element = new_down_in_list;
     change_in_hash(name, (*list.upper_element), hash, List);
 
-    return delite;
+    return delete;
 }
 
 struct element move_up_list(int name, struct list list, struct element_hash **hash) {
@@ -136,9 +132,9 @@ struct element move_up_list(int name, struct list list, struct element_hash **ha
     return move_elem->element;
 }
 
-void change_in_list(struct element add, int name_delite, struct list list, struct element_hash **hash) {
+void change_in_list(struct element add, int name_delete, struct list list, struct element_hash **hash) {
 
-    struct dlinked_list_element *del_elem = find_element(name_delite, hash, List);
+    struct dlinked_list_element *del_elem = find_element(name_delete, hash, List);
     new_in_list(add.name, del_elem->element.location_in_cache, list, hash);
     if ((del_elem->previous) != NULL) {
         del_elem->previous->next = del_elem->next;

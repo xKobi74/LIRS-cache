@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
-#include "../include/hash.h"
-#include "../include/stack.h"
+
+#include "hash.h"
+#include "stack.h"
 
 #define LEN_HASH 5 
 

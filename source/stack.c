@@ -2,10 +2,10 @@
 #include <assert.h>
 #include <stdlib.h>
 
-#include "../include/hash.h"
-#include "../include/list.h"
-#include "../include/cache_storage.h"
-#include "../include/stack.h"
+#include "hash.h"
+#include "list.h"
+#include "cache_storage.h"
+#include "stack.h"
 
 #if 0
 int main(){
