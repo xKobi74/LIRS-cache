@@ -2,65 +2,13 @@
 #include <assert.h>
 #include <stdlib.h>
 
+#include "all_objects.h"
 #include "hash.h"
-#include "stack.h"
 
-#define LEN_HASH 5 
+#define LEN_HASH 5000
 
-
-#if 0
-int main() {
-    
-    struct element_hash *element;
-    struct element_hash **hash = make_hash();
-    struct dlinked_list_element a, b, c, d ,e, f, g, h;
-
-    change_in_hash(11, &a, hash, List);
-    change_in_hash(6, &b, hash, Stack);
-    change_in_hash(16, &c, hash, Stack);
-    change_in_hash(3, &d, hash, List);
-    change_in_hash(72, &e, hash, Stack);
-    change_in_hash(84, &f, hash, List);
-    change_in_hash(37, &g, hash, Stack);
-    //element = new_element(3, NULL);
-
-    /*printf("adress 11: %p\n", (hash[1])->list);
-    change_in_hash(11, &a, hash, List);
-    printf("adress 11: %p\n", (hash[1])->list);
-    printf("adress 11: %p\n", find_element(11, hash, List));*/
-
-    printf("\n\n");
-    print_hash(hash);
-    printf("\n\n");
-
-    printf("%d\n", hash[1]->name);
-    printf("%d\n", (hash[1]->next)->name);
-    printf("%d\n\n", ((hash[1]->next)->next)->name);
-
-    free_hash(hash);
-
-    printf("\n\n");
-    print_hash(hash);
-    printf("\n\n");
-
-    //delete_element_hash(6, hash);
-    //printf("%d\n", delete_element_hash(13, hash));
-    //printf("%d\n", delete_element_hash(11, hash));
-
-    //printf("%d\n", hash[1]->name);
-    //printf("%d\n", (hash[1]->next)->name);   
-
-    //delete_element_hash(16, hash); 
-
-    //printf("%d\n", hash[1]->name);
-
-    //delete_element_hash(11, hash);
-
-    free(hash);
-
-    return 0;
-}
-#endif
+static char delete_element_hash(int name, struct element_hash **hash);
+static struct element_hash *new_element(int name, struct dlinked_list_element *address, enum what_object object);
 
 struct element_hash **make_hash() {
     
@@ -72,7 +20,7 @@ struct element_hash **make_hash() {
     return hash;
 }
 
-struct element_hash *new_element(int name, struct dlinked_list_element *address, enum what_object object) {
+static struct element_hash *new_element(int name, struct dlinked_list_element *address, enum what_object object) {
     
     assert(address != NULL);
 
@@ -137,7 +85,7 @@ struct dlinked_list_element *find_element(int name, struct element_hash **hash, 
     return NULL;
 }
 
-char delete_element_hash(int name, struct element_hash **hash) {
+static char delete_element_hash(int name, struct element_hash **hash) {
 
     assert(hash != NULL);
 
@@ -184,6 +132,8 @@ void free_hash(struct element_hash **hash) {
             }
         }
     }
+
+    free(hash);
 }
 
 void print_hash(struct element_hash **hash) {

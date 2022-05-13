@@ -2,9 +2,8 @@
 #include <assert.h>
 #include <stdlib.h>
 
+#include "all_objects.h"
 #include "hash.h"
-#include "list.h"
-#include "cache_storage.h"
 #include "stack.h"
 #include "lirs.h"
 
@@ -22,9 +21,10 @@ struct lirs_t {
 
 struct lirs_t *lirs_init(int lircapacity, int hircapacity, int datasize, fgetdata_t fgetdata) {
     struct lirs_t *lirs = calloc(1, sizeof(struct lirs_t));
-    if (lirs == NULL)
+    if (lirs == NULL) {
         abort();
-
+    }
+        
 	lirs->lircapacity = lircapacity;
 	lirs->hircapacity = hircapacity;
 
@@ -54,7 +54,6 @@ struct lirs_t *lirs_init(int lircapacity, int hircapacity, int datasize, fgetdat
 
 void lirs_delete(struct lirs_t *lirs) {
 	free_hash(lirs->hash);
-    free(lirs->hash);
     
     free(lirs->stack.upper_element);
     free(lirs->stack.down_element);

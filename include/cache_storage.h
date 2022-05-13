@@ -1,7 +1,5 @@
 #pragma once
 
-struct cache_storage_t;
-
 //function that writes data of file to cacheunit
 typedef void (*fgetdata_t)(void *cacheunit, int filenumber);
 

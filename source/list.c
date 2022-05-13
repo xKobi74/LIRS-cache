@@ -2,40 +2,13 @@
 #include <stdio.h>
 #include <assert.h>
 
+#include "all_objects.h"
 #include "hash.h"
-#include "stack.h"
 #include "list.h"
 
-#if 0
-void print_stack_down(struct dlinked_list_element *upper_element) {
+static struct dlinked_list_element *create_elem(int name, void *location_in_cache);
+static void delete_element(struct dlinked_list_element **del_elem, struct element_hash **hash);
 
-    assert(upper_element != NULL);
-
-    struct dlinked_list_element *current = upper_element;
-
-    printf("element: %d\n", current->element.name);
-
-    while (current->next != NULL) {
-        current = current->next;
-        printf("element: %d\n", current->element.name);
-    }
-}
-
-void print_stack_up(struct dlinked_list_element *down_element) {
-
-    assert(down_element != NULL);
-
-    struct dlinked_list_element *current = down_element;
-
-    printf("element: %d\n", current->element.name);
-
-    while (current->previous != NULL) {
-        current = current->previous;
-        printf("element: %d\n", current->element.name);
-    }
-}
-
-#endif
 
 void new_in_list(int name, void *location_in_cash, struct list list, struct element_hash **hash) {
 
@@ -57,7 +30,7 @@ void new_in_list(int name, void *location_in_cash, struct list list, struct elem
     change_in_hash(name, new_elem, hash, List);
 }
 
-struct dlinked_list_element *create_elem(int name, void *location_in_cache) {
+static struct dlinked_list_element *create_elem(int name, void *location_in_cache) {
 
     assert(location_in_cache != NULL);
 
@@ -74,7 +47,7 @@ struct dlinked_list_element *create_elem(int name, void *location_in_cache) {
     return new_elem;
 }
 
-void delete_element(struct dlinked_list_element **del_elem, struct element_hash **hash) {
+static void delete_element(struct dlinked_list_element **del_elem, struct element_hash **hash) {
 
     change_in_hash((*del_elem)->element.name, NULL, hash, List);
     free(*del_elem);
@@ -149,45 +122,3 @@ void change_in_list(struct element add, int name_delete, struct list list, struc
     }
     delete_element(&del_elem, hash);
 }
-
-#if 0
-int main() {
-
-    struct dlinked_list_element *upper = NULL;
-    struct dlinked_list_element *down = NULL;
-    struct element_hash **hash = make_hash();
-
-    struct element change_elem;
-    change_elem.name = 16;
-    change_elem.location_in_cache = NULL;
-    change_elem.state_element = Resident_HIR; 
-
-    list.upper_element = &upper;
-    list.down_element = &down;
-
-    new_in_list(2, &change_elem.name, list, hash);
-    new_in_list(1, &change_elem.name, list, hash);
-
-    change_in_list(change_elem, 1, list, hash);
-
-    // struct element check_struct;
-    // check_struct.location_in_cache = NULL;
-    // check_struct.name = 0;
-    // check_struct.state_element = LIR;
- 
-
-    printf("------Print-down:\n");
-    print_stack_down(upper);
-
-    //printf("Return name after move: %d\n", check_struct.name);
-    printf("\n");
-
-    printf("------HASH\n");  
-
-    print_hash(hash);
-
-    free_hash(hash);
-    free(hash);
-    return 0;
- }
-#endif

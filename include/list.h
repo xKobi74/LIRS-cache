@@ -1,11 +1,7 @@
 #ifndef __LIST_H__
 #define __LIST_H__
 
-struct list list;
-
 void new_in_list(int name, void *location_in_cash, struct list list, struct element_hash **hash);
-struct dlinked_list_element *create_elem(int name, void *location_in_cache);
-void delete_element(struct dlinked_list_element **det_elem, struct element_hash **hash);
 
 struct element add_in_list(int name, struct list list, struct element_hash **hash); //return struct delete element
 //Добавление пришедшего элемента сверху, удаление нижнего, возвращение копии удаленной структуры

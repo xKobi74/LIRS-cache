@@ -1,8 +1,6 @@
 #ifndef __LIRS_H__
 #define __LIRS_H__
 
-struct lirs_t;
-
 //function that writes data of file to cacheunit
 typedef void (*fgetdata_t)(void *cacheunit, int filenumber);
 
