@@ -57,9 +57,9 @@ void lirs_delete(struct lirs_t *lirs) {
 
 void *lirs_getfile(struct lirs_t *lirs, int filenumber) {
 	char *ptr;
-    ++(lirs-> count_of_accessing);
+    ++(lirs->count_of_accessing);
     ptr = LIRS_algorithm(filenumber, lirs->lircapacity, lirs->stack, lirs->list, lirs->hash, lirs->cachestorage);
-    if (ptr == NULL)
+    if (ptr != NULL)
         ++(lirs->count_of_rewritings);
     cache_unit_change(lirs->cachestorage, ptr, filenumber);
 
@@ -86,4 +86,10 @@ void *lirs_getfilewithlog(struct lirs_t *lirs, int filenumber) {
     }
     
     return ptr;
+}
+
+float get_rate_of_lirs_cache_missing(struct lirs_t *lirs) {
+    if (cache_storage_isfull(lirs->cachestorage) == 0)
+        return cache_storage_used(lirs->cachestorage) / (float) lirs->count_of_accessing;
+    return (lirs->count_of_rewritings + cache_storage_used(lirs->cachestorage)) / (float) lirs->count_of_accessing;
 }

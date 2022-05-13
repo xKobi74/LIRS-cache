@@ -4,21 +4,42 @@
 
 #include "lirs.h"
 
-#define LEN_CACHE 3
-#define LEN_LIR 2
-#define DATASIZE 2
+
+const int datasize = 2;
 
 void fgetdata(void *cacheunit, int filenumber) {
     ((char *)cacheunit) [0] = filenumber % 10 + '0';
 }
 
+void input_configs(int *cachesize, int *filescount) {
+    int k;
+    k = scanf("%d %d", cachesize, filescount);
+    if (k != 2)
+        abort();
+}
+
+int input_filenumber() {
+    int x, k;
+    k = scanf("%d", &x);
+    if (k != 1)
+        abort();
+    return x;
+}
+
 int main() {
-    struct lirs_t *lirs = lirs_init(LEN_CACHE, LEN_CACHE - LEN_LIR, DATASIZE, fgetdata);
+    int cachesize, filescount;
+    input_configs(&cachesize, &filescount);
 
-    int input[10] = {1, 4, 2, 3, 2, 1, 4, 1, 5, 4};
-
-    for (int i = 0; i < 10; ++i)
-        printf("%s\n", (char *) lirs_getfile(lirs, input[i]));
+    int lirsize, hirsize;
+    hirsize = (cachesize + 3) / 4;
+    lirsize = cachesize - hirsize;
+    struct lirs_t *lirs = lirs_init(lirsize, hirsize, datasize, fgetdata);
+    
+    int i;
+    for (i = 0; i < filescount; ++i)
+        lirs_getfile(lirs, input_filenumber());
+    
+    printf("Percents of cache predict missings: %.2f%%\n", get_rate_of_lirs_cache_missing(lirs) * 100.0);
 
     lirs_delete(lirs);
 
