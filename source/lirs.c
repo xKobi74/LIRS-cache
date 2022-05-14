@@ -2,9 +2,8 @@
 #include <assert.h>
 #include <stdlib.h>
 
+#include "all_objects.h"
 #include "hash.h"
-#include "list.h"
-#include "cache_storage.h"
 #include "stack.h"
 #include "lirs.h"
 
@@ -15,30 +14,46 @@ struct lirs_t {
 	struct stack stack;
 	struct list list;
 	struct element_hash **hash;
+
+    unsigned long long count_of_rewritings;
+    unsigned long long count_of_accessing;
 };
 
 struct lirs_t *lirs_init(int lircapacity, int hircapacity, int datasize, fgetdata_t fgetdata) {
-	struct lirs_t *lirs = calloc(1, sizeof(struct lirs_t));
-
+    struct lirs_t *lirs = calloc(1, sizeof(struct lirs_t));
+    if (lirs == NULL) {
+        abort();
+    }
+        
 	lirs->lircapacity = lircapacity;
 	lirs->hircapacity = hircapacity;
 
 	lirs->cachestorage = cache_storage_init(lircapacity + hircapacity, datasize, fgetdata);
     
     ((lirs->stack).upper_element) = (struct dlinked_list_element **) calloc(1, sizeof(struct dlinked_list_element *));
+    if (((lirs->stack).upper_element) == NULL)
+        abort();
     ((lirs->stack).down_element) = (struct dlinked_list_element **) calloc(1, sizeof(struct dlinked_list_element *));
-    
+    if (((lirs->stack).down_element) == NULL)
+        abort();
+
     ((lirs->list).upper_element) = (struct dlinked_list_element **) calloc(1, sizeof(struct dlinked_list_element *));
+    if (((lirs->list).upper_element) == NULL)
+        abort();
     ((lirs->list).down_element) = (struct dlinked_list_element **) calloc(1, sizeof(struct dlinked_list_element *));
-    
+    if (((lirs->list).down_element) == NULL)
+        abort();
+
     lirs->hash = make_hash();
+
+    lirs->count_of_rewritings = 0;
+    lirs->count_of_accessing = 0;
 
     return lirs;
 }
 
 void lirs_delete(struct lirs_t *lirs) {
 	free_hash(lirs->hash);
-    free(lirs->hash);
     
     free(lirs->stack.upper_element);
     free(lirs->stack.down_element);
@@ -47,11 +62,16 @@ void lirs_delete(struct lirs_t *lirs) {
     free(lirs->list.down_element);
 
     cache_storage_delete(lirs->cachestorage);
+
+    free(lirs);
 }
 
 void *lirs_getfile(struct lirs_t *lirs, int filenumber) {
 	char *ptr;
+    ++(lirs->count_of_accessing);
     ptr = LIRS_algorithm(filenumber, lirs->lircapacity, lirs->stack, lirs->list, lirs->hash, lirs->cachestorage);
+    if (ptr != NULL)
+        ++(lirs->count_of_rewritings);
     cache_unit_change(lirs->cachestorage, ptr, filenumber);
 
     struct dlinked_list_element *objptr = find_element(filenumber, lirs->hash, List);
@@ -63,13 +83,8 @@ void *lirs_getfile(struct lirs_t *lirs, int filenumber) {
 }
 
 void *lirs_getfilewithlog(struct lirs_t *lirs, int filenumber) {
-	char *ptr;
+    char *ptr = lirs_getfile(lirs, filenumber);
 
-    ptr = LIRS_algorithm(filenumber, lirs->lircapacity, lirs->stack, lirs->list, lirs->hash, lirs->cachestorage);
-    cache_unit_change(lirs->cachestorage, ptr, filenumber);
-    if (ptr == NULL)
- 		ptr = cache_unit_pointer(lirs->cachestorage, cache_storage_used(lirs->cachestorage) - 1);
- 	
     printf("\n-------------------------------------------------------------------\n");
     cache_storage_data_print(lirs->cachestorage);
     print_hash(lirs->hash);
@@ -84,8 +99,21 @@ void *lirs_getfilewithlog(struct lirs_t *lirs, int filenumber) {
     return ptr;
 }
 
+//<<<<<<< HEAD
+//=======
+float get_rate_of_lirs_cache_missing(struct lirs_t *lirs) {
+    if (cache_storage_isfull(lirs->cachestorage) == 0)
+        return cache_storage_used(lirs->cachestorage) / (float) lirs->count_of_accessing;
+    return (lirs->count_of_rewritings + cache_storage_used(lirs->cachestorage)) / (float) lirs->count_of_accessing;
+}
+
+//>>>>>>> 9458c4e1811f3d30bc6f685149ab3451be77bb44
 unsigned long long get_count_of_lirs_cache_hit(struct lirs_t *lirs) {
     if (cache_storage_isfull(lirs->cachestorage) == 0)
         return lirs->count_of_accessing - cache_storage_used(lirs->cachestorage);
     return lirs->count_of_accessing - (lirs->count_of_rewritings + cache_storage_used(lirs->cachestorage));
+//<<<<<<< HEAD
 }
+//=======
+//}
+//>>>>>>> 9458c4e1811f3d30bc6f685149ab3451be77bb44

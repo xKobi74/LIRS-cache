@@ -24,7 +24,6 @@ target_include_directories (${EXEC_FILE} PRIVATE ${INCLUDE})
 
 set (COMPILE_SETTINGS
 
-    -g
     -Wall
     -Wextra
     -Wpedantic

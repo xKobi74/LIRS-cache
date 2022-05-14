@@ -2,15 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "cache_storage.h"
-
-struct cache_storage_t {
-	int capacity;
-	int used;
-	int unitsize;
-	char *data;
-	fgetdata_t fgetdata;
-};
+#include "all_objects.h"
 
 struct cache_storage_t *cache_storage_init(int capacity, int unitsize, fgetdata_t fgetdata) {
 	struct cache_storage_t *cachestorage = malloc(sizeof(struct cache_storage_t));

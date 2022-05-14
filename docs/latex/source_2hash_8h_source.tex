@@ -1,0 +1,26 @@
+\hypertarget{source_2hash_8h_source}{}\doxysection{hash.\+h}
+\label{source_2hash_8h_source}\index{/Users/mary/Projects/finalProgect/LIRS-\/cache/source/hash.h@{/Users/mary/Projects/finalProgect/LIRS-\/cache/source/hash.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{keyword}{enum} what\_object\{}
+\DoxyCodeLine{3     Stack,}
+\DoxyCodeLine{4     List}
+\DoxyCodeLine{5 \};}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{struct }\mbox{\hyperlink{structelement__hash}{element\_hash}} \{}
+\DoxyCodeLine{8     \textcolor{keywordtype}{int} name;}
+\DoxyCodeLine{9     \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *\mbox{\hyperlink{structstack}{stack}};}
+\DoxyCodeLine{10     \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *\mbox{\hyperlink{structlist}{list}};}
+\DoxyCodeLine{11     \textcolor{keyword}{struct }\mbox{\hyperlink{structelement__hash}{element\_hash}} *next;}
+\DoxyCodeLine{12 \};}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{struct }\mbox{\hyperlink{structelement__hash}{element\_hash}} **make\_hash();}
+\DoxyCodeLine{15 \textcolor{keywordtype}{void} free\_hash(\textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash);}
+\DoxyCodeLine{16 \textcolor{keywordtype}{void} print\_hash(\textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash);}
+\DoxyCodeLine{17 \textcolor{keywordtype}{char} delete\_element\_hash(\textcolor{keywordtype}{int} name, \textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash);}
+\DoxyCodeLine{18 \textcolor{keyword}{struct }\mbox{\hyperlink{structelement__hash}{element\_hash}} *new\_element(\textcolor{keywordtype}{int} name, \textcolor{keyword}{struct} \mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *address, \textcolor{keyword}{enum} what\_object \textcolor{keywordtype}{object});}
+\DoxyCodeLine{19 \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *find\_element(\textcolor{keywordtype}{int} name, \textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash, \textcolor{keyword}{enum} what\_object \textcolor{keywordtype}{object});}
+\DoxyCodeLine{20 \textcolor{keywordtype}{void} change\_in\_hash(\textcolor{keywordtype}{int} name, \textcolor{keyword}{struct} \mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *address, \textcolor{keyword}{struct} \mbox{\hyperlink{structelement__hash}{element\_hash}} **hash, \textcolor{keyword}{enum} what\_object \textcolor{keywordtype}{object});}
+
+\end{DoxyCode}

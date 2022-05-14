@@ -11,12 +11,12 @@
 #include<time.h>
 #include<assert.h>
 
-#include"generator.h"
+#include"../include/generator.h"
 
 
 int main(int argc, char ** argv) {
 	
-	int N = 10;		//количество тестов
+	int N = 5;		//количество тестов
 	int m_max = 20;		//максимально возможный размер кэша
 	int n_max = 100;	//максимально возможное количество запросов
 	int p_max = 40;		//максимально возможный номер страницы
@@ -33,15 +33,15 @@ int main(int argc, char ** argv) {
 		p_max = atoi(argv[5]);
 		assert(p_max);
 	} 
-	else if(argc > 4) {
+	if(argc > 4) {
 		n_max = atoi(argv[4]);
 		assert(n_max);
 	}
-	else if(argc > 3) {
+	if(argc > 3) {
 		m_max = atoi(argv[3]);
 		assert(m_max);
 	} 
-	else if(argc > 2) {
+	if(argc > 2) {
 		N = atoi(argv[2]);
 		assert(N);
 	}

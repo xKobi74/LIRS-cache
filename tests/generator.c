@@ -3,7 +3,7 @@
 #include<time.h>
 #include<assert.h>
 
-#include"generator.h"
+#include"../include/generator.h"
 
 
 void writetest(FILE * file, int m_max, int n_max, int p_max) {
@@ -26,7 +26,7 @@ void generator(FILE * file, int N, int m_max, int n_max, int p_max) {
 	fprintf(file, "Total number of tests in this file %d\n", N);
 	srand(time(NULL));
 	for(int i = 0; i < N; i++) {
-		WriteTest(file, m_max, n_max, p_max);
+		writetest(file, m_max, n_max, p_max);
 	}
 	
 	

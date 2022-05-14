@@ -1,8 +1,6 @@
 #ifndef __LIRS_H__
 #define __LIRS_H__
 
-struct lirs_t;
-
 //function that writes data of file to cacheunit
 typedef void (*fgetdata_t)(void *cacheunit, int filenumber);
 
@@ -18,5 +16,14 @@ void *lirs_getfile(struct lirs_t *lirs, int filenumber);
 //get pointer on data of file (and print log information)
 void *lirs_getfilewithlog(struct lirs_t *lirs, int filenumber);
 
+//<<<<<<< HEAD
 unsigned long long get_count_of_lirs_cache_hit(struct lirs_t *lirs);
+//=======
+//get current rate of cache missing
+float get_rate_of_lirs_cache_missing(struct lirs_t *lirs);
+
+//get count of cache hits
+unsigned long long get_count_of_lirs_cache_hit(struct lirs_t *lirs);
+
+//>>>>>>> 9458c4e1811f3d30bc6f685149ab3451be77bb44
 #endif
