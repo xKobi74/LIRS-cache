@@ -9,7 +9,7 @@
 
 /** 
 The required signature of the function that writes data of the file to cache.
-	\param[in] cacheunit The pointer on the location in bytes(char *) array where need to write data.
+	\param[out] cacheunit The pointer on the location in bytes(char *) array where need to write data.
 	\param[in] filenumber The name of the file which information need to write.
 */
 typedef void (*fgetdata_t)(void *cacheunit, int filenumber);
@@ -27,7 +27,7 @@ struct cache_storage_t *cache_storage_init(int capacity, int unitsize, fgetdata_
 
 /**
 The function that delete cache storage and free all memory that in used.
-	\param[in] cachestorage The pointer on the cache_storage_t object that need to delete.
+	\param[out] cachestorage The pointer on the cache_storage_t object that need to delete.
 */
 void cache_storage_delete(struct cache_storage_t *cachestorage);
 
@@ -47,7 +47,7 @@ int cache_storage_used(struct cache_storage_t *cachestorage);
 
 /**
 The function that writes the data of the file with current filenumber if the cache storage is not full.
-    \param[in] cachestorage The pointer on the cache_storage_t object where you need to write the file.
+    \param[out] cachestorage The pointer on the cache_storage_t object where you need to write the file.
     \param[in] filenumber The unique number of the file that you need to write.
     \return The pointer on the location in the cache storage where file's data will be written. Or NULL pointer if cache storage is full.
 */
@@ -55,7 +55,7 @@ void *cache_unit_add(struct cache_storage_t *cachestorage, int filenumber);
 
 /**
 The function that writes the data of the new file with current filenumber in replace to an old file in the cache unit.
-    \param[in] cachestorage The pointer on the cache_storage_t object where you need to overwrite the file.
+    \param[out] cachestorage The pointer on the cache_storage_t object where you need to overwrite the file.
     \param[in] cacheunit The pointer on the cache unit that you need to overwrite.
     \param[in] newfilenumber The unique number of the file that you need to write in replace to an old.
 */

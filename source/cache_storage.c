@@ -31,7 +31,7 @@ static void *cache_unit_pointer(struct cache_storage_t *cachestorage, int cacheu
 /**
 The function that delete the data of the cache unit by its pointer and writes zeros to it.
     \param[in] cachestorage The pointer on the cache_storage_t object where you need to clear cache unit.
-    \param[in] cacheunit The pointer on the cache unit that you need to clear.
+    \param[out] cacheunit The pointer on the cache unit that you need to clear.
 */
 static void cache_unit_clear(struct cache_storage_t *cachestorage, void *cacheunit);
 
