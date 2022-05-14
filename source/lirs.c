@@ -26,7 +26,12 @@ struct lirs_t {
 };
 
 struct lirs_t *lirs_init(int lircapacity, int hircapacity, int datasize, fgetdata_t fgetdata) {
-    struct lirs_t *lirs = calloc(1, sizeof(struct lirs_t));
+    struct lirs_t *lirs;
+
+    if (lircapacity == 0 || hircapacity == 0)
+        abort();
+    
+    lirs = calloc(1, sizeof(struct lirs_t));
     if (lirs == NULL) {
         abort();
     }

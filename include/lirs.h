@@ -17,8 +17,8 @@ struct lirs_t; ///< Declaration of the struct that need to be used in this funct
 
 /**
 The function that create LIRS cache with required params.
-    \param[in] lircapacity The size of LIR part of cache
-    \param[in] hircapacity The size of HIR part of cache
+    \param[in] lircapacity The size of LIR part of cache. It couldn't be zero! 
+    \param[in] hircapacity The size of HIR part of cache. It couldn't be zero!
     \param[in] datasize Maximum size in bytes of a single file.
     \param[in] fgetdata The pointer on a function that writes data of the file to cache.
     \return A pointer on the new lirs_t object.
