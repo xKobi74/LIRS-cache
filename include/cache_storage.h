@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __CACHE_STORAGE_H__
+#define __CACHE_STORAGE_H__
 
 //function that writes data of file to cacheunit
 typedef void (*fgetdata_t)(void *cacheunit, int filenumber);
@@ -29,3 +30,5 @@ void cache_unit_change(struct cache_storage_t *, void *cacheunit, int newfilenum
 
 //print cache_storage data
 void cache_storage_data_print(struct cache_storage_t *cachestorage);
+
+#endif
