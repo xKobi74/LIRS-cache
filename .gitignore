@@ -1,5 +1,8 @@
+.gitignore
 build
-docs
+**/docs
 .vscode
 *.out
 *.exe
+test
+tests/test
