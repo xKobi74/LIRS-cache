@@ -1,3 +1,8 @@
+/** 
+ \file 
+ \brief File with the implementation of functions from the header file and static functions for the list object.
+*/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>
@@ -6,7 +11,18 @@
 #include "hash.h"
 #include "list.h"
 
+/**
+Created a new dlinked_list_element for list. Assigns it to him location_in_cash.
+    \param[in] name The created element will have this name.
+    \param[in] location_in_cache This will be assigned to element.location_in_cache.
+*/
 static struct dlinked_list_element *create_elem(int name, void *location_in_cache);
+
+/**
+Free element from list and changed information about it in hash.
+    \param[in] del_elem This element will be deleted.
+    \param[in] hash In hash will be changed info about the element.
+*/
 static void delete_element(struct dlinked_list_element **del_elem, struct element_hash **hash);
 
 
