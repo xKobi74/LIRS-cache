@@ -1,3 +1,8 @@
+/** 
+ \file 
+ \brief File with the implementation of functions from the header file and lirs_t struct.
+*/
+
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
@@ -7,16 +12,17 @@
 #include "stack.h"
 #include "lirs.h"
 
+/// The description of the lirs_t struct.
 struct lirs_t {
-	int lircapacity;
-	int hircapacity;
-	struct cache_storage_t *cachestorage;
-	struct stack stack;
-	struct list list;
-	struct element_hash **hash;
+	int lircapacity; ///< The size of LIR part of cache.
+	int hircapacity; ///< The size of HIR part of cache.
+	struct cache_storage_t *cachestorage; ///< The pointer on cache storage where all files will be written. 
+	struct stack stack; ///< The struct that will be used to interact with stack.
+	struct list list; ///< The struct that will be used to interact with list.
+	struct element_hash **hash; ///< The pointer on required hashmap.
 
-    unsigned long long count_of_rewritings;
-    unsigned long long count_of_accessing;
+    unsigned long long count_of_rewritings; ///< The total number of rewritings of files.
+    unsigned long long count_of_accessing; ///< The total number of accessings of files.
 };
 
 struct lirs_t *lirs_init(int lircapacity, int hircapacity, int datasize, fgetdata_t fgetdata) {

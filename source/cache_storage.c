@@ -11,7 +11,7 @@
 
 #include "cache_storage.h"
 
-/// The description of the cache_storage_struct.
+/// The description of the cache_storage_t struct.
 struct cache_storage_t {
 	int capacity; ///< Total count of cache units.
 	int used; ///< Current count of used cache units.
