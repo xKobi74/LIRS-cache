@@ -49,5 +49,5 @@ with their status (Lir, Resident HIR or Non-Resident HIR), and the last called o
 ---
 
 ## Useful materials:
-+ https://vk.com/away.php?to=http%3A%2F%2Fweb.cse.ohio-state.edu%2Fhpcs%2FWWW%2FHTML%2Fpublications%2Fpapers%2FTR-02-6.pdf&cc_key=
++ http://web.cse.ohio-state.edu/hpcs/WWW/HTML/publications/papers/TR-02-6.pdf
 + https://russianblogs.com/article/59551446435/
