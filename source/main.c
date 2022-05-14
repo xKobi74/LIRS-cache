@@ -1,6 +1,6 @@
 /**
-\file
-\brief File with main() and static functions for start.
+    \file
+    \brief File with main() and static functions for start.
 */
 
 #include <stdio.h>
@@ -45,24 +45,24 @@ static int read_one_int() {
 }
 
 int main() {
-    int cachesize; ///< The variable that will be equal to total size of cache. 
-    int filescount; ///< The variable that will be equeal to total count of requested files. 
-    write_two_int(&cachesize, &filescount); ///< The input of two params.
+    int cachesize; // The variable that will be equal to total size of cache. 
+    int filescount; // The variable that will be equeal to total count of requested files. 
+    write_two_int(&cachesize, &filescount); // The input of two params.
 
-    int lirsize, hirsize; ///< The variables that will be equal to total size of LIR and HIR parts of cache, respectively. 
-    hirsize = (cachesize + 3) / 4; ///< Equating hirsize to a quarter of the total cache size with rounding up.
-    lirsize = cachesize - hirsize; ///< Equating lirsize to to the remaining space in the cache (about three-quarters of it).
-    struct lirs_t *lirs = lirs_init(lirsize, hirsize, datasize, fgetdata); ///< Сreating a lirs cache with the required parameters.
+    int lirsize, hirsize; // The variables that will be equal to total size of LIR and HIR parts of cache, respectively. 
+    hirsize = (cachesize + 3) / 4; // Equating hirsize to a quarter of the total cache size with rounding up.
+    lirsize = cachesize - hirsize; // Equating lirsize to to the remaining space in the cache (about three-quarters of it).
+    struct lirs_t *lirs = lirs_init(lirsize, hirsize, datasize, fgetdata); // Сreating a lirs cache with the required parameters.
     
-    /**
+    /*
     Processing of all requested files. 
     */
-    int i; ///< The iterator variable.
-    for (i = 0; i < filescount; ++i) ///< The cycle for process all requested files.
-        lirs_getfile(lirs, read_one_int()); ///< Processing of one (current) requested files.
+    int i; // The iterator variable.
+    for (i = 0; i < filescount; ++i) // The cycle for process all requested files.
+        lirs_getfile(lirs, read_one_int()); // Processing of one (current) requested files.
     
-    printf("%llu\n", get_count_of_lirs_cache_hit(lirs)); ///< The output of total count of cache hits.
+    printf("%llu\n", get_count_of_lirs_cache_hit(lirs)); // The output of total count of cache hits.
 
-    lirs_delete(lirs); ///< Free all memory that keeped by lirs struct.
+    lirs_delete(lirs); // Free all memory that keeped by lirs struct.
     return 0;
 }
