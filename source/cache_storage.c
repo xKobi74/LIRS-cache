@@ -1,8 +1,40 @@
+/** 
+ \file 
+ \brief File with the implementation of functions from the header file, static functions for the cache_storage_t object and cache_storage_t struct.
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 #include <string.h>
 
-#include "all_objects.h"
+#include "cache_storage.h"
+
+/// The description of the cache_storage_struct.
+struct cache_storage_t {
+	int capacity; ///< Total count of cache units.
+	int used; ///< Current count of used cache units.
+	int unitsize; ///< Size in bytes (chars) of single cache unit.
+	char *data; ///< The pointer on the start of cache units array.
+	fgetdata_t fgetdata; ///< The pointer on the function that writes file's data by its number.
+};
+
+/**
+The function that gives the pointer on the cache unit with current index.
+    \param[in] cachestorage The pointer on the cache_storage_t object where you find cache unit.
+    \param[in] cacheunitindex The index of the cache unit that you find.
+    \return The pointer on the cache unit with current index.
+*/
+static void *cache_unit_pointer(struct cache_storage_t *cachestorage, int cacheunitindex);
+
+/**
+The function that delete the data of the cache unit by its pointer and writes zeros to it.
+    \param[in] cachestorage The pointer on the cache_storage_t object where you need to clear cache unit.
+    \param[in] cacheunit The pointer on the cache unit that you need to clear.
+*/
+static void cache_unit_clear(struct cache_storage_t *cachestorage, void *cacheunit);
+
 
 struct cache_storage_t *cache_storage_init(int capacity, int unitsize, fgetdata_t fgetdata) {
 	struct cache_storage_t *cachestorage = malloc(sizeof(struct cache_storage_t));
@@ -32,7 +64,7 @@ int cache_storage_used(struct cache_storage_t *cachestorage) {
 	return cachestorage->used;
 }
 
-void *cache_unit_pointer(struct cache_storage_t *cachestorage, int cacheunitindex) {
+static void *cache_unit_pointer(struct cache_storage_t *cachestorage, int cacheunitindex) {
 	if (cacheunitindex < 0 || cacheunitindex >= cachestorage->capacity) 
 		return NULL;
 	return cachestorage->data + cachestorage->unitsize * cacheunitindex;
@@ -47,7 +79,7 @@ void *cache_unit_add(struct cache_storage_t *cachestorage, int filenumber) {
 	return cacheunit;
 }
 
-void cache_unit_clear(struct cache_storage_t *cachestorage, void *cacheunit) {
+static void cache_unit_clear(struct cache_storage_t *cachestorage, void *cacheunit) {
 	if (cacheunit == NULL)
 		return;
 	memset((char *) cacheunit, '\0', cachestorage->unitsize);
