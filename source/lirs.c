@@ -99,21 +99,15 @@ void *lirs_getfilewithlog(struct lirs_t *lirs, int filenumber) {
     return ptr;
 }
 
-//<<<<<<< HEAD
-//=======
 float get_rate_of_lirs_cache_missing(struct lirs_t *lirs) {
     if (cache_storage_isfull(lirs->cachestorage) == 0)
         return cache_storage_used(lirs->cachestorage) / (float) lirs->count_of_accessing;
     return (lirs->count_of_rewritings + cache_storage_used(lirs->cachestorage)) / (float) lirs->count_of_accessing;
 }
 
-//>>>>>>> 9458c4e1811f3d30bc6f685149ab3451be77bb44
+
 unsigned long long get_count_of_lirs_cache_hit(struct lirs_t *lirs) {
     if (cache_storage_isfull(lirs->cachestorage) == 0)
         return lirs->count_of_accessing - cache_storage_used(lirs->cachestorage);
     return lirs->count_of_accessing - (lirs->count_of_rewritings + cache_storage_used(lirs->cachestorage));
-//<<<<<<< HEAD
 }
-//=======
-//}
-//>>>>>>> 9458c4e1811f3d30bc6f685149ab3451be77bb44
