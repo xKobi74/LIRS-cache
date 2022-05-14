@@ -8,7 +8,7 @@
 const int datasize = 2;
 
 void fgetdata(void *cacheunit, int filenumber) {
-    ((char *)cacheunit) [0] = filenumber % 10 + '0';
+    ((char *)cacheunit) [0] = abs(filenumber) % 10 + '0';
 }
 
 void input_configs(int *cachesize, int *filescount) {
