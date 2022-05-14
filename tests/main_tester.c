@@ -19,8 +19,8 @@ int main(int argc, char ** argv) {
 	
 	
 	for(int i = 0; i < N; i++) {
+		printf("Test #%d: ", i + 1);
 		tester(file);
-		printf("%d\n", i);
 	}
 	
 	return 0;

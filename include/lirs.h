@@ -18,4 +18,5 @@ void *lirs_getfile(struct lirs_t *lirs, int filenumber);
 //get pointer on data of file (and print log information)
 void *lirs_getfilewithlog(struct lirs_t *lirs, int filenumber);
 
+unsigned long long get_count_of_lirs_cache_hit(struct lirs_t *lirs);
 #endif

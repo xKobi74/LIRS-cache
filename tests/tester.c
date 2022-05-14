@@ -22,6 +22,14 @@ int getN(FILE * file) {
 	return N;
 }
 
+int input_filenumber() {
+    int x, k;
+    k = scanf("%d", &x);
+    if (k != 1)
+        abort();
+    return x;
+}
+
 void fgetdata(void *cacheunit, int filenumber) {
     ((char *)cacheunit) [0] = filenumber % 10 + '0';
 }
@@ -35,13 +43,14 @@ int tester (FILE * file) {
 	
 	int LEN_HIR = (m + 3)/ 4;
 	int LEN_LIR = m - LEN_HIR;
-	int x;
+	
 	struct lirs_t *lirs = lirs_init(LEN_LIR, LEN_HIR, DATASIZE, fgetdata);
 	
 	for(int i = 0; i < n; i++) {
-		fscanf(file, "%d", &x);
-		/*printf("%s\n", (char *) */lirs_getfile(lirs, x);
+		lirs_getfile(lirs, input_filenumber());
 	}
+	
+	printf("%llu\n", get_count_of_lirs_cache_hit(lirs));
 	
 	lirs_delete(lirs);
 	

@@ -46,7 +46,7 @@ int main(int argc, char ** argv) {
 		assert(N);
 	}
 	
-	Generator(file, N, m_max, n_max, p_max);
+	generator(file, N, m_max, n_max, p_max);
 	
 	
 	return 0;
