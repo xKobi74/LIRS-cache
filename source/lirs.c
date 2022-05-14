@@ -96,10 +96,10 @@ void *lirs_getfilewithlog(struct lirs_t *lirs, int filenumber) {
     print_hash(lirs->hash);
     printf("\n");
     printf("Stack:\n");
-    print_stack_down(*lirs->stack.upper_element);
+    print_down(*lirs->stack.upper_element);
     printf("\nList:\n");
     if (*lirs->list.upper_element != NULL){
-        print_stack_down(*lirs->list.upper_element); 
+        print_down(*lirs->list.upper_element); 
     }
     
     return ptr;

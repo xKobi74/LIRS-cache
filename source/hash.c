@@ -1,3 +1,8 @@
+/** 
+ \file 
+ \brief File with the implementation of functions from the header file and static functions for the hash object
+*/
+
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
@@ -5,10 +10,29 @@
 #include "all_objects.h"
 #include "hash.h"
 
-#define LEN_HASH 5000
+#define LEN_HASH 5000 ///< Hash array length.
 
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+Removes an element from a hash table collision.
+    \param[in]      name The name of the input file.
+    \param[in, out] hash The hash array in which changes will occur.
+    \return 0 if the element was not found in the hash table.
+    \return 1 if the element was found in the hash table and removed successfully.
+*/
 static char delete_element_hash(int name, struct element_hash **hash);
+
+/**
+Removes an element from a hash table collision.
+    \param[in] name    The name of the input file.
+    \param[in] address The address where the file is stored in the specified object.
+    \param[in] object  The object whose address will be written.
+    \return Pointer to the created element of the hash table
+*/
 static struct element_hash *new_element(int name, struct dlinked_list_element *address, enum what_object object);
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------
 
 struct element_hash **make_hash() {
     
