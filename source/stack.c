@@ -12,9 +12,6 @@
 #include "list.h"
 #include "stack.h"
 
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------------------------------------------------------------
 /**
 Removes a pointer to stack from the hash of the specified element and changes its status to Non_resident_HIR.
     \param[in]      name The name of the input file.
@@ -148,9 +145,6 @@ Implementation of a part of the algorithm when an element comes to the input tha
 */
 static struct dlinked_list_element *new_upper_element(int name, enum state state_element, void *location_in_cache, 
                                                struct stack stack, struct element_hash **hash);
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------------------------------------------------------------
 
 void *LIRS_algorithm(int name, int len_LIR, struct stack stack, struct list list, struct element_hash **hash, struct  cache_storage_t *cache) {
 

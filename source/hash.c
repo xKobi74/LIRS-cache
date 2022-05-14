@@ -12,8 +12,6 @@
 
 #define LEN_HASH 5000 ///< Hash array length.
 
-//--------------------------------------------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------------------------------------------------------------
 /**
 Removes an element from a hash table collision.
     \param[in]      name The name of the input file.
@@ -31,8 +29,8 @@ Removes an element from a hash table collision.
     \return Pointer to the created element of the hash table
 */
 static struct element_hash *new_element(int name, struct dlinked_list_element *address, enum what_object object);
-//--------------------------------------------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 struct element_hash **make_hash() {
     
