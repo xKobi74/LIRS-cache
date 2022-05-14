@@ -1,24 +1,42 @@
+/**
+\file
+\brief File with main() and static functions for start.
+*/
+
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
 
 #include "lirs.h"
 
+const int datasize = 2; ///< Maximum size in bytes of a single file that will be requested.
 
-const int datasize = 2;
-
+/** 
+The required function that writes data of the requested file to cache by its number.
+    \param[out] cacheunit The pointer on the location in bytes(char *) array where need to write data.
+    \param[in] filenumber The unique number of the file which information will bw written.
+*/
 void fgetdata(void *cacheunit, int filenumber) {
     ((char *)cacheunit) [0] = abs(filenumber) % 10 + '0';
 }
 
-void input_configs(int *cachesize, int *filescount) {
+/** 
+The function that reads and writes by pointers two int numbers from the standard input.
+    \param[out] xptr The pointer on the int where need to write first number.
+    \param[out] yptr The pointer on the int where need to write first number.
+*/
+static void write_two_int(int *xptr, int *yptr) {
     int k;
-    k = scanf("%d %d", cachesize, filescount);
+    k = scanf("%d %d", xptr, yptr);
     if (k != 2)
         abort();
 }
 
-int input_filenumber() {
+/** 
+The function that read an int numbers from the standard input.
+    \return The number that was read.
+*/
+static int read_one_int() {
     int x, k;
     k = scanf("%d", &x);
     if (k != 1)
@@ -28,7 +46,7 @@ int input_filenumber() {
 
 int main() {
     int cachesize, filescount;
-    input_configs(&cachesize, &filescount);
+    write_two_int(&cachesize, &filescount);
 
     int lirsize, hirsize;
     hirsize = (cachesize + 3) / 4;
@@ -37,7 +55,7 @@ int main() {
     
     int i;
     for (i = 0; i < filescount; ++i)
-        lirs_getfile(lirs, input_filenumber());
+        lirs_getfile(lirs, read_one_int());
     
     printf("%llu\n", get_count_of_lirs_cache_hit(lirs));
 
