@@ -1,10 +1,44 @@
 \hypertarget{md___users_mary__projects_final_progect__l_i_r_s_cache__r_e_a_d_m_e_autotoc_md0}{}\doxysection{How to build the project}\label{md___users_mary__projects_final_progect__l_i_r_s_cache__r_e_a_d_m_e_autotoc_md0}
 
+\begin{DoxyItemize}
+\item mkdir build
+\item cd build
+\item cmake ..
+\item make
+\end{DoxyItemize}\hypertarget{md___users_mary__projects_final_progect__l_i_r_s_cache__r_e_a_d_m_e_autotoc_md1}{}\doxysection{Compiler settings\+:}\label{md___users_mary__projects_final_progect__l_i_r_s_cache__r_e_a_d_m_e_autotoc_md1}
+
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\$   mkdir build}
-\DoxyCodeLine{\$   cd build}
-\DoxyCodeLine{\$   cmake ..}
-\DoxyCodeLine{\$   make }
+\DoxyCodeLine{-\/Wall -\/Wextra -\/Wpedantic -\/O2}
 
 \end{DoxyCode}
- 
+ \hypertarget{md___users_mary__projects_final_progect__l_i_r_s_cache__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\#\#\#\# In a folder \textquotesingle{}build\textquotesingle{} a file \textquotesingle{}lirs\textquotesingle{} will appear executing a program}\label{md___users_mary__projects_final_progect__l_i_r_s_cache__r_e_a_d_m_e_autotoc_md2}
+\hypertarget{md___users_mary__projects_final_progect__l_i_r_s_cache__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Input data\+:}\label{md___users_mary__projects_final_progect__l_i_r_s_cache__r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyItemize}
+\item cache size
+\item number of files
+\item name of uploaded files 
+\end{DoxyItemize}\hypertarget{md___users_mary__projects_final_progect__l_i_r_s_cache__r_e_a_d_m_e_autotoc_md4}{}\doxysection{Output data\+:}\label{md___users_mary__projects_final_progect__l_i_r_s_cache__r_e_a_d_m_e_autotoc_md4}
+\hypertarget{md___users_mary__projects_final_progect__l_i_r_s_cache__r_e_a_d_m_e_autotoc_md5}{}\doxysection{$\ast$ how many times an input file has already been cached}\label{md___users_mary__projects_final_progect__l_i_r_s_cache__r_e_a_d_m_e_autotoc_md5}
+\hypertarget{md___users_mary__projects_final_progect__l_i_r_s_cache__r_e_a_d_m_e_autotoc_md6}{}\doxysection{A little about the algorithm\+:}\label{md___users_mary__projects_final_progect__l_i_r_s_cache__r_e_a_d_m_e_autotoc_md6}
+LIRS is Low Inter-\/reference Recency Set. This algorithm is based on such parameters of each incoming file as Inter-\/\+Reference Recency (IRR) and Recency. We use recent Inter-\/\+Reference Recency (IRR) as the recorded history information of each block, where IRR of a block refers to the number of other blocks accessed between two consecutive references to the block. Cache memory is divided into two parts\+: Lir, where the most frequently called files are located, and Resident HIR. Files not written to memory are called Non-\/\+Resident HIR.
+
+In the implementation, we used two objects such as stack and list. List holds files from Resident HIR, and at the top are the most recently called ones. The stack stores all the files that come to the input with their status (Lir, Resident HIR or Non-\/\+Resident HIR), and the last called ones are located at the top.
+
+\DoxyHorRuler{0}
+ \hypertarget{md___users_mary__projects_final_progect__l_i_r_s_cache__r_e_a_d_m_e_autotoc_md8}{}\doxysection{Some examples of how the algorithm works\+:}\label{md___users_mary__projects_final_progect__l_i_r_s_cache__r_e_a_d_m_e_autotoc_md8}
+{\bfseries{Calling a file stored in the LIR\+:}} 
+
+{\bfseries{Calling a file not written to the cache but present in the stack\+:}} 
+
+{\bfseries{Calling a file not written to the cache or stack\+:}} 
+
+{\bfseries{Calling a non-\/resident file written to stack\+:}} 
+
+\DoxyHorRuler{0}
+\hypertarget{md___users_mary__projects_final_progect__l_i_r_s_cache__r_e_a_d_m_e_autotoc_md10}{}\doxysection{Useful materials\+:}\label{md___users_mary__projects_final_progect__l_i_r_s_cache__r_e_a_d_m_e_autotoc_md10}
+
+\begin{DoxyItemize}
+\item \href{https://vk.com/away.php?to=http\%3A\%2F\%2Fweb.cse.ohio-state.edu\%2Fhpcs\%2FWWW\%2FHTML\%2Fpublications\%2Fpapers\%2FTR-02-6.pdf&cc_key=}{\texttt{ https\+://vk.\+com/away.\+php?to=http\%3\+A\%2\+F\%2\+Fweb.\+cse.\+ohio-\/state.\+edu\%2\+Fhpcs\%2\+FWWW\%2\+FHTML\%2\+Fpublications\%2\+Fpapers\%2\+FTR-\/02-\/6.\+pdf\&cc\+\_\+key=}}
+\item \href{https://russianblogs.com/article/59551446435/}{\texttt{ https\+://russianblogs.\+com/article/59551446435/}} 
+\end{DoxyItemize}

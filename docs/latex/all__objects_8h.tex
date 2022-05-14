@@ -1,0 +1,85 @@
+\hypertarget{all__objects_8h}{}\doxysection{/\+Users/mary/\+Projects/final\+Progect/\+LIRS-\/cache/include/all\+\_\+objects.h File Reference}
+\label{all__objects_8h}\index{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/all\_objects.h@{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/all\_objects.h}}
+
+
+A header file with a description of enumerations and structures that are needed in different files.  
+
+
+{\ttfamily \#include \char`\"{}cache\+\_\+storage.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structelement}{element}}
+\begin{DoxyCompactList}\small\item\em Description of struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}}\textquotesingle{}s element. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}}
+\begin{DoxyCompactList}\small\item\em Description of struct element of doubly linked list. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structstack}{stack}}
+\begin{DoxyCompactList}\small\item\em A structure that stores the upper and down elements of the stack. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structlist}{list}}
+\begin{DoxyCompactList}\small\item\em A structure that stores the upper and down elements of the list. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902}{what\+\_\+object}} \{ \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902ad323e21f975d98abeddb6f8ff46f8ff5}{Stack}}
+, \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902ab62e104d38c9bf7a2efb6b244b4b9d3f}{List}}
+ \}
+\begin{DoxyCompactList}\small\item\em A set of possible object states showing which object will be worked with in functions that are universal for working with stack and list. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}} \{ \mbox{\hyperlink{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a7ea368c444edaf9a2095a99b701f204c}{LIR}}
+, \mbox{\hyperlink{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a531bb92ecb2ec62795e424305253d001}{Resident\+\_\+\+HIR}}
+, \mbox{\hyperlink{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a8b9c7d9def75a7105b0e26052bb5f118}{Non\+\_\+resident\+\_\+\+HIR}}
+ \}
+\begin{DoxyCompactList}\small\item\em A set of possible states of an object tracked by LIRS-\/algorithm. It will be worked with according to his condition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A header file with a description of enumerations and structures that are needed in different files. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90}\label{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90}} 
+\index{all\_objects.h@{all\_objects.h}!state@{state}}
+\index{state@{state}!all\_objects.h@{all\_objects.h}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}}}
+
+
+
+A set of possible states of an object tracked by LIRS-\/algorithm. It will be worked with according to his condition. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LIR@{LIR}!all\_objects.h@{all\_objects.h}}\index{all\_objects.h@{all\_objects.h}!LIR@{LIR}}}\mbox{\Hypertarget{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a7ea368c444edaf9a2095a99b701f204c}\label{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a7ea368c444edaf9a2095a99b701f204c}} 
+LIR&The element is marked as LIR. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Resident\_HIR@{Resident\_HIR}!all\_objects.h@{all\_objects.h}}\index{all\_objects.h@{all\_objects.h}!Resident\_HIR@{Resident\_HIR}}}\mbox{\Hypertarget{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a531bb92ecb2ec62795e424305253d001}\label{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a531bb92ecb2ec62795e424305253d001}} 
+Resident\+\_\+\+HIR&The element is marked as Resident\+\_\+\+HIR. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Non\_resident\_HIR@{Non\_resident\_HIR}!all\_objects.h@{all\_objects.h}}\index{all\_objects.h@{all\_objects.h}!Non\_resident\_HIR@{Non\_resident\_HIR}}}\mbox{\Hypertarget{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a8b9c7d9def75a7105b0e26052bb5f118}\label{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a8b9c7d9def75a7105b0e26052bb5f118}} 
+Non\+\_\+resident\+\_\+\+HIR&The element is marked as Non\+\_\+resident\+\_\+\+HIR. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{all__objects_8h_a813e55972e649648540e141d28f2f902}\label{all__objects_8h_a813e55972e649648540e141d28f2f902}} 
+\index{all\_objects.h@{all\_objects.h}!what\_object@{what\_object}}
+\index{what\_object@{what\_object}!all\_objects.h@{all\_objects.h}}
+\doxysubsubsection{\texorpdfstring{what\_object}{what\_object}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902}{what\+\_\+object}}}
+
+
+
+A set of possible object states showing which object will be worked with in functions that are universal for working with stack and list. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Stack@{Stack}!all\_objects.h@{all\_objects.h}}\index{all\_objects.h@{all\_objects.h}!Stack@{Stack}}}\mbox{\Hypertarget{all__objects_8h_a813e55972e649648540e141d28f2f902ad323e21f975d98abeddb6f8ff46f8ff5}\label{all__objects_8h_a813e55972e649648540e141d28f2f902ad323e21f975d98abeddb6f8ff46f8ff5}} 
+Stack&Specifies that the element will be identified as a stack element. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{List@{List}!all\_objects.h@{all\_objects.h}}\index{all\_objects.h@{all\_objects.h}!List@{List}}}\mbox{\Hypertarget{all__objects_8h_a813e55972e649648540e141d28f2f902ab62e104d38c9bf7a2efb6b244b4b9d3f}\label{all__objects_8h_a813e55972e649648540e141d28f2f902ab62e104d38c9bf7a2efb6b244b4b9d3f}} 
+List&Specifies that the element will be identified as a list element. \\
+\hline
+
+\end{DoxyEnumFields}

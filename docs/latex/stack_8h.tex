@@ -1,0 +1,70 @@
+\hypertarget{stack_8h}{}\doxysection{/\+Users/mary/\+Projects/final\+Progect/\+LIRS-\/cache/include/stack.h File Reference}
+\label{stack_8h}\index{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/stack.h@{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/stack.h}}
+
+
+Header file with description of functions for \mbox{\hyperlink{stack_8c}{stack.\+c}}.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{stack_8h_abd4c5c60fc300702dbc2da5acb6078ba}{print\+\_\+up}} (struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}} $\ast$down\+\_\+element)
+\item 
+void \mbox{\hyperlink{stack_8h_a05e1a123d3dfcc32ce77fbe3021e4882}{print\+\_\+down}} (struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}} $\ast$upper\+\_\+element)
+\item 
+void $\ast$ \mbox{\hyperlink{stack_8h_ab138bca8da490970159211b64f50a212}{LIRS\+\_\+algorithm}} (int name, int len\+\_\+\+LIR, struct \mbox{\hyperlink{structstack}{stack}} \mbox{\hyperlink{structstack}{stack}}, struct \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$hash, struct \mbox{\hyperlink{structcache__storage__t}{cache\+\_\+storage\+\_\+t}} $\ast$cache)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file with description of functions for \mbox{\hyperlink{stack_8c}{stack.\+c}}. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{stack_8h_ab138bca8da490970159211b64f50a212}\label{stack_8h_ab138bca8da490970159211b64f50a212}} 
+\index{stack.h@{stack.h}!LIRS\_algorithm@{LIRS\_algorithm}}
+\index{LIRS\_algorithm@{LIRS\_algorithm}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{LIRS\_algorithm()}{LIRS\_algorithm()}}
+{\footnotesize\ttfamily void $\ast$ LIRS\+\_\+algorithm (\begin{DoxyParamCaption}\item[{int}]{name,  }\item[{int}]{len\+\_\+\+LIR,  }\item[{struct \mbox{\hyperlink{structstack}{stack}}}]{stack,  }\item[{struct \mbox{\hyperlink{structlist}{list}}}]{list,  }\item[{struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$}]{hash,  }\item[{struct \mbox{\hyperlink{structcache__storage__t}{cache\+\_\+storage\+\_\+t}} $\ast$}]{cache }\end{DoxyParamCaption})}
+
+Implements the entire algorithm for writing elements to various program objects and clearing objects if necessary. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & The name of the input file. \\
+\hline
+\mbox{\texttt{ in}}  & {\em len\+\_\+\+LIR} & Length of the LIR memory area. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em stack} & The stack structure in which changes will occur. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em list} & The list structure in which changes will occur. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em hash} & The hash array in which changes will occur. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em cache} & The cache array where all files are stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Void $\ast$ pointer to the location in the cache where the incoming file should be written. NULL if the file has already been written. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{stack_8h_a05e1a123d3dfcc32ce77fbe3021e4882}\label{stack_8h_a05e1a123d3dfcc32ce77fbe3021e4882}} 
+\index{stack.h@{stack.h}!print\_down@{print\_down}}
+\index{print\_down@{print\_down}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{print\_down()}{print\_down()}}
+{\footnotesize\ttfamily void print\+\_\+down (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}} $\ast$}]{upper\+\_\+element }\end{DoxyParamCaption})}
+
+Prints to the console the names of the elements in the object from the top of the doubly linked list. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em upper\+\_\+element} & Pointer to the upper element of a doubly linked list. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8h_abd4c5c60fc300702dbc2da5acb6078ba}\label{stack_8h_abd4c5c60fc300702dbc2da5acb6078ba}} 
+\index{stack.h@{stack.h}!print\_up@{print\_up}}
+\index{print\_up@{print\_up}!stack.h@{stack.h}}
+\doxysubsubsection{\texorpdfstring{print\_up()}{print\_up()}}
+{\footnotesize\ttfamily void print\+\_\+up (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}} $\ast$}]{down\+\_\+element }\end{DoxyParamCaption})}
+
+Prints to the console the names of the elements in the object from the bottom of the doubly linked list. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em down\+\_\+element} & Pointer to the down element of a doubly linked list. \\
+\hline
+\end{DoxyParams}

@@ -1,39 +1,29 @@
 \hypertarget{cache__storage_8h_source}{}\doxysection{cache\+\_\+storage.\+h}
 \label{cache__storage_8h_source}\index{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/cache\_storage.h@{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/cache\_storage.h}}
-
+\mbox{\hyperlink{cache__storage_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{2 }
-\DoxyCodeLine{3 \textcolor{keyword}{struct }\mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}};}
-\DoxyCodeLine{4 }
-\DoxyCodeLine{5 \textcolor{comment}{//function that writes data of file to cacheunit}}
-\DoxyCodeLine{6 \textcolor{keyword}{typedef} void (*fgetdata\_t)(\textcolor{keywordtype}{void} *cacheunit, \textcolor{keywordtype}{int} filenumber);}
-\DoxyCodeLine{7 }
-\DoxyCodeLine{8 \textcolor{comment}{//create and return pointer on struct cache\_storage\_t}}
-\DoxyCodeLine{9 \textcolor{keyword}{struct }\mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *cache\_storage\_init(\textcolor{keywordtype}{int} capacity, \textcolor{keywordtype}{int} unitsize, fgetdata\_t);}
-\DoxyCodeLine{10 }
-\DoxyCodeLine{11 \textcolor{comment}{//free memory of struct cache\_storage\_t by pointer  }}
-\DoxyCodeLine{12 \textcolor{keywordtype}{void} cache\_storage\_delete(\textcolor{keyword}{struct} \mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *);}
-\DoxyCodeLine{13 }
-\DoxyCodeLine{14 \textcolor{comment}{//1 -\/ full, 0 -\/ there is empty space}}
-\DoxyCodeLine{15 \textcolor{keywordtype}{char} cache\_storage\_isfull(\textcolor{keyword}{struct} \mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *);}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef \_\_CACHE\_STORAGE\_H\_\_}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define \_\_CACHE\_STORAGE\_H\_\_}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{15 \textcolor{keyword}{typedef} void (*\mbox{\hyperlink{cache__storage_8h_a7bb10de407c090d61acfd51ff0d42892}{fgetdata\_t}})(\textcolor{keywordtype}{void} *cacheunit, \textcolor{keywordtype}{int} filenumber);}
 \DoxyCodeLine{16 }
-\DoxyCodeLine{17 \textcolor{comment}{//return number of used cache units }}
-\DoxyCodeLine{18 \textcolor{keywordtype}{int} cache\_storage\_used(\textcolor{keyword}{struct} \mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *);}
-\DoxyCodeLine{19 }
-\DoxyCodeLine{20 \textcolor{comment}{//return pointer of cacheunit by its index (or NULL if number is uncorrect)}}
-\DoxyCodeLine{21 \textcolor{keywordtype}{void} *cache\_unit\_pointer(\textcolor{keyword}{struct} \mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *, \textcolor{keywordtype}{int} cacheunitindex);}
-\DoxyCodeLine{22 }
-\DoxyCodeLine{23 \textcolor{comment}{//add data of file in cache\_storage\_t and return pointer on it (or NULL if cache storage is full)}}
-\DoxyCodeLine{24 \textcolor{keywordtype}{void} *cache\_unit\_add(\textcolor{keyword}{struct} \mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *, \textcolor{keywordtype}{int} filenumber);}
-\DoxyCodeLine{25 }
-\DoxyCodeLine{26 \textcolor{comment}{//writes zeros in cache unit by pointer}}
-\DoxyCodeLine{27 \textcolor{keywordtype}{void} cache\_unit\_clear(\textcolor{keyword}{struct} \mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *, \textcolor{keywordtype}{void} *cacheunit);}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29 \textcolor{comment}{//replace data in cache unit to data of newfilenumber}}
-\DoxyCodeLine{30 \textcolor{keywordtype}{void} cache\_unit\_change(\textcolor{keyword}{struct} \mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *, \textcolor{keywordtype}{void} *cacheunit, \textcolor{keywordtype}{int} newfilenumber);}
-\DoxyCodeLine{31 }
-\DoxyCodeLine{32 \textcolor{comment}{//print cache\_storage data}}
-\DoxyCodeLine{33 \textcolor{keywordtype}{void} cache\_storage\_data\_print(\textcolor{keyword}{struct} \mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *cachestorage);}
+\DoxyCodeLine{17 \textcolor{keyword}{struct }\mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}}; }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{26 \textcolor{keyword}{struct }\mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *\mbox{\hyperlink{cache__storage_8h_a199f6ebcde1fa35675ca41bc7f49bc18}{cache\_storage\_init}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{structcache__storage__t_adf63985159f0f6703649b9364d136018}{capacity}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{structcache__storage__t_aa95f6e59af8eb84f1b848003cd247b44}{unitsize}}, \mbox{\hyperlink{cache__storage_8h_a7bb10de407c090d61acfd51ff0d42892}{fgetdata\_t}} \mbox{\hyperlink{main_8c_a230451480887ca801843563a11c2c106}{fgetdata}});}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{32 \textcolor{keywordtype}{void} \mbox{\hyperlink{cache__storage_8h_ab3324bbb8d19a89bd2e09d28d2b870e5}{cache\_storage\_delete}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *cachestorage);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{39 \textcolor{keywordtype}{char} \mbox{\hyperlink{cache__storage_8h_a25d09f615f50f94ad156ce21121348b9}{cache\_storage\_isfull}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *cachestorage);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{46 \textcolor{keywordtype}{int} \mbox{\hyperlink{cache__storage_8h_ab635e3fe49233dee32c45d78f95c80d0}{cache\_storage\_used}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *cachestorage);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{54 \textcolor{keywordtype}{void} *\mbox{\hyperlink{cache__storage_8h_a03105691dd0436b9346d6906a3e4cb8c}{cache\_unit\_add}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *cachestorage, \textcolor{keywordtype}{int} filenumber);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{62 \textcolor{keywordtype}{void} \mbox{\hyperlink{cache__storage_8h_a34ee8b8f8415c0499e532d81fbc39432}{cache\_unit\_change}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *cachestorage, \textcolor{keywordtype}{void} *cacheunit, \textcolor{keywordtype}{int} newfilenumber);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{68 \textcolor{keywordtype}{void} \mbox{\hyperlink{cache__storage_8h_ab08af497389ec120431ea19dafb090cd}{cache\_storage\_data\_print}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structcache__storage__t}{cache\_storage\_t}} *cachestorage);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

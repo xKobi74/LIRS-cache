@@ -1,0 +1,137 @@
+\hypertarget{lirs_8c}{}\doxysection{/\+Users/mary/\+Projects/final\+Progect/\+LIRS-\/cache/source/lirs.c File Reference}
+\label{lirs_8c}\index{/Users/mary/Projects/finalProgect/LIRS-\/cache/source/lirs.c@{/Users/mary/Projects/finalProgect/LIRS-\/cache/source/lirs.c}}
+
+
+File with the implementation of functions from the header file and \mbox{\hyperlink{structlirs__t}{lirs\+\_\+t}} struct.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}all\+\_\+objects.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hash.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stack.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lirs.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlirs__t}{lirs\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em The description of the \mbox{\hyperlink{structlirs__t}{lirs\+\_\+t}} struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlirs__t}{lirs\+\_\+t}} $\ast$ \mbox{\hyperlink{lirs_8c_a6cb1a99877114460dccb065b1df38255}{lirs\+\_\+init}} (int lircapacity, int hircapacity, int \mbox{\hyperlink{main_8c_a8c2040450bb67806b6215ebec0ef297e}{datasize}}, \mbox{\hyperlink{lirs_8h_a7bb10de407c090d61acfd51ff0d42892}{fgetdata\+\_\+t}} \mbox{\hyperlink{main_8c_a230451480887ca801843563a11c2c106}{fgetdata}})
+\begin{DoxyCompactList}\small\item\em Declaration of the struct that need to be used in this functions. Its description is hidden. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lirs_8c_a5da20053908a10553067ea239091bf57}{lirs\+\_\+delete}} (struct \mbox{\hyperlink{structlirs__t}{lirs\+\_\+t}} $\ast$lirs)
+\item 
+void $\ast$ \mbox{\hyperlink{lirs_8c_a39cd4c1a781fbcd66d50ae307ad964f1}{lirs\+\_\+getfile}} (struct \mbox{\hyperlink{structlirs__t}{lirs\+\_\+t}} $\ast$lirs, int filenumber)
+\item 
+void $\ast$ \mbox{\hyperlink{lirs_8c_a7fda3f2931496ccfc73dab741f8a4789}{lirs\+\_\+getfilewithlog}} (struct \mbox{\hyperlink{structlirs__t}{lirs\+\_\+t}} $\ast$lirs, int filenumber)
+\item 
+float \mbox{\hyperlink{lirs_8c_a81215e59336b8c2f52db8768231728db}{get\+\_\+rate\+\_\+of\+\_\+lirs\+\_\+cache\+\_\+missing}} (struct \mbox{\hyperlink{structlirs__t}{lirs\+\_\+t}} $\ast$lirs)
+\item 
+unsigned long long \mbox{\hyperlink{lirs_8c_ab7b4116715c0355b558bd043f337e680}{get\+\_\+count\+\_\+of\+\_\+lirs\+\_\+cache\+\_\+hit}} (struct \mbox{\hyperlink{structlirs__t}{lirs\+\_\+t}} $\ast$lirs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File with the implementation of functions from the header file and \mbox{\hyperlink{structlirs__t}{lirs\+\_\+t}} struct. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lirs_8c_ab7b4116715c0355b558bd043f337e680}\label{lirs_8c_ab7b4116715c0355b558bd043f337e680}} 
+\index{lirs.c@{lirs.c}!get\_count\_of\_lirs\_cache\_hit@{get\_count\_of\_lirs\_cache\_hit}}
+\index{get\_count\_of\_lirs\_cache\_hit@{get\_count\_of\_lirs\_cache\_hit}!lirs.c@{lirs.c}}
+\doxysubsubsection{\texorpdfstring{get\_count\_of\_lirs\_cache\_hit()}{get\_count\_of\_lirs\_cache\_hit()}}
+{\footnotesize\ttfamily unsigned long long get\+\_\+count\+\_\+of\+\_\+lirs\+\_\+cache\+\_\+hit (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlirs__t}{lirs\+\_\+t}} $\ast$}]{lirs }\end{DoxyParamCaption})}
+
+The function that gives a count of cache hits. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lirs} & The size of LIR part of cache \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A count of cache hits. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lirs_8c_a81215e59336b8c2f52db8768231728db}\label{lirs_8c_a81215e59336b8c2f52db8768231728db}} 
+\index{lirs.c@{lirs.c}!get\_rate\_of\_lirs\_cache\_missing@{get\_rate\_of\_lirs\_cache\_missing}}
+\index{get\_rate\_of\_lirs\_cache\_missing@{get\_rate\_of\_lirs\_cache\_missing}!lirs.c@{lirs.c}}
+\doxysubsubsection{\texorpdfstring{get\_rate\_of\_lirs\_cache\_missing()}{get\_rate\_of\_lirs\_cache\_missing()}}
+{\footnotesize\ttfamily float get\+\_\+rate\+\_\+of\+\_\+lirs\+\_\+cache\+\_\+missing (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlirs__t}{lirs\+\_\+t}} $\ast$}]{lirs }\end{DoxyParamCaption})}
+
+The function that gives a rate of cache missings. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lirs} & The size of LIR part of cache \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A rate of cache missings. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lirs_8c_a5da20053908a10553067ea239091bf57}\label{lirs_8c_a5da20053908a10553067ea239091bf57}} 
+\index{lirs.c@{lirs.c}!lirs\_delete@{lirs\_delete}}
+\index{lirs\_delete@{lirs\_delete}!lirs.c@{lirs.c}}
+\doxysubsubsection{\texorpdfstring{lirs\_delete()}{lirs\_delete()}}
+{\footnotesize\ttfamily void lirs\+\_\+delete (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlirs__t}{lirs\+\_\+t}} $\ast$}]{lirs }\end{DoxyParamCaption})}
+
+The function that delete LIRS cache and free all memory that in used. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em lirs} & The pointer on the \mbox{\hyperlink{structlirs__t}{lirs\+\_\+t}} object that need to delete. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{lirs_8c_a39cd4c1a781fbcd66d50ae307ad964f1}\label{lirs_8c_a39cd4c1a781fbcd66d50ae307ad964f1}} 
+\index{lirs.c@{lirs.c}!lirs\_getfile@{lirs\_getfile}}
+\index{lirs\_getfile@{lirs\_getfile}!lirs.c@{lirs.c}}
+\doxysubsubsection{\texorpdfstring{lirs\_getfile()}{lirs\_getfile()}}
+{\footnotesize\ttfamily void $\ast$ lirs\+\_\+getfile (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlirs__t}{lirs\+\_\+t}} $\ast$}]{lirs,  }\item[{int}]{filenumber }\end{DoxyParamCaption})}
+
+The function that gives a pointer on the file location in memory. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lirs} & The size of LIR part of cache \\
+\hline
+\mbox{\texttt{ in}}  & {\em filenumber} & The name of the file which information is requested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer on the file location in memory. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lirs_8c_a7fda3f2931496ccfc73dab741f8a4789}\label{lirs_8c_a7fda3f2931496ccfc73dab741f8a4789}} 
+\index{lirs.c@{lirs.c}!lirs\_getfilewithlog@{lirs\_getfilewithlog}}
+\index{lirs\_getfilewithlog@{lirs\_getfilewithlog}!lirs.c@{lirs.c}}
+\doxysubsubsection{\texorpdfstring{lirs\_getfilewithlog()}{lirs\_getfilewithlog()}}
+{\footnotesize\ttfamily void $\ast$ lirs\+\_\+getfilewithlog (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlirs__t}{lirs\+\_\+t}} $\ast$}]{lirs,  }\item[{int}]{filenumber }\end{DoxyParamCaption})}
+
+The function that gives a pointer on the file location in memory and print log information. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lirs} & The size of LIR part of cache \\
+\hline
+\mbox{\texttt{ in}}  & {\em filenumber} & The name of the file which information is requested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer on the file location in memory. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{lirs_8c_a6cb1a99877114460dccb065b1df38255}\label{lirs_8c_a6cb1a99877114460dccb065b1df38255}} 
+\index{lirs.c@{lirs.c}!lirs\_init@{lirs\_init}}
+\index{lirs\_init@{lirs\_init}!lirs.c@{lirs.c}}
+\doxysubsubsection{\texorpdfstring{lirs\_init()}{lirs\_init()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structlirs__t}{lirs\+\_\+t}} $\ast$ lirs\+\_\+init (\begin{DoxyParamCaption}\item[{int}]{lircapacity,  }\item[{int}]{hircapacity,  }\item[{int}]{datasize,  }\item[{\mbox{\hyperlink{lirs_8h_a7bb10de407c090d61acfd51ff0d42892}{fgetdata\+\_\+t}}}]{fgetdata }\end{DoxyParamCaption})}
+
+
+
+Declaration of the struct that need to be used in this functions. Its description is hidden. 
+
+The function that create LIRS cache with required params. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lircapacity} & The size of LIR part of cache \\
+\hline
+\mbox{\texttt{ in}}  & {\em hircapacity} & The size of HIR part of cache \\
+\hline
+\mbox{\texttt{ in}}  & {\em datasize} & Maximum size in bytes of a single file. \\
+\hline
+\mbox{\texttt{ in}}  & {\em fgetdata} & The pointer on a function that writes data of the file to cache. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer on the new \mbox{\hyperlink{structlirs__t}{lirs\+\_\+t}} object. 
+\end{DoxyReturn}

@@ -1,0 +1,27 @@
+\hypertarget{lirs_8h_source}{}\doxysection{lirs.\+h}
+\label{lirs_8h_source}\index{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/lirs.h@{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/lirs.h}}
+\mbox{\hyperlink{lirs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef \_\_LIRS\_H\_\_}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define \_\_LIRS\_H\_\_}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{14 \textcolor{keyword}{typedef} void (*\mbox{\hyperlink{lirs_8h_a7bb10de407c090d61acfd51ff0d42892}{fgetdata\_t}})(\textcolor{keywordtype}{void} *cacheunit, \textcolor{keywordtype}{int} filenumber);}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{struct }\mbox{\hyperlink{structlirs__t}{lirs\_t}}; }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{26 \textcolor{keyword}{struct }\mbox{\hyperlink{structlirs__t}{lirs\_t}} *\mbox{\hyperlink{lirs_8h_a6cb1a99877114460dccb065b1df38255}{lirs\_init}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{structlirs__t_aa411a04f6ff6008e78672202001ddc2e}{lircapacity}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{structlirs__t_ae14d0cfb2aec41b7d5ba1cbf020e4e61}{hircapacity}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8c_a8c2040450bb67806b6215ebec0ef297e}{datasize}}, \mbox{\hyperlink{lirs_8h_a7bb10de407c090d61acfd51ff0d42892}{fgetdata\_t}} \mbox{\hyperlink{main_8c_a230451480887ca801843563a11c2c106}{fgetdata}});}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{32 \textcolor{keywordtype}{void} \mbox{\hyperlink{lirs_8h_a5da20053908a10553067ea239091bf57}{lirs\_delete}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structlirs__t}{lirs\_t}} *lirs);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{40 \textcolor{keywordtype}{void} *\mbox{\hyperlink{lirs_8h_a39cd4c1a781fbcd66d50ae307ad964f1}{lirs\_getfile}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structlirs__t}{lirs\_t}} *lirs, \textcolor{keywordtype}{int} filenumber);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{48 \textcolor{keywordtype}{void} *\mbox{\hyperlink{lirs_8h_a7fda3f2931496ccfc73dab741f8a4789}{lirs\_getfilewithlog}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structlirs__t}{lirs\_t}} *lirs, \textcolor{keywordtype}{int} filenumber);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{55 \textcolor{keywordtype}{float} \mbox{\hyperlink{lirs_8h_a81215e59336b8c2f52db8768231728db}{get\_rate\_of\_lirs\_cache\_missing}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structlirs__t}{lirs\_t}} *lirs);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{62 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \mbox{\hyperlink{lirs_8h_ab7b4116715c0355b558bd043f337e680}{get\_count\_of\_lirs\_cache\_hit}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structlirs__t}{lirs\_t}} *lirs);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

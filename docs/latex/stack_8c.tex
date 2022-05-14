@@ -1,0 +1,54 @@
+\hypertarget{stack_8c}{}\doxysection{/\+Users/mary/\+Projects/final\+Progect/\+LIRS-\/cache/source/stack.c File Reference}
+\label{stack_8c}\index{/Users/mary/Projects/finalProgect/LIRS-\/cache/source/stack.c@{/Users/mary/Projects/finalProgect/LIRS-\/cache/source/stack.c}}
+
+
+File with the implementation of functions from the header file and static functions for the stack object.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}all\+\_\+objects.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hash.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}list.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stack.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{stack_8c_ab138bca8da490970159211b64f50a212}\label{stack_8c_ab138bca8da490970159211b64f50a212}} 
+void $\ast$ {\bfseries LIRS\+\_\+algorithm} (int name, int len\+\_\+\+LIR, struct \mbox{\hyperlink{structstack}{stack}} \mbox{\hyperlink{structstack}{stack}}, struct \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$hash, struct \mbox{\hyperlink{structcache__storage__t}{cache\+\_\+storage\+\_\+t}} $\ast$cache)
+\item 
+void \mbox{\hyperlink{stack_8c_a05e1a123d3dfcc32ce77fbe3021e4882}{print\+\_\+down}} (struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}} $\ast$upper\+\_\+element)
+\item 
+void \mbox{\hyperlink{stack_8c_abd4c5c60fc300702dbc2da5acb6078ba}{print\+\_\+up}} (struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}} $\ast$down\+\_\+element)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File with the implementation of functions from the header file and static functions for the stack object. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{stack_8c_a05e1a123d3dfcc32ce77fbe3021e4882}\label{stack_8c_a05e1a123d3dfcc32ce77fbe3021e4882}} 
+\index{stack.c@{stack.c}!print\_down@{print\_down}}
+\index{print\_down@{print\_down}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{print\_down()}{print\_down()}}
+{\footnotesize\ttfamily void print\+\_\+down (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}} $\ast$}]{upper\+\_\+element }\end{DoxyParamCaption})}
+
+Prints to the console the names of the elements in the object from the top of the doubly linked list. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em upper\+\_\+element} & Pointer to the upper element of a doubly linked list. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8c_abd4c5c60fc300702dbc2da5acb6078ba}\label{stack_8c_abd4c5c60fc300702dbc2da5acb6078ba}} 
+\index{stack.c@{stack.c}!print\_up@{print\_up}}
+\index{print\_up@{print\_up}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{print\_up()}{print\_up()}}
+{\footnotesize\ttfamily void print\+\_\+up (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}} $\ast$}]{down\+\_\+element }\end{DoxyParamCaption})}
+
+Prints to the console the names of the elements in the object from the bottom of the doubly linked list. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em down\+\_\+element} & Pointer to the down element of a doubly linked list. \\
+\hline
+\end{DoxyParams}

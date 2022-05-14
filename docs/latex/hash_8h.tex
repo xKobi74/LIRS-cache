@@ -1,0 +1,94 @@
+\hypertarget{hash_8h}{}\doxysection{/\+Users/mary/\+Projects/final\+Progect/\+LIRS-\/cache/include/hash.h File Reference}
+\label{hash_8h}\index{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/hash.h@{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/hash.h}}
+
+
+Header file with description of functions for \mbox{\hyperlink{hash_8c}{hash.\+c}}.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$ \mbox{\hyperlink{hash_8h_a7e9ffe973d568f8c5ccf7ce984bbeb3f}{make\+\_\+hash}} ()
+\item 
+void \mbox{\hyperlink{hash_8h_a7adc8d390f663389508b2338a298d671}{free\+\_\+hash}} (struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$hash)
+\item 
+void \mbox{\hyperlink{hash_8h_a8194e0948bdbdc65683a2f7c0219b39c}{print\+\_\+hash}} (struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$hash)
+\item 
+struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}} $\ast$ \mbox{\hyperlink{hash_8h_a059209594d50308b1db28fc7bfd3929d}{find\+\_\+element}} (int name, struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$hash, enum \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902}{what\+\_\+object}} object)
+\item 
+void \mbox{\hyperlink{hash_8h_add435d13d3a9e2d0dbdd72341af51641}{change\+\_\+in\+\_\+hash}} (int name, struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}} $\ast$address, struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$hash, enum \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902}{what\+\_\+object}} object)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file with description of functions for \mbox{\hyperlink{hash_8c}{hash.\+c}}. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{hash_8h_add435d13d3a9e2d0dbdd72341af51641}\label{hash_8h_add435d13d3a9e2d0dbdd72341af51641}} 
+\index{hash.h@{hash.h}!change\_in\_hash@{change\_in\_hash}}
+\index{change\_in\_hash@{change\_in\_hash}!hash.h@{hash.h}}
+\doxysubsubsection{\texorpdfstring{change\_in\_hash()}{change\_in\_hash()}}
+{\footnotesize\ttfamily void change\+\_\+in\+\_\+hash (\begin{DoxyParamCaption}\item[{int}]{name,  }\item[{struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}} $\ast$}]{address,  }\item[{struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$}]{hash,  }\item[{enum \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902}{what\+\_\+object}}}]{object }\end{DoxyParamCaption})}
+
+Creates a new element in the hash table if there isn\textquotesingle{}t one already. Or changes information about an existing one. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & The name of the input file. \\
+\hline
+\mbox{\texttt{ in}}  & {\em address} & The address where the file is stored in the specified object. \\
+\hline
+\mbox{\texttt{ in}}  & {\em hash} & Hash array in which to search. \\
+\hline
+\mbox{\texttt{ in}}  & {\em object} & The object whose address will be written. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash_8h_a059209594d50308b1db28fc7bfd3929d}\label{hash_8h_a059209594d50308b1db28fc7bfd3929d}} 
+\index{hash.h@{hash.h}!find\_element@{find\_element}}
+\index{find\_element@{find\_element}!hash.h@{hash.h}}
+\doxysubsubsection{\texorpdfstring{find\_element()}{find\_element()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}} $\ast$ find\+\_\+element (\begin{DoxyParamCaption}\item[{int}]{name,  }\item[{struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$}]{hash,  }\item[{enum \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902}{what\+\_\+object}}}]{object }\end{DoxyParamCaption})}
+
+Searches for a pointer to an element in the specified object. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & The name of the input file. \\
+\hline
+\mbox{\texttt{ in}}  & {\em hash} & Hash array in which to search. \\
+\hline
+\mbox{\texttt{ in}}  & {\em object} & The object whose address will be written. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to an element in the specified object. Or NULL if there is no pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hash_8h_a7adc8d390f663389508b2338a298d671}\label{hash_8h_a7adc8d390f663389508b2338a298d671}} 
+\index{hash.h@{hash.h}!free\_hash@{free\_hash}}
+\index{free\_hash@{free\_hash}!hash.h@{hash.h}}
+\doxysubsubsection{\texorpdfstring{free\_hash()}{free\_hash()}}
+{\footnotesize\ttfamily void free\+\_\+hash (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$}]{hash }\end{DoxyParamCaption})}
+
+Releases a hash table with all collisions and pointers to store elements in other objects. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em hash} & The hash array in which changes will occur. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash_8h_a7e9ffe973d568f8c5ccf7ce984bbeb3f}\label{hash_8h_a7e9ffe973d568f8c5ccf7ce984bbeb3f}} 
+\index{hash.h@{hash.h}!make\_hash@{make\_hash}}
+\index{make\_hash@{make\_hash}!hash.h@{hash.h}}
+\doxysubsubsection{\texorpdfstring{make\_hash()}{make\_hash()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$ make\+\_\+hash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Creates an array for the hash table. \begin{DoxyReturn}{Returns}
+Pointer to created array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hash_8h_a8194e0948bdbdc65683a2f7c0219b39c}\label{hash_8h_a8194e0948bdbdc65683a2f7c0219b39c}} 
+\index{hash.h@{hash.h}!print\_hash@{print\_hash}}
+\index{print\_hash@{print\_hash}!hash.h@{hash.h}}
+\doxysubsubsection{\texorpdfstring{print\_hash()}{print\_hash()}}
+{\footnotesize\ttfamily void print\+\_\+hash (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$}]{hash }\end{DoxyParamCaption})}
+
+Prints to the console the elements in the hash table and their pointers to other objects. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em hash} & The hash array to be printed. \\
+\hline
+\end{DoxyParams}
