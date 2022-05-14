@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.16)
+cmake_minimum_required (VERSION 3.10)
 project ("LIRS CACHE" VERSION 1.0.0) 
 
 set (EXEC_FILE "lirs")
@@ -15,7 +15,8 @@ set (SOURCES
     source/list.c
     source/cache_storage.c
     source/lirs.c
-    source/main.c
+    tests/main_tester.c
+    tests/tester.c
 )
 
 add_executable (${EXEC_FILE} ${SOURCES})
