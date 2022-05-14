@@ -15,6 +15,7 @@
 Created a new dlinked_list_element for list. Assigns it to him location_in_cash.
     \param[in] name The created element will have this name.
     \param[in] location_in_cache This will be assigned to element.location_in_cache.
+    \return Pointer to the created dlinked_list_element.
 */
 static struct dlinked_list_element *create_elem(int name, void *location_in_cache);
 
