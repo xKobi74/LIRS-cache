@@ -21,7 +21,7 @@ void fgetdata(void *cacheunit, int filenumber) {
 }
 
 /** 
-The function that reads and writes by pointers two int numbers from the standard input.
+The function that reads from the standard input two int numbers and writes them by pointers.
     \param[out] xptr The pointer on the int where need to write first number.
     \param[out] yptr The pointer on the int where need to write first number.
 */
@@ -33,7 +33,7 @@ static void write_two_int(int *xptr, int *yptr) {
 }
 
 /** 
-The function that read an int numbers from the standard input.
+The function that read and return an int number from the standard input.
     \return The number that was read.
 */
 static int read_one_int() {
@@ -45,20 +45,24 @@ static int read_one_int() {
 }
 
 int main() {
-    int cachesize, filescount;
-    write_two_int(&cachesize, &filescount);
+    int cachesize; ///< The variable that will be equal to total size of cache. 
+    int filescount; ///< The variable that will be equeal to total count of requested files. 
+    write_two_int(&cachesize, &filescount); ///< The input of two params.
 
-    int lirsize, hirsize;
-    hirsize = (cachesize + 3) / 4;
-    lirsize = cachesize - hirsize;
-    struct lirs_t *lirs = lirs_init(lirsize, hirsize, datasize, fgetdata);
+    int lirsize, hirsize; ///< The variables that will be equal to total size of LIR and HIR parts of cache, respectively. 
+    hirsize = (cachesize + 3) / 4; ///< Equating hirsize to a quarter of the total cache size with rounding up.
+    lirsize = cachesize - hirsize; ///< Equating lirsize to to the remaining space in the cache (about three-quarters of it).
+    struct lirs_t *lirs = lirs_init(lirsize, hirsize, datasize, fgetdata); ///< Сreating a lirs cache with the required parameters.
     
-    int i;
-    for (i = 0; i < filescount; ++i)
-        lirs_getfile(lirs, read_one_int());
+    /**
+    Processing of all requested files. 
+    */
+    int i; ///< The iterator variable.
+    for (i = 0; i < filescount; ++i) ///< The cycle for process all requested files.
+        lirs_getfile(lirs, read_one_int()); ///< Processing of one (current) requested files.
     
-    printf("%llu\n", get_count_of_lirs_cache_hit(lirs));
+    printf("%llu\n", get_count_of_lirs_cache_hit(lirs)); ///< The output of total count of cache hits.
 
-    lirs_delete(lirs);
+    lirs_delete(lirs); ///< Free all memory that keeped by lirs struct.
     return 0;
 }
