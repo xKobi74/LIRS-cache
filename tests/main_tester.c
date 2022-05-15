@@ -6,12 +6,16 @@
 
 
 int main(int argc, char ** argv) {
-	if(argc < 2) {
-		perror("You must enter the file name");
+	if(argc < 3) {
+		perror("You must enter mode and the file name");
 		abort();
 	}
 	
-	FILE * file = fopen(argv[1], "r");
+	long long hits = 0;
+	
+	int u = atoi(argv[1]);
+	
+	FILE * file = fopen(argv[2], "r");
 	assert(file);
 	
 	int N = getN(file);
@@ -20,7 +24,9 @@ int main(int argc, char ** argv) {
 	
 	for(int i = 0; i < N; i++) {
 		printf("Test #%d: ", i + 1);
-		printf("%llu hits\n", tester(file));
+		hits = tester(file, u);
+		if (hits >= 0)
+			printf("%lld hits\n", hits);
 	}
 	
 	return 0;

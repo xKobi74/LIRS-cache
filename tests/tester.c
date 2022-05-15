@@ -36,12 +36,15 @@ void fgetdata(void *cacheunit, int filenumber) {
     ((char *)cacheunit) [0] = filenumber % 10 + '0';
 }
 
-unsigned long long tester (FILE * file) {
+long long tester (FILE * file, int u) {
 
 	assert(file);
 	int m, n;
-	unsigned long long count;
-	fscanf(file, "%d%d", &m, &n);
+	long long count, ans;
+	if(u == 1)
+		fscanf(file, "%lld", &ans);
+	m = getN(file);
+	n = getN(file);
 	
 	int LEN_HIR = (m + 3)/ 4;
 	int LEN_LIR = m - LEN_HIR;
@@ -55,6 +58,11 @@ unsigned long long tester (FILE * file) {
 	count = get_count_of_lirs_cache_hit(lirs);
 	
 	lirs_delete(lirs);
+	
+	if(u == 1 && count != ans) {
+		printf("Wrong answer: %lld, correct answer: %lld\n", count, ans);
+		return -1;
+	}
 	
 	return count;
 	

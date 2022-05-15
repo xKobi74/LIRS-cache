@@ -15,4 +15,4 @@ The function that runs tests from a file.
     \param[in] file The FILE pointer to read.
 	\return A number of cache hits.
 */
-unsigned long long tester (FILE * file);
+long long tester (FILE * file, int u);
