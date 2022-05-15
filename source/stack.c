@@ -144,7 +144,7 @@ Implementation of a part of the algorithm when an element comes to the input tha
     \return Void * pointer to the location in the cache where the incoming file should be written.
 */
 static struct dlinked_list_element *new_upper_element(int name, enum state state_element, void *location_in_cache, 
-                                               struct stack stack, struct hash *hash);
+                                                      struct stack stack, struct hash *hash);
 
 void *LIRS_algorithm(int name, int len_LIR, struct stack stack, struct list list, struct hash *hash, struct  cache_storage_t *cache) {
 

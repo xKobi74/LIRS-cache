@@ -138,7 +138,7 @@ static void realloc_hash(struct hash *hash) {
 
 static void delete_element_list(struct hash *hash, struct element_hash **current, struct element_hash **previous) {
     
-    hash->list.size -= 1;
+    --hash->list.size;
     struct element_hash *temporary = *current;
     if (*current == *previous) {
         hash->list.top = (*current)->next;
@@ -201,8 +201,8 @@ static void first_in_collision(int name, int number, struct dlinked_list_element
     struct element_hash *new = new_element(name, address, object);
     struct element_hash **top = &(hash->list.top);
 
-    hash->size += 1;
-    hash->list.size += 1;
+    ++hash->size;
+    ++hash->list.size;
 
     new->next = *top;
     *top = new;
@@ -240,7 +240,7 @@ void change_in_hash(int name, struct dlinked_list_element *address, struct hash 
     
     struct element_hash *new = new_element(name, address, object);
 
-    hash->list.size += 1;
+    ++hash->list.size;
     new->next = *current;
     (*previous)->next = new;
 
