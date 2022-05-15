@@ -1,6 +1,6 @@
 # LIRS-cache
 ---
-## How to build the project 
+## How to build the project: 
 
 * mkdir build
 * cd build
@@ -12,6 +12,45 @@
 -Wall -Wextra -Wpedantic -O2
 ```
 In a folder 'build' a file 'lirs' will appear executing a program
+
+---
+## How to build the tests:
+
+* mkdir build_tester
+* cd build_tester
+* cmake ../tester
+* make 
+
+## Compiler settings:
+```
+-Wall -Wextra -Wpedantic -O2
+```
+In a folder 'build_tester' a file 'lirs_tester' will appear executing a program
+
+## How to run tests:
+
+To start it with random tests: 
+```
+./lirs_tester 0 ../tests/tests
+```
+Returns number of files that should not be overwritten
+
+To start it with unit tests: 
+```
+./lirs_tester 1 ../tests/test.txt
+``` 
+Returns number of files that should not be overwritten if correct, else return wrong ansver and correct ansver
+
+## How to generated tests:
+
+* cd ../tests/
+* gcc main_generator.c generator.c
+* ./a.out tests [number_of_tests] [max_cache] [max_files] [max_name]
+
+[number_of_tests] - Number of tests
+[max_cache] - Maximum possible cache size
+[max_files] - The maximum number of files that can come in
+[max_name] - The maximum number of the incoming file by module     
 
 ---
 ## Input data:
