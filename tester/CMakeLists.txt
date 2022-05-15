@@ -15,8 +15,8 @@ set (SOURCES
     ../source/list.c
     ../source/cache_storage.c
     ../source/lirs.c
-    ../tests/main_tester.c
-    ../tests/tester.c
+    ../tester/main_tester.c
+    ../tester/tester.c
 )
 
 add_executable (${EXEC_FILE} ${SOURCES})

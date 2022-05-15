@@ -21,7 +21,7 @@ In a folder 'build' a file 'lirs' will appear executing a program
 ## Output data:
 * how many times an input file has already been cached
 ---
-## How to build the tests:
+## How to build the tester:
 
 * mkdir build_tester
 * cd build_tester
@@ -34,23 +34,23 @@ In a folder 'build' a file 'lirs' will appear executing a program
 ```
 In a folder 'build_tester' a file 'lirs_tester' will appear executing a program
 
-## How to run tests:
+## How to run tester:
 
 To start it with random tests: 
 ```
-./lirs_tester 0 ../tests/tests
+./lirs_tester 0 ../tester/tests
 ```
 Returns number of files that should not be overwritten
 
 To start it with unit tests: 
 ```
-./lirs_tester 1 ../tests/test.txt
+./lirs_tester 1 ../tester/tests.txt
 ``` 
 Returns number of files that should not be overwritten if correct, else return wrong answer and correct answer
 
 ## How to generated tests:
 
-* cd ../tests/
+* cd ../tester/
 * gcc main_generator.c generator.c
 * ./a.out tests [number_of_tests] [max_cache] [max_files] [max_name]
 
