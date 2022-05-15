@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['len_5fhash_0',['LEN_HASH',['../hash_8c.html#a70fe36bfeae2d24fde50eb9a782a28b1',1,'hash.c']]]
+  ['max_5fratio_223',['MAX_RATIO',['../hash_8c.html#a0daaa01c95492013b852ba3d9dbaffc8',1,'hash.c']]]
 ];

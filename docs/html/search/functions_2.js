@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['fgetdata_0',['fgetdata',['../main_8c.html#a230451480887ca801843563a11c2c106',1,'main.c']]],
-  ['find_5felement_1',['find_element',['../hash_8h.html#a059209594d50308b1db28fc7bfd3929d',1,'find_element(int name, struct element_hash **hash, enum what_object object):&#160;hash.c'],['../hash_8c.html#a059209594d50308b1db28fc7bfd3929d',1,'find_element(int name, struct element_hash **hash, enum what_object object):&#160;hash.c']]],
-  ['free_5fhash_2',['free_hash',['../hash_8h.html#a7adc8d390f663389508b2338a298d671',1,'free_hash(struct element_hash **hash):&#160;hash.c'],['../hash_8c.html#a7adc8d390f663389508b2338a298d671',1,'free_hash(struct element_hash **hash):&#160;hash.c']]]
+  ['delete_5felement_147',['delete_element',['../list_8c.html#ad46f9c1c191f66a655faf56c14f3ade4',1,'list.c']]],
+  ['delete_5felement_5flist_148',['delete_element_list',['../hash_8c.html#a653af7ea99bbf34dd9ecf865b0b094fa',1,'hash.c']]]
 ];

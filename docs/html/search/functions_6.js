@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['new_5fin_5flist_0',['new_in_list',['../list_8h.html#add34742f3c1a4733128a1d1b49343a95',1,'new_in_list(int name, void *location_in_cash, struct list list, struct element_hash **hash):&#160;list.c'],['../list_8c.html#add34742f3c1a4733128a1d1b49343a95',1,'new_in_list(int name, void *location_in_cash, struct list list, struct element_hash **hash):&#160;list.c']]]
+  ['in_5fstack_163',['in_stack',['../stack_8c.html#a93facf9699e2c2f115bf2648e75f0d49',1,'stack.c']]],
+  ['in_5fthis_5fcollision_164',['in_this_collision',['../hash_8c.html#a52bc45c454a5719d42f312f4b68c34af',1,'hash.c']]]
 ];

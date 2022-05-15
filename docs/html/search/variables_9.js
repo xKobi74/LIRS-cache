@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['unitsize_0',['unitsize',['../structcache__storage__t.html#aa95f6e59af8eb84f1b848003cd247b44',1,'cache_storage_t']]],
-  ['upper_5felement_1',['upper_element',['../structstack.html#a96f29513d639fe1a04fb7b15ad59a45f',1,'stack::upper_element()'],['../structlist.html#a8f86c2d4cb314f3693543edeb4446c66',1,'list::upper_element()']]],
-  ['used_2',['used',['../structcache__storage__t.html#a603467141845b0872e887e6ceb6aeb4a',1,'cache_storage_t']]]
+  ['size_208',['size',['../structhash__list.html#a719b46936b6001da6785e9ec5f729297',1,'hash_list::size()'],['../structhash.html#aeaadf297384d8e71511f0d65247fd8a0',1,'hash::size()']]],
+  ['stack_209',['stack',['../structelement__hash.html#a45295c39e4fa4b9f84057a193376bea2',1,'element_hash::stack()'],['../structlirs__t.html#a0e59db8ac4b02c124787669264197fac',1,'lirs_t::stack()']]],
+  ['state_5felement_210',['state_element',['../structelement.html#acb8ec1ae44b646d5c15008ede8d26d9d',1,'element']]]
 ];

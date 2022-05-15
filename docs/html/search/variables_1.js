@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['data_0',['data',['../structcache__storage__t.html#a5556158144778d37da085eb650fd82f0',1,'cache_storage_t']]],
-  ['datasize_1',['datasize',['../main_8c.html#a8c2040450bb67806b6215ebec0ef297e',1,'main.c']]],
-  ['down_5felement_2',['down_element',['../structstack.html#a9e042fd58b3193fd8b4058095c74e95b',1,'stack::down_element()'],['../structlist.html#a0eeb8a1a04a5ef88b34ee5070c78f4e0',1,'list::down_element()']]]
+  ['cachestorage_191',['cachestorage',['../structlirs__t.html#a3a2d1099a96df09a750c47499edbf883',1,'lirs_t']]],
+  ['capacity_192',['capacity',['../structhash.html#a6ba8417d01b4aae3f373d821d98ae9d6',1,'hash::capacity()'],['../structcache__storage__t.html#adf63985159f0f6703649b9364d136018',1,'cache_storage_t::capacity()']]],
+  ['count_5fof_5faccessing_193',['count_of_accessing',['../structlirs__t.html#acc99c9588d24ef8d06ce8bddbfbe4328',1,'lirs_t']]],
+  ['count_5fof_5frewritings_194',['count_of_rewritings',['../structlirs__t.html#aa21c7a9f25baed59794ca03797de8d52',1,'lirs_t']]]
 ];

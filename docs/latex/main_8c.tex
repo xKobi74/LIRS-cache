@@ -1,8 +1,8 @@
-\hypertarget{main_8c}{}\doxysection{/\+Users/mary/\+Projects/final\+Progect/\+LIRS-\/cache/source/main.c File Reference}
-\label{main_8c}\index{/Users/mary/Projects/finalProgect/LIRS-\/cache/source/main.c@{/Users/mary/Projects/finalProgect/LIRS-\/cache/source/main.c}}
+\hypertarget{main_8c}{}\doxysection{/mnt/c/\+Users/zenj2/\+L\+I\+R\+S-\/cache/source/main.c File Reference}
+\label{main_8c}\index{/mnt/c/Users/zenj2/LIRS-\/cache/source/main.c@{/mnt/c/Users/zenj2/LIRS-\/cache/source/main.c}}
 
 
-File with \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}} and static functions for start.  
+File with main() and static functions for start.  
 
 
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
@@ -14,18 +14,23 @@ File with \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}} a
 \item 
 void \mbox{\hyperlink{main_8c_a230451480887ca801843563a11c2c106}{fgetdata}} (void $\ast$cacheunit, int filenumber)
 \item 
-int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+static void \mbox{\hyperlink{main_8c_a8352002481a12733d3dc40fdcd515fcb}{write\+\_\+two\+\_\+int}} (int $\ast$xptr, int $\ast$yptr)
+\item 
+static int \mbox{\hyperlink{main_8c_a6d722a6b725259b626461571a12f7502}{read\+\_\+one\+\_\+int}} ()
+\item 
+\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{main_8c_a8c2040450bb67806b6215ebec0ef297e}\label{main_8c_a8c2040450bb67806b6215ebec0ef297e}} 
-const int {\bfseries datasize} = 2
+const int \mbox{\hyperlink{main_8c_a8c2040450bb67806b6215ebec0ef297e}{datasize}} = 2
 \begin{DoxyCompactList}\small\item\em Maximum size in bytes of a single file that will be requested. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-File with \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}} and static functions for start. 
+File with main() and static functions for start. 
 
 
 
@@ -43,34 +48,25 @@ The required function that writes data of the requested file to cache by its num
 \mbox{\texttt{ in}}  & {\em filenumber} & The unique number of the file which information will bw written. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
-\index{main.c@{main.c}!main@{main}}
-\index{main@{main}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{main()}{main()}}
-{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{main_8c_a6d722a6b725259b626461571a12f7502}\label{main_8c_a6d722a6b725259b626461571a12f7502}} 
+\index{main.c@{main.c}!read\_one\_int@{read\_one\_int}}
+\index{read\_one\_int@{read\_one\_int}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{read\_one\_int()}{read\_one\_int()}}
+{\footnotesize\ttfamily static int read\+\_\+one\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-\texorpdfstring{$<$}{<} The variable that will be equal to total size of cache.
+The function that read and return an int number from the standard input. \begin{DoxyReturn}{Returns}
+The number that was read. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8c_a8352002481a12733d3dc40fdcd515fcb}\label{main_8c_a8352002481a12733d3dc40fdcd515fcb}} 
+\index{main.c@{main.c}!write\_two\_int@{write\_two\_int}}
+\index{write\_two\_int@{write\_two\_int}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{write\_two\_int()}{write\_two\_int()}}
+{\footnotesize\ttfamily static void write\+\_\+two\+\_\+int (\begin{DoxyParamCaption}\item[{int $\ast$}]{xptr,  }\item[{int $\ast$}]{yptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-\texorpdfstring{$<$}{<} The variable that will be equeal to total count of requested files.
-
-\texorpdfstring{$<$}{<} The input of two params.
-
-\texorpdfstring{$<$}{<} The variables that will be equal to total size of LIR and HIR parts of cache, respectively.
-
-\texorpdfstring{$<$}{<} Equating hirsize to a quarter of the total cache size with rounding up.
-
-\texorpdfstring{$<$}{<} Equating lirsize to to the remaining space in the cache (about three-\/quarters of it).
-
-\texorpdfstring{$<$}{<} Сreating a lirs cache with the required parameters.
-
-Processing of all requested files.
-
-\texorpdfstring{$<$}{<} The iterator variable.
-
-\texorpdfstring{$<$}{<} The cycle for process all requested files.
-
-\texorpdfstring{$<$}{<} Processing of one (current) requested files.
-
-\texorpdfstring{$<$}{<} The output of total count of cache hits.
-
-\texorpdfstring{$<$}{<} Free all memory that keeped by lirs struct.
+The function that reads from the standard input two int numbers and writes them by pointers. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em xptr} & The pointer on the int where need to write first number. \\
+\hline
+\mbox{\texttt{ out}}  & {\em yptr} & The pointer on the int where need to write first number. \\
+\hline
+\end{DoxyParams}

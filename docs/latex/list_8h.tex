@@ -1,5 +1,5 @@
-\hypertarget{list_8h}{}\doxysection{/\+Users/mary/\+Projects/final\+Progect/\+LIRS-\/cache/include/list.h File Reference}
-\label{list_8h}\index{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/list.h@{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/list.h}}
+\hypertarget{list_8h}{}\doxysection{/mnt/c/\+Users/zenj2/\+L\+I\+R\+S-\/cache/include/list.h File Reference}
+\label{list_8h}\index{/mnt/c/Users/zenj2/LIRS-\/cache/include/list.h@{/mnt/c/Users/zenj2/LIRS-\/cache/include/list.h}}
 
 
 Header file with description of functions for \mbox{\hyperlink{list_8c}{list.\+c}}.  
@@ -8,13 +8,13 @@ Header file with description of functions for \mbox{\hyperlink{list_8c}{list.\+c
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{list_8h_add34742f3c1a4733128a1d1b49343a95}{new\+\_\+in\+\_\+list}} (int name, void $\ast$location\+\_\+in\+\_\+cash, struct \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$hash)
+void \mbox{\hyperlink{list_8h_a1cfdd21560aa5ea4aa3dad6cd795b9ad}{new\+\_\+in\+\_\+list}} (int name, void $\ast$location\+\_\+in\+\_\+cash, struct \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, struct \mbox{\hyperlink{structhash}{hash}} $\ast$\mbox{\hyperlink{structhash}{hash}})
 \item 
-struct \mbox{\hyperlink{structelement}{element}} \mbox{\hyperlink{list_8h_ad718761605ca89a4cb00477aae1a2916}{add\+\_\+in\+\_\+list}} (int name, struct \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$hash)
+struct \mbox{\hyperlink{structelement}{element}} \mbox{\hyperlink{list_8h_a1b093f4cafb02c4d975b3d21664735cf}{add\+\_\+in\+\_\+list}} (int name, struct \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, struct \mbox{\hyperlink{structhash}{hash}} $\ast$\mbox{\hyperlink{structhash}{hash}})
 \item 
-struct \mbox{\hyperlink{structelement}{element}} \mbox{\hyperlink{list_8h_af99a0cd598c2286d9d72a6cefcc24481}{move\+\_\+up\+\_\+list}} (int name, struct \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$hash)
+struct \mbox{\hyperlink{structelement}{element}} \mbox{\hyperlink{list_8h_a550ed2f225203482dec4cb2077409924}{move\+\_\+up\+\_\+list}} (int name, struct \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, struct \mbox{\hyperlink{structhash}{hash}} $\ast$\mbox{\hyperlink{structhash}{hash}})
 \item 
-void \mbox{\hyperlink{list_8h_a1308e0edd71a473859d8687beab14023}{change\+\_\+in\+\_\+list}} (struct \mbox{\hyperlink{structelement}{element}} add, int name\+\_\+delete, struct \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$hash)
+void \mbox{\hyperlink{list_8h_ad24cdd7e211d8a2f5ea98a0a8a1c9f6b}{change\+\_\+in\+\_\+list}} (struct \mbox{\hyperlink{structelement}{element}} add, int name\+\_\+delete, struct \mbox{\hyperlink{structlist}{list}} \mbox{\hyperlink{structlist}{list}}, struct \mbox{\hyperlink{structhash}{hash}} $\ast$\mbox{\hyperlink{structhash}{hash}})
 \end{DoxyCompactItemize}
 
 
@@ -24,11 +24,11 @@ Header file with description of functions for \mbox{\hyperlink{list_8c}{list.\+c
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{list_8h_ad718761605ca89a4cb00477aae1a2916}\label{list_8h_ad718761605ca89a4cb00477aae1a2916}} 
+\mbox{\Hypertarget{list_8h_a1b093f4cafb02c4d975b3d21664735cf}\label{list_8h_a1b093f4cafb02c4d975b3d21664735cf}} 
 \index{list.h@{list.h}!add\_in\_list@{add\_in\_list}}
 \index{add\_in\_list@{add\_in\_list}!list.h@{list.h}}
 \doxysubsubsection{\texorpdfstring{add\_in\_list()}{add\_in\_list()}}
-{\footnotesize\ttfamily struct \mbox{\hyperlink{structelement}{element}} add\+\_\+in\+\_\+list (\begin{DoxyParamCaption}\item[{int}]{name,  }\item[{struct \mbox{\hyperlink{structlist}{list}}}]{list,  }\item[{struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$}]{hash }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structelement}{element}} add\+\_\+in\+\_\+list (\begin{DoxyParamCaption}\item[{int}]{name,  }\item[{struct \mbox{\hyperlink{structlist}{list}}}]{list,  }\item[{struct \mbox{\hyperlink{structhash}{hash}} $\ast$}]{hash }\end{DoxyParamCaption})}
 
 Created a new element at the top of the list and deleted at the bottom. The new element will be stored in location\+\_\+in\+\_\+chach of deleted elem. ~\newline
  
@@ -43,11 +43,11 @@ Created a new element at the top of the list and deleted at the bottom. The new 
 \begin{DoxyReturn}{Returns}
 A copy of the deleted structure 
 \end{DoxyReturn}
-\mbox{\Hypertarget{list_8h_a1308e0edd71a473859d8687beab14023}\label{list_8h_a1308e0edd71a473859d8687beab14023}} 
+\mbox{\Hypertarget{list_8h_ad24cdd7e211d8a2f5ea98a0a8a1c9f6b}\label{list_8h_ad24cdd7e211d8a2f5ea98a0a8a1c9f6b}} 
 \index{list.h@{list.h}!change\_in\_list@{change\_in\_list}}
 \index{change\_in\_list@{change\_in\_list}!list.h@{list.h}}
 \doxysubsubsection{\texorpdfstring{change\_in\_list()}{change\_in\_list()}}
-{\footnotesize\ttfamily void change\+\_\+in\+\_\+list (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structelement}{element}}}]{add,  }\item[{int}]{name\+\_\+delete,  }\item[{struct \mbox{\hyperlink{structlist}{list}}}]{list,  }\item[{struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$}]{hash }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void change\+\_\+in\+\_\+list (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structelement}{element}}}]{add,  }\item[{int}]{name\+\_\+delete,  }\item[{struct \mbox{\hyperlink{structlist}{list}}}]{list,  }\item[{struct \mbox{\hyperlink{structhash}{hash}} $\ast$}]{hash }\end{DoxyParamCaption})}
 
 Created a new element at the top of the list and deleted specified one. The new element will be stored in location\+\_\+in\+\_\+chach of deleted elem. 
 \begin{DoxyParams}[1]{Parameters}
@@ -60,11 +60,11 @@ Created a new element at the top of the list and deleted specified one. The new 
 \mbox{\texttt{ in,out}}  & {\em hash} & For change information about the element in the hash and find information about deleted element. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{list_8h_af99a0cd598c2286d9d72a6cefcc24481}\label{list_8h_af99a0cd598c2286d9d72a6cefcc24481}} 
+\mbox{\Hypertarget{list_8h_a550ed2f225203482dec4cb2077409924}\label{list_8h_a550ed2f225203482dec4cb2077409924}} 
 \index{list.h@{list.h}!move\_up\_list@{move\_up\_list}}
 \index{move\_up\_list@{move\_up\_list}!list.h@{list.h}}
 \doxysubsubsection{\texorpdfstring{move\_up\_list()}{move\_up\_list()}}
-{\footnotesize\ttfamily struct \mbox{\hyperlink{structelement}{element}} move\+\_\+up\+\_\+list (\begin{DoxyParamCaption}\item[{int}]{name,  }\item[{struct \mbox{\hyperlink{structlist}{list}}}]{list,  }\item[{struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$}]{hash }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structelement}{element}} move\+\_\+up\+\_\+list (\begin{DoxyParamCaption}\item[{int}]{name,  }\item[{struct \mbox{\hyperlink{structlist}{list}}}]{list,  }\item[{struct \mbox{\hyperlink{structhash}{hash}} $\ast$}]{hash }\end{DoxyParamCaption})}
 
 Moved the specified element to the top, return a copy of its structure. 
 \begin{DoxyParams}[1]{Parameters}
@@ -78,11 +78,11 @@ Moved the specified element to the top, return a copy of its structure.
 \begin{DoxyReturn}{Returns}
 The move \mbox{\hyperlink{structelement}{element(struct element)}}. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{list_8h_add34742f3c1a4733128a1d1b49343a95}\label{list_8h_add34742f3c1a4733128a1d1b49343a95}} 
+\mbox{\Hypertarget{list_8h_a1cfdd21560aa5ea4aa3dad6cd795b9ad}\label{list_8h_a1cfdd21560aa5ea4aa3dad6cd795b9ad}} 
 \index{list.h@{list.h}!new\_in\_list@{new\_in\_list}}
 \index{new\_in\_list@{new\_in\_list}!list.h@{list.h}}
 \doxysubsubsection{\texorpdfstring{new\_in\_list()}{new\_in\_list()}}
-{\footnotesize\ttfamily void new\+\_\+in\+\_\+list (\begin{DoxyParamCaption}\item[{int}]{name,  }\item[{void $\ast$}]{location\+\_\+in\+\_\+cash,  }\item[{struct \mbox{\hyperlink{structlist}{list}}}]{list,  }\item[{struct \mbox{\hyperlink{structelement__hash}{element\+\_\+hash}} $\ast$$\ast$}]{hash }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void new\+\_\+in\+\_\+list (\begin{DoxyParamCaption}\item[{int}]{name,  }\item[{void $\ast$}]{location\+\_\+in\+\_\+cash,  }\item[{struct \mbox{\hyperlink{structlist}{list}}}]{list,  }\item[{struct \mbox{\hyperlink{structhash}{hash}} $\ast$}]{hash }\end{DoxyParamCaption})}
 
 Created a new element in list. It is added to the top. 
 \begin{DoxyParams}[1]{Parameters}

@@ -1,19 +1,9 @@
 var searchData=
 [
-  ['cache_5fstorage_2ec_0',['cache_storage.c',['../cache__storage_8c.html',1,'']]],
-  ['cache_5fstorage_2eh_1',['cache_storage.h',['../cache__storage_8h.html',1,'']]],
-  ['cache_5fstorage_5fdata_5fprint_2',['cache_storage_data_print',['../cache__storage_8h.html#ab08af497389ec120431ea19dafb090cd',1,'cache_storage_data_print(struct cache_storage_t *cachestorage):&#160;cache_storage.c'],['../cache__storage_8c.html#ab08af497389ec120431ea19dafb090cd',1,'cache_storage_data_print(struct cache_storage_t *cachestorage):&#160;cache_storage.c']]],
-  ['cache_5fstorage_5fdelete_3',['cache_storage_delete',['../cache__storage_8h.html#ab3324bbb8d19a89bd2e09d28d2b870e5',1,'cache_storage_delete(struct cache_storage_t *cachestorage):&#160;cache_storage.c'],['../cache__storage_8c.html#ab3324bbb8d19a89bd2e09d28d2b870e5',1,'cache_storage_delete(struct cache_storage_t *cachestorage):&#160;cache_storage.c']]],
-  ['cache_5fstorage_5finit_4',['cache_storage_init',['../cache__storage_8h.html#a199f6ebcde1fa35675ca41bc7f49bc18',1,'cache_storage_init(int capacity, int unitsize, fgetdata_t fgetdata):&#160;cache_storage.c'],['../cache__storage_8c.html#a199f6ebcde1fa35675ca41bc7f49bc18',1,'cache_storage_init(int capacity, int unitsize, fgetdata_t fgetdata):&#160;cache_storage.c']]],
-  ['cache_5fstorage_5fisfull_5',['cache_storage_isfull',['../cache__storage_8h.html#a25d09f615f50f94ad156ce21121348b9',1,'cache_storage_isfull(struct cache_storage_t *cachestorage):&#160;cache_storage.c'],['../cache__storage_8c.html#a25d09f615f50f94ad156ce21121348b9',1,'cache_storage_isfull(struct cache_storage_t *cachestorage):&#160;cache_storage.c']]],
-  ['cache_5fstorage_5ft_6',['cache_storage_t',['../structcache__storage__t.html',1,'']]],
-  ['cache_5fstorage_5fused_7',['cache_storage_used',['../cache__storage_8h.html#ab635e3fe49233dee32c45d78f95c80d0',1,'cache_storage_used(struct cache_storage_t *cachestorage):&#160;cache_storage.c'],['../cache__storage_8c.html#ab635e3fe49233dee32c45d78f95c80d0',1,'cache_storage_used(struct cache_storage_t *cachestorage):&#160;cache_storage.c']]],
-  ['cache_5funit_5fadd_8',['cache_unit_add',['../cache__storage_8h.html#a03105691dd0436b9346d6906a3e4cb8c',1,'cache_unit_add(struct cache_storage_t *cachestorage, int filenumber):&#160;cache_storage.c'],['../cache__storage_8c.html#a03105691dd0436b9346d6906a3e4cb8c',1,'cache_unit_add(struct cache_storage_t *cachestorage, int filenumber):&#160;cache_storage.c']]],
-  ['cache_5funit_5fchange_9',['cache_unit_change',['../cache__storage_8h.html#a34ee8b8f8415c0499e532d81fbc39432',1,'cache_unit_change(struct cache_storage_t *cachestorage, void *cacheunit, int newfilenumber):&#160;cache_storage.c'],['../cache__storage_8c.html#a34ee8b8f8415c0499e532d81fbc39432',1,'cache_unit_change(struct cache_storage_t *cachestorage, void *cacheunit, int newfilenumber):&#160;cache_storage.c']]],
-  ['cachestorage_10',['cachestorage',['../structlirs__t.html#a3a2d1099a96df09a750c47499edbf883',1,'lirs_t']]],
-  ['capacity_11',['capacity',['../structcache__storage__t.html#adf63985159f0f6703649b9364d136018',1,'cache_storage_t']]],
-  ['change_5fin_5fhash_12',['change_in_hash',['../hash_8h.html#add435d13d3a9e2d0dbdd72341af51641',1,'change_in_hash(int name, struct dlinked_list_element *address, struct element_hash **hash, enum what_object object):&#160;hash.c'],['../hash_8c.html#add435d13d3a9e2d0dbdd72341af51641',1,'change_in_hash(int name, struct dlinked_list_element *address, struct element_hash **hash, enum what_object object):&#160;hash.c']]],
-  ['change_5fin_5flist_13',['change_in_list',['../list_8h.html#a1308e0edd71a473859d8687beab14023',1,'change_in_list(struct element add, int name_delete, struct list list, struct element_hash **hash):&#160;list.c'],['../list_8c.html#a1308e0edd71a473859d8687beab14023',1,'change_in_list(struct element add, int name_delete, struct list list, struct element_hash **hash):&#160;list.c']]],
-  ['count_5fof_5faccessing_14',['count_of_accessing',['../structlirs__t.html#acc99c9588d24ef8d06ce8bddbfbe4328',1,'lirs_t']]],
-  ['count_5fof_5frewritings_15',['count_of_rewritings',['../structlirs__t.html#aa21c7a9f25baed59794ca03797de8d52',1,'lirs_t']]]
+  ['data_23',['data',['../structcache__storage__t.html#a5556158144778d37da085eb650fd82f0',1,'cache_storage_t']]],
+  ['datasize_24',['datasize',['../main_8c.html#a8c2040450bb67806b6215ebec0ef297e',1,'main.c']]],
+  ['delete_5felement_25',['delete_element',['../list_8c.html#ad46f9c1c191f66a655faf56c14f3ade4',1,'list.c']]],
+  ['delete_5felement_5flist_26',['delete_element_list',['../hash_8c.html#a653af7ea99bbf34dd9ecf865b0b094fa',1,'hash.c']]],
+  ['dlinked_5flist_5felement_27',['dlinked_list_element',['../structdlinked__list__element.html',1,'']]],
+  ['down_5felement_28',['down_element',['../structstack.html#a9e042fd58b3193fd8b4058095c74e95b',1,'stack::down_element()'],['../structlist.html#a0eeb8a1a04a5ef88b34ee5070c78f4e0',1,'list::down_element()']]]
 ];

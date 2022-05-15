@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['get_5fcount_5fof_5flirs_5fcache_5fhit_0',['get_count_of_lirs_cache_hit',['../lirs_8h.html#ab7b4116715c0355b558bd043f337e680',1,'get_count_of_lirs_cache_hit(struct lirs_t *lirs):&#160;lirs.c'],['../lirs_8c.html#ab7b4116715c0355b558bd043f337e680',1,'get_count_of_lirs_cache_hit(struct lirs_t *lirs):&#160;lirs.c']]],
-  ['get_5frate_5fof_5flirs_5fcache_5fmissing_1',['get_rate_of_lirs_cache_missing',['../lirs_8h.html#a81215e59336b8c2f52db8768231728db',1,'get_rate_of_lirs_cache_missing(struct lirs_t *lirs):&#160;lirs.c'],['../lirs_8c.html#a81215e59336b8c2f52db8768231728db',1,'get_rate_of_lirs_cache_missing(struct lirs_t *lirs):&#160;lirs.c']]]
+  ['hash_47',['hash',['../structhash.html',1,'hash'],['../structlirs__t.html#af42267cfd91ec30f7bcb147898237672',1,'lirs_t::hash()']]],
+  ['hash_2ec_48',['hash.c',['../hash_8c.html',1,'']]],
+  ['hash_2eh_49',['hash.h',['../hash_8h.html',1,'']]],
+  ['hash_5flist_50',['hash_list',['../structhash__list.html',1,'']]],
+  ['hircapacity_51',['hircapacity',['../structlirs__t.html#ae14d0cfb2aec41b7d5ba1cbf020e4e61',1,'lirs_t']]]
 ];

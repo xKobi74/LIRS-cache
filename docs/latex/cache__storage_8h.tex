@@ -1,5 +1,5 @@
-\hypertarget{cache__storage_8h}{}\doxysection{/\+Users/mary/\+Projects/final\+Progect/\+LIRS-\/cache/include/cache\+\_\+storage.h File Reference}
-\label{cache__storage_8h}\index{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/cache\_storage.h@{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/cache\_storage.h}}
+\hypertarget{cache__storage_8h}{}\doxysection{/mnt/c/\+Users/zenj2/\+L\+I\+R\+S-\/cache/include/cache\+\_\+storage.h File Reference}
+\label{cache__storage_8h}\index{/mnt/c/Users/zenj2/LIRS-\/cache/include/cache\_storage.h@{/mnt/c/Users/zenj2/LIRS-\/cache/include/cache\_storage.h}}
 
 
 Header file with description of functions for \mbox{\hyperlink{cache__storage_8c}{cache\+\_\+storage.\+c}}.  
@@ -13,7 +13,7 @@ typedef void($\ast$ \mbox{\hyperlink{cache__storage_8h_a7bb10de407c090d61acfd51f
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{structcache__storage__t}{cache\+\_\+storage\+\_\+t}} $\ast$ \mbox{\hyperlink{cache__storage_8h_a199f6ebcde1fa35675ca41bc7f49bc18}{cache\+\_\+storage\+\_\+init}} (int capacity, int unitsize, \mbox{\hyperlink{lirs_8h_a7bb10de407c090d61acfd51ff0d42892}{fgetdata\+\_\+t}} \mbox{\hyperlink{main_8c_a230451480887ca801843563a11c2c106}{fgetdata}})
+struct \mbox{\hyperlink{structcache__storage__t}{cache\+\_\+storage\+\_\+t}} $\ast$ \mbox{\hyperlink{cache__storage_8h_ab52fa9bb2b1fc4ae7a08623a885a5d96}{cache\+\_\+storage\+\_\+init}} (int capacity, int unitsize, \mbox{\hyperlink{lirs_8h_a7bb10de407c090d61acfd51ff0d42892}{fgetdata\+\_\+t}} \mbox{\hyperlink{tester_8c_a230451480887ca801843563a11c2c106}{fgetdata}})
 \begin{DoxyCompactList}\small\item\em Declaration of the struct that need to be used in this functions. Its description is hidden. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{cache__storage_8h_ab3324bbb8d19a89bd2e09d28d2b870e5}{cache\+\_\+storage\+\_\+delete}} (struct \mbox{\hyperlink{structcache__storage__t}{cache\+\_\+storage\+\_\+t}} $\ast$cachestorage)
 \item 
@@ -21,7 +21,7 @@ char \mbox{\hyperlink{cache__storage_8h_a25d09f615f50f94ad156ce21121348b9}{cache
 \item 
 int \mbox{\hyperlink{cache__storage_8h_ab635e3fe49233dee32c45d78f95c80d0}{cache\+\_\+storage\+\_\+used}} (struct \mbox{\hyperlink{structcache__storage__t}{cache\+\_\+storage\+\_\+t}} $\ast$cachestorage)
 \item 
-void $\ast$ \mbox{\hyperlink{cache__storage_8h_a03105691dd0436b9346d6906a3e4cb8c}{cache\+\_\+unit\+\_\+add}} (struct \mbox{\hyperlink{structcache__storage__t}{cache\+\_\+storage\+\_\+t}} $\ast$cachestorage, int filenumber)
+void $\ast$ \mbox{\hyperlink{cache__storage_8h_ad5f9b031cf13847e3052a0d5eb4893d8}{cache\+\_\+unit\+\_\+add}} (struct \mbox{\hyperlink{structcache__storage__t}{cache\+\_\+storage\+\_\+t}} $\ast$cachestorage, int filenumber)
 \item 
 void \mbox{\hyperlink{cache__storage_8h_a34ee8b8f8415c0499e532d81fbc39432}{cache\+\_\+unit\+\_\+change}} (struct \mbox{\hyperlink{structcache__storage__t}{cache\+\_\+storage\+\_\+t}} $\ast$cachestorage, void $\ast$cacheunit, int newfilenumber)
 \item 
@@ -57,7 +57,7 @@ The required signature of the function that writes data of the file to cache.
 \doxysubsubsection{\texorpdfstring{cache\_storage\_data\_print()}{cache\_storage\_data\_print()}}
 {\footnotesize\ttfamily void cache\+\_\+storage\+\_\+data\+\_\+print (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcache__storage__t}{cache\+\_\+storage\+\_\+t}} $\ast$}]{cachestorage }\end{DoxyParamCaption})}
 
-The function that print the data of all written cache units. Data will be interpritated as ASCII string. 
+The function that print the data of all written cache units. Data will be interpritated as A\+S\+C\+II string. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em cachestorage} & The pointer on the \mbox{\hyperlink{structcache__storage__t}{cache\+\_\+storage\+\_\+t}} object that you need to display. \\
 \hline
@@ -73,11 +73,11 @@ The function that delete cache storage and free all memory that in used.
 \mbox{\texttt{ out}}  & {\em cachestorage} & The pointer on the \mbox{\hyperlink{structcache__storage__t}{cache\+\_\+storage\+\_\+t}} object that need to delete. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{cache__storage_8h_a199f6ebcde1fa35675ca41bc7f49bc18}\label{cache__storage_8h_a199f6ebcde1fa35675ca41bc7f49bc18}} 
+\mbox{\Hypertarget{cache__storage_8h_ab52fa9bb2b1fc4ae7a08623a885a5d96}\label{cache__storage_8h_ab52fa9bb2b1fc4ae7a08623a885a5d96}} 
 \index{cache\_storage.h@{cache\_storage.h}!cache\_storage\_init@{cache\_storage\_init}}
 \index{cache\_storage\_init@{cache\_storage\_init}!cache\_storage.h@{cache\_storage.h}}
 \doxysubsubsection{\texorpdfstring{cache\_storage\_init()}{cache\_storage\_init()}}
-{\footnotesize\ttfamily struct \mbox{\hyperlink{structcache__storage__t}{cache\+\_\+storage\+\_\+t}} $\ast$ cache\+\_\+storage\+\_\+init (\begin{DoxyParamCaption}\item[{int}]{capacity,  }\item[{int}]{unitsize,  }\item[{\mbox{\hyperlink{lirs_8h_a7bb10de407c090d61acfd51ff0d42892}{fgetdata\+\_\+t}}}]{fgetdata }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structcache__storage__t}{cache\+\_\+storage\+\_\+t}}$\ast$ cache\+\_\+storage\+\_\+init (\begin{DoxyParamCaption}\item[{int}]{capacity,  }\item[{int}]{unitsize,  }\item[{\mbox{\hyperlink{lirs_8h_a7bb10de407c090d61acfd51ff0d42892}{fgetdata\+\_\+t}}}]{fgetdata }\end{DoxyParamCaption})}
 
 
 
@@ -123,11 +123,11 @@ The function that indicate the total number of used cache units.
 \begin{DoxyReturn}{Returns}
 The total number of used cache units. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{cache__storage_8h_a03105691dd0436b9346d6906a3e4cb8c}\label{cache__storage_8h_a03105691dd0436b9346d6906a3e4cb8c}} 
+\mbox{\Hypertarget{cache__storage_8h_ad5f9b031cf13847e3052a0d5eb4893d8}\label{cache__storage_8h_ad5f9b031cf13847e3052a0d5eb4893d8}} 
 \index{cache\_storage.h@{cache\_storage.h}!cache\_unit\_add@{cache\_unit\_add}}
 \index{cache\_unit\_add@{cache\_unit\_add}!cache\_storage.h@{cache\_storage.h}}
 \doxysubsubsection{\texorpdfstring{cache\_unit\_add()}{cache\_unit\_add()}}
-{\footnotesize\ttfamily void $\ast$ cache\+\_\+unit\+\_\+add (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcache__storage__t}{cache\+\_\+storage\+\_\+t}} $\ast$}]{cachestorage,  }\item[{int}]{filenumber }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void$\ast$ cache\+\_\+unit\+\_\+add (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcache__storage__t}{cache\+\_\+storage\+\_\+t}} $\ast$}]{cachestorage,  }\item[{int}]{filenumber }\end{DoxyParamCaption})}
 
 The function that writes the data of the file with current filenumber if the cache storage is not full. 
 \begin{DoxyParams}[1]{Parameters}
@@ -137,7 +137,7 @@ The function that writes the data of the file with current filenumber if the cac
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The pointer on the location in the cache storage where file\textquotesingle{}s data will be written. Or NULL pointer if cache storage is full. 
+The pointer on the location in the cache storage where file\textquotesingle{}s data will be written. Or N\+U\+LL pointer if cache storage is full. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{cache__storage_8h_a34ee8b8f8415c0499e532d81fbc39432}\label{cache__storage_8h_a34ee8b8f8415c0499e532d81fbc39432}} 
 \index{cache\_storage.h@{cache\_storage.h}!cache\_unit\_change@{cache\_unit\_change}}
