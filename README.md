@@ -48,8 +48,11 @@ Returns number of files that should not be overwritten if correct, else return w
 * ./a.out tests [number_of_tests] [max_cache] [max_files] [max_name]
 
 [number_of_tests] - Number of tests
+
 [max_cache] - Maximum possible cache size
+
 [max_files] - The maximum number of files that can come in
+
 [max_name] - The maximum number of the incoming file by module     
 
 ---
