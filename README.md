@@ -12,7 +12,13 @@
 -Wall -Wextra -Wpedantic -O2
 ```
 In a folder 'build' a file 'lirs' will appear executing a program
-
+---
+## Input data:
+* cache size
+* number of files
+* name of uploaded files
+## Output data:
+* how many times an input file has already been cached
 ---
 ## How to build the tests:
 
@@ -39,7 +45,7 @@ To start it with unit tests:
 ```
 ./lirs_tester 1 ../tests/test.txt
 ``` 
-Returns number of files that should not be overwritten if correct, else return wrong ansver and correct ansver
+Returns number of files that should not be overwritten if correct, else return wrong answer and correct answer
 
 ## How to generated tests:
 
@@ -55,13 +61,6 @@ Returns number of files that should not be overwritten if correct, else return w
 
 [max_name] - The maximum number of the incoming file by module     
 
----
-## Input data:
-* cache size
-* number of files
-* name of uploaded files
-## Output data:
-* how many times an input file has already been cached
 ---
 ## Documentation:
 
