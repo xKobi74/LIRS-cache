@@ -61,4 +61,5 @@ The function that gives a count of cache hits.
 */
 unsigned long long get_count_of_lirs_cache_hit(struct lirs_t *lirs);
 
+
 #endif

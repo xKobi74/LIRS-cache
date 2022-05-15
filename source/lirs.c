@@ -116,6 +116,7 @@ float get_rate_of_lirs_cache_missing(struct lirs_t *lirs) {
     return (lirs->count_of_rewritings + cache_storage_used(lirs->cachestorage)) / (float) lirs->count_of_accessing;
 }
 
+
 unsigned long long get_count_of_lirs_cache_hit(struct lirs_t *lirs) {
     if (cache_storage_isfull(lirs->cachestorage) == 0)
         return lirs->count_of_accessing - cache_storage_used(lirs->cachestorage);
