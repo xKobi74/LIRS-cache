@@ -12,6 +12,7 @@
 -Wall -Wextra -Wpedantic -O2
 ```
 In a folder 'build' a file 'lirs' will appear executing a program
+
 ---
 ## Input data:
 * cache size
