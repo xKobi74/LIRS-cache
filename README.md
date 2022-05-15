@@ -74,7 +74,7 @@ LIRS is Low Inter-reference Recency Set. This algorithm is based on such paramet
 Inter-Reference Recency (IRR) and Recency. We use recent Inter-Reference Recency (IRR) as the recorded
 history information of each block, where IRR of a block refers to the number of other blocks accessed between 
 two consecutive references to the block. Cache memory is divided into two parts: Lir, where the most frequently 
-called files are located, and Resident HIR. Files not written to memory are called Non-Resident HIR.
+called files are located, and Resident HIR, where to store recent called files. Files not written to memory are called Non-Resident HIR.
 
 In the implementation, we used two objects such as stack and list. List holds files from Resident HIR, 
 and at the top are the most recently called ones. The stack stores all the files that come to the input
