@@ -29,5 +29,7 @@ int main(int argc, char ** argv) {
 			printf("%lld hits\n", hits);
 	}
 	
+	fclose(file);
+	
 	return 0;
 }

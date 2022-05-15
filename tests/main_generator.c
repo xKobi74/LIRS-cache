@@ -48,6 +48,7 @@ int main(int argc, char ** argv) {
 	
 	generator(file, N, m_max, n_max, p_max);
 	
+	fclose(file);
 	
 	return 0;
 }
