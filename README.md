@@ -109,8 +109,8 @@ files stored in the list (Resident_HIR) will be on the stack.
 **Calling a file not written to the cache or stack:**
 ![Calling a file not written to the cache or stack](https://github.com/xKobi74/LIRS-cache/blob/main/pictures/3.jpg)
 
-**Calling a non-resident file written to stack:**
-![Calling a non-resident file written to stack](https://github.com/xKobi74/LIRS-cache/blob/main/pictures/4.jpg)
+**Calling a file written to the stack and to list:**
+![Calling a file written to the stack and to list](https://github.com/xKobi74/LIRS-cache/blob/main/pictures/4.jpg)
 
 ---
 
