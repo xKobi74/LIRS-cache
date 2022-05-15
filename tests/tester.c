@@ -21,7 +21,7 @@ int getN(FILE * file) {
 	int N = -1;
 	
 	for(int i = fscanf(file, "%d", &N); i == 0;) {
-		fscanf(file, "%*s");
+		i = fscanf(file, "%*s");
 		i = fscanf(file, "%d", &N);
 	}
 	return N;
@@ -39,10 +39,13 @@ void fgetdata(void *cacheunit, int filenumber) {
 long long tester (FILE * file, int u) {
 
 	assert(file);
-	int m, n;
+	int m, n, i;
 	long long count, ans;
-	if(u == 1)
-		fscanf(file, "%lld", &ans);
+	if(u == 1) {
+		i = fscanf(file, "%lld", &ans);
+		if(i != 1)
+			abort();
+	}
 	m = getN(file);
 	n = getN(file);
 	
@@ -51,7 +54,7 @@ long long tester (FILE * file, int u) {
 	
 	struct lirs_t *lirs = lirs_init(LEN_LIR, LEN_HIR, DATASIZE, fgetdata);
 	
-	for(int i = 0; i < n; i++) {
+	for(i = 0; i < n; i++) {
 		lirs_getfile(lirs, getN(file));
 	}
 	
