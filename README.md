@@ -19,7 +19,7 @@ In a folder 'build' a file 'lirs' will appear executing a program
 * number of files
 * name of uploaded files
 ## Output data:
-* how many times an input file has already been cached
+* number of times times when input file has already been cached
 ---
 ## How to build the tester:
 
@@ -62,6 +62,21 @@ Returns number of files that should not be overwritten if correct, else return w
 
 [max_name] - The maximum number of the incoming file by module     
 
+Exampel to generated tests:
+```
+./a.out tests 100 1000 10000 100000
+```
+
+If enter ```./a.out tests``` starts with default parameters:
+
+[number_of_tests] = 5
+
+[max_cache] = 20
+
+[max_files] = 100
+
+[max_name] = 40  
+
 ---
 ## Documentation:
 
@@ -78,7 +93,9 @@ called files are located, and Resident HIR, where to store recent called files. 
 
 In the implementation, we used two objects such as stack and list. List holds files from Resident HIR, 
 and at the top are the most recently called ones. The stack stores all the files that come to the input
-with their status (Lir, Resident HIR or Non-Resident HIR), and the last called ones are located at the top.
+with their status (Lir, Resident HIR or Non-Resident HIR), and the last called ones are located at the top. 
+During the process of the algorithm, some files from the stack can be removed. Therefore, not necessarily all 
+files stored in the list (Resident_HIR) will be on the stack.
 
 ---
 ## Some examples of how the algorithm works:
