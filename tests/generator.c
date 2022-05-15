@@ -11,7 +11,7 @@ void writetest(FILE * file, int m_max, int n_max, int p_max) {
 	srand(rand());
 	
 	int n = rand() % n_max + 1;
-	fprintf(file, "%d %d ", rand() % m_max + 1, n);
+	fprintf(file, "%d %d ", rand() % m_max + 2, n);
 	
 	for(int i = 0; i < n; i++) {
 		fprintf(file, "%d ", rand() % (p_max + 1));
