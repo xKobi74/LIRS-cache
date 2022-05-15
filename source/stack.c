@@ -15,10 +15,10 @@
 /**
 Removes a pointer to stack from the hash of the specified element and changes its status to Non_resident_HIR.
     \param[in]      name The name of the input file.
-    \param[in, out] hash The hash array in which changes will occur.
+    \param[in, out] hash The hash table in which changes will occur.
     \return Void * pointer to the location in the cache where the incoming file should be written. NULL if the file has already been written.
 */
-static void to_non_resident(int name, struct element_hash **hash);
+static void to_non_resident(int name, struct hash *hash);
 
 /**
 Releases an element from stack.
@@ -46,58 +46,58 @@ Implementation of a part of the algorithm when an element comes to the input tha
     \param[in]      name    The name of the input file.
     \param[in, out] stack   The stack structure in which changes will occur.
     \param[in, out] list    The list structure in which changes will occur.
-    \param[in, out] hash    The hash array in which changes will occur.
+    \param[in, out] hash    The hash table in which changes will occur.
 */
-static void only_in_list(int name, struct stack stack, struct list list, struct element_hash **hash);
+static void only_in_list(int name, struct stack stack, struct list list, struct hash *hash);
 
 /**
 Implementation of a part of the algorithm when an element comes to the input that is not stored in cache and the cache is full.
     \param[in]      name    The name of the input file.
     \param[in, out] stack   The stack structure in which changes will occur.
     \param[in, out] list    The list structure in which changes will occur.
-    \param[in, out] hash    The hash array in which changes will occur.
+    \param[in, out] hash    The hash table in which changes will occur.
     \return Void * pointer to the location in the cache where the incoming file should be written.
 */
-static void *first_entry_in_full(int name, struct stack stack, struct list list, struct element_hash **hash);
+static void *first_entry_in_full(int name, struct stack stack, struct list list, struct hash *hash);
 
 /**
 Implements the entire algorithm for writing elements to various program objects and clearing objects if necessary.
     \param[in, out] down_element Pointer to the down element of the stack.
-    \param[in, out] hash         The hash array in which changes will occur.
+    \param[in, out] hash         The hash table in which changes will occur.
     \return Pointer to the new down element in stack.
 */
-static struct dlinked_list_element *clear_stack_to_LIR(struct dlinked_list_element *down_element, struct element_hash **hash);
+static struct dlinked_list_element *clear_stack_to_LIR(struct dlinked_list_element *down_element, struct hash *hash);
 
 /**
 Implementation of a part of the algorithm when an element comes to the input that is written to the stack with the Non_resident_HIR status.
     \param[in, out] stack            The stack structure in which changes will occur.
     \param[in, out] list             The list structure in which changes will occur.
-    \param[in, out] hash             The hash array in which changes will occur.
+    \param[in, out] hash             The hash table in which changes will occur.
     \param[in, out] element_in_stack Pointer to the location of the incoming element on the stack.
     \return Void * pointer to the location in the cache where the incoming file should be written.
 */
-static void *non_resident_in_stack(struct stack stack, struct list list, struct element_hash **hash, struct dlinked_list_element *element_in_stack);
+static void *non_resident_in_stack(struct stack stack, struct list list, struct hash *hash, struct dlinked_list_element *element_in_stack);
 
 /**
 Implementation of a part of the algorithm when an element comes to the input that is written to the stack.
     \param[in]      name             The name of the input file.
     \param[in, out] stack            The stack structure in which changes will occur.
     \param[in, out] list             The list structure in which changes will occur.
-    \param[in, out] hash             The hash array in which changes will occur.
+    \param[in, out] hash             The hash table in which changes will occur.
     \param[in, out] element_in_stack Pointer to the location of the incoming element on the stack.
     \return Void * pointer to the location in the cache where the incoming file should be written.
 */
-static void *in_stack(int name, struct stack stack, struct list list, struct element_hash **hash, struct dlinked_list_element *element_in_stack);
+static void *in_stack(int name, struct stack stack, struct list list, struct hash *hash, struct dlinked_list_element *element_in_stack);
 
 /**
 Implementation of a part of the algorithm when an element comes to the input that is written to the stack with the Resident_HIR status.
     \param[in]      name    The name of the input file.
     \param[in, out] stack   The stack structure in which changes will occur.
     \param[in, out] list    The list structure in which changes will occur.
-    \param[in, out] hash    The hash array in which changes will occur.
+    \param[in, out] hash    The hash table in which changes will occur.
     \param[in, out] element_in_stack Pointer to the location of the incoming element on the stack.
 */
-static void resident_in_stack(int name, struct stack stack, struct list list, struct element_hash **hash, struct dlinked_list_element *element_in_stack);
+static void resident_in_stack(int name, struct stack stack, struct list list, struct hash *hash, struct dlinked_list_element *element_in_stack);
 
 /**
 Implementation of a part of the algorithm when an element comes to the input that is not stored in cache.
@@ -105,11 +105,11 @@ Implementation of a part of the algorithm when an element comes to the input tha
     \param[in]      len_LIR Length of the LIR memory area.
     \param[in, out] stack   The stack structure in which changes will occur.
     \param[in, out] list    The list structure in which changes will occur.
-    \param[in, out] hash    The hash array in which changes will occur.
+    \param[in, out] hash    The hash table in which changes will occur.
     \param[in, out] cache   The cache array where all files are stored.
     \return Void * pointer to the location in the cache where the incoming file should be written.
 */
-static void *first_entery(int name, int len_LIR, struct stack stack, struct list list, struct element_hash **hash, struct  cache_storage_t *cache);
+static void *first_entery(int name, int len_LIR, struct stack stack, struct list list, struct hash *hash, struct  cache_storage_t *cache);
 
 /**
 Implementation of a part of the algorithm when an element comes to the input that is not stored in cache and the cache is not yet full.
@@ -117,10 +117,10 @@ Implementation of a part of the algorithm when an element comes to the input tha
     \param[in]      len_LIR Length of the LIR memory area.
     \param[in, out] stack   The stack structure in which changes will occur.
     \param[in, out] list    The list structure in which changes will occur.
-    \param[in, out] hash    The hash array in which changes will occur.
+    \param[in, out] hash    The hash table in which changes will occur.
     \param[in, out] cache   The cache array where all files are stored.
 */
-static void first_filling(int name, int len_LIR, struct stack stack, struct list list, struct element_hash **hash, struct  cache_storage_t *cache);
+static void first_filling(int name, int len_LIR, struct stack stack, struct list list, struct hash *hash, struct  cache_storage_t *cache);
 
 /**
 Implementation of a part of the algorithm when an element comes to the input that is not written to the stack.
@@ -128,11 +128,11 @@ Implementation of a part of the algorithm when an element comes to the input tha
     \param[in]      len_LIR Length of the LIR memory area.
     \param[in, out] stack   The stack structure in which changes will occur.
     \param[in, out] list    The list structure in which changes will occur.
-    \param[in, out] hash    The hash array in which changes will occur.
+    \param[in, out] hash    The hash table in which changes will occur.
     \param[in, out] cache   The cache array where all files are stored.
     \return Void * pointer to the location in the cache where the incoming file should be written.
 */
-static void *not_in_stack(int name, int len_LIR, struct stack stack, struct list list, struct element_hash **hash, struct  cache_storage_t *cache);
+static void *not_in_stack(int name, int len_LIR, struct stack stack, struct list list, struct hash *hash, struct  cache_storage_t *cache);
 
 /**
 Implementation of a part of the algorithm when an element comes to the input that is not written to the stack.
@@ -140,13 +140,13 @@ Implementation of a part of the algorithm when an element comes to the input tha
     \param[in]      state_element     The state element to add
     \param[in]      location_in_cache The address where the element is stored in the cache
     \param[in, out] stack             The stack structure in which changes will occur.
-    \param[in, out] hash              The hash array in which changes will occur.
+    \param[in, out] hash              The hash table in which changes will occur.
     \return Void * pointer to the location in the cache where the incoming file should be written.
 */
 static struct dlinked_list_element *new_upper_element(int name, enum state state_element, void *location_in_cache, 
-                                               struct stack stack, struct element_hash **hash);
+                                               struct stack stack, struct hash *hash);
 
-void *LIRS_algorithm(int name, int len_LIR, struct stack stack, struct list list, struct element_hash **hash, struct  cache_storage_t *cache) {
+void *LIRS_algorithm(int name, int len_LIR, struct stack stack, struct list list, struct hash *hash, struct  cache_storage_t *cache) {
 
     struct dlinked_list_element *element_in_stack = find_element(name, hash, Stack);
 
@@ -160,7 +160,7 @@ void *LIRS_algorithm(int name, int len_LIR, struct stack stack, struct list list
     }
 }
 
-static void *in_stack(int name, struct stack stack, struct list list, struct element_hash **hash, struct dlinked_list_element *element_in_stack) {
+static void *in_stack(int name, struct stack stack, struct list list, struct hash *hash, struct dlinked_list_element *element_in_stack) {
 
     move_up_stack(stack, element_in_stack);
     
@@ -180,7 +180,7 @@ static void *in_stack(int name, struct stack stack, struct list list, struct ele
     } 
 }
 
-static void *not_in_stack(int name, int len_LIR, struct stack stack, struct list list, struct element_hash **hash, struct  cache_storage_t *cache) {
+static void *not_in_stack(int name, int len_LIR, struct stack stack, struct list list, struct hash *hash, struct  cache_storage_t *cache) {
     
     if (find_element(name, hash, List) == NULL) {
         
@@ -193,7 +193,7 @@ static void *not_in_stack(int name, int len_LIR, struct stack stack, struct list
     }
 }
 
-static void *first_entery(int name, int len_LIR, struct stack stack, struct list list, struct element_hash **hash, struct  cache_storage_t *cache) {
+static void *first_entery(int name, int len_LIR, struct stack stack, struct list list, struct hash *hash, struct  cache_storage_t *cache) {
     if (cache_storage_isfull(cache) != 0) {
 
         return first_entry_in_full(name, stack, list, hash);
@@ -205,7 +205,7 @@ static void *first_entery(int name, int len_LIR, struct stack stack, struct list
     }
 }
 
-static void first_filling(int name, int len_LIR, struct stack stack, struct list list, struct element_hash **hash, struct  cache_storage_t *cache) {
+static void first_filling(int name, int len_LIR, struct stack stack, struct list list, struct hash *hash, struct  cache_storage_t *cache) {
     
     struct dlinked_list_element *new;
     void *new_in_cash;
@@ -229,7 +229,7 @@ static void first_filling(int name, int len_LIR, struct stack stack, struct list
     *stack.upper_element = new;
 }
 
-static void *first_entry_in_full(int name, struct stack stack, struct list list, struct element_hash **hash) {
+static void *first_entry_in_full(int name, struct stack stack, struct list list, struct hash *hash) {
 
     struct element delete;
     struct dlinked_list_element *new;
@@ -245,7 +245,7 @@ static void *first_entry_in_full(int name, struct stack stack, struct list list,
     return delete.location_in_cache;
 }
 
-static void only_in_list(int name, struct stack stack, struct list list, struct element_hash **hash) {
+static void only_in_list(int name, struct stack stack, struct list list, struct hash *hash) {
     
     struct dlinked_list_element *new;
     struct element move_up = move_up_list(name, list, hash);
@@ -256,7 +256,7 @@ static void only_in_list(int name, struct stack stack, struct list list, struct 
     change_in_hash(name, new, hash, Stack);
 }
 
-static void resident_in_stack(int name, struct stack stack, struct list list, struct element_hash **hash, struct dlinked_list_element *element_in_stack) {
+static void resident_in_stack(int name, struct stack stack, struct list list, struct hash *hash, struct dlinked_list_element *element_in_stack) {
 
     assert(element_in_stack != NULL);
 
@@ -272,7 +272,7 @@ static void resident_in_stack(int name, struct stack stack, struct list list, st
     *stack.down_element = clear_stack_to_LIR(down_elem, hash);
 }
 
-static void *non_resident_in_stack(struct stack stack, struct list list, struct element_hash **hash, struct dlinked_list_element *element_in_stack) {
+static void *non_resident_in_stack(struct stack stack, struct list list, struct hash *hash, struct dlinked_list_element *element_in_stack) {
 
     assert(element_in_stack != NULL);
 
@@ -292,7 +292,7 @@ static void *non_resident_in_stack(struct stack stack, struct list list, struct 
 }
 
 static struct dlinked_list_element *new_upper_element(int name, enum state state_element, void *location_in_cache, struct stack stack, 
-                                               struct element_hash **hash) {
+                                               struct hash *hash) {
 
     assert(location_in_cache != NULL);
 
@@ -360,7 +360,7 @@ static char element_is_LIR(struct dlinked_list_element *down_element) {
     return 0;
 }
 
-static struct dlinked_list_element *clear_stack_to_LIR(struct dlinked_list_element *down_element, struct element_hash **hash) {
+static struct dlinked_list_element *clear_stack_to_LIR(struct dlinked_list_element *down_element, struct hash *hash) {
     
     assert(down_element != NULL);
 
@@ -386,7 +386,7 @@ static void free_element_stack(struct dlinked_list_element *element) {
     free(element);
 }
 
-static void to_non_resident(int name, struct element_hash **hash) {
+static void to_non_resident(int name, struct hash *hash) {
     
     struct dlinked_list_element *element = find_element(name, hash, Stack);
     

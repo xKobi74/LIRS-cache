@@ -19,7 +19,7 @@ struct lirs_t {
 	struct cache_storage_t *cachestorage; ///< The pointer on cache storage where all files will be written. 
 	struct stack stack; ///< The struct that will be used to interact with stack.
 	struct list list; ///< The struct that will be used to interact with list.
-	struct element_hash **hash; ///< The pointer on required hashmap.
+	struct hash *hash; ///< The pointer on required hashtable.
 
     unsigned long long count_of_rewritings; ///< The total number of rewritings of files.
     unsigned long long count_of_accessing; ///< The total number of accessings of files.

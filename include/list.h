@@ -13,7 +13,7 @@ Created a new element in list. It is added to the top.
     \param[in, out] list The element will be added to this list.
     \param[out] hash For add information about a new element to the hash.
 */
-void new_in_list(int name, void *location_in_cash, struct list list, struct element_hash **hash);
+void new_in_list(int name, void *location_in_cash, struct list list, struct hash *hash);
 
 /**
 Created a new element at the top of the list and deleted at the bottom. The new element will be stored in location_in_chach of deleted elem.   
@@ -22,7 +22,7 @@ Created a new element at the top of the list and deleted at the bottom. The new 
     \param[out] hash For change information about new and old elements in the hash.
     \return A copy of the deleted structure
 */
-struct element add_in_list(int name, struct list list, struct element_hash **hash); //return struct deleted element
+struct element add_in_list(int name, struct list list, struct hash *hash); //return struct deleted element
 
 /**
 Moved the specified element to the top, return a copy of its structure.
@@ -31,7 +31,7 @@ Moved the specified element to the top, return a copy of its structure.
     \param[in, out] hash For change information about the element in the hash and find information about moved element.
     \return The move element(struct element).
 */
-struct element move_up_list(int name, struct list list, struct element_hash **hash);
+struct element move_up_list(int name, struct list list, struct hash *hash);
 
 /**
 Created a new element at the top of the list and deleted specified one. The new element will be stored in location_in_chach of deleted elem.
@@ -40,5 +40,5 @@ Created a new element at the top of the list and deleted specified one. The new 
     \param[in, out] list The actions will be happened in this list.
     \param[in,out] hash For change information about the element in the hash and find information about deleted element.
 */
-void change_in_list(struct element add, int name_delete, struct list list, struct element_hash **hash);
+void change_in_list(struct element add, int name_delete, struct list list, struct hash *hash);
 #endif

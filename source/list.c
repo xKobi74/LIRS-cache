@@ -24,10 +24,10 @@ Free element from list and changed information about it in hash.
     \param[in] del_elem This element will be deleted.
     \param[in] hash In hash will be changed info about the element.
 */
-static void delete_element(struct dlinked_list_element **del_elem, struct element_hash **hash);
+static void delete_element(struct dlinked_list_element **del_elem, struct hash *hash);
 
 
-void new_in_list(int name, void *location_in_cash, struct list list, struct element_hash **hash) {
+void new_in_list(int name, void *location_in_cash, struct list list, struct hash *hash) {
 
     assert(location_in_cash != NULL);
 
@@ -64,13 +64,13 @@ static struct dlinked_list_element *create_elem(int name, void *location_in_cach
     return new_elem;
 }
 
-static void delete_element(struct dlinked_list_element **del_elem, struct element_hash **hash) {
+static void delete_element(struct dlinked_list_element **del_elem, struct hash *hash) {
 
     change_in_hash((*del_elem)->element.name, NULL, hash, List);
     free(*del_elem);
 }
 
-struct element add_in_list(int name, struct list list, struct element_hash **hash) {
+struct element add_in_list(int name, struct list list, struct hash *hash) {
 
     void *loc_in_cash = (*list.down_element)->element.location_in_cache;
     struct element delete = (*list.down_element)->element;    
@@ -99,7 +99,7 @@ struct element add_in_list(int name, struct list list, struct element_hash **has
     return delete;
 }
 
-struct element move_up_list(int name, struct list list, struct element_hash **hash) {
+struct element move_up_list(int name, struct list list, struct hash *hash) {
 
     struct dlinked_list_element *move_elem = find_element(name, hash, List);
     assert(move_elem != NULL);
@@ -124,7 +124,7 @@ struct element move_up_list(int name, struct list list, struct element_hash **ha
     return move_elem->element;
 }
 
-void change_in_list(struct element add, int name_delete, struct list list, struct element_hash **hash) {
+void change_in_list(struct element add, int name_delete, struct list list, struct hash *hash) {
 
     struct dlinked_list_element *del_elem = find_element(name_delete, hash, List);
     new_in_list(add.name, del_elem->element.location_in_cache, list, hash);

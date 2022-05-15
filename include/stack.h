@@ -24,10 +24,10 @@ Implements the entire algorithm for writing elements to various program objects 
     \param[in]      len_LIR Length of the LIR memory area.
     \param[in, out] stack   The stack structure in which changes will occur.
     \param[in, out] list    The list structure in which changes will occur.
-    \param[in, out] hash    The hash array in which changes will occur.
+    \param[in, out] hash    The hash table in which changes will occur.
     \param[in, out] cache   The cache array where all files are stored.
     \return Void * pointer to the location in the cache where the incoming file should be written. NULL if the file has already been written.
 */
-void *LIRS_algorithm(int name, int len_LIR, struct stack stack, struct list list, struct element_hash **hash, struct  cache_storage_t *cache);
+void *LIRS_algorithm(int name, int len_LIR, struct stack stack, struct list list, struct hash *hash, struct  cache_storage_t *cache);
 
 #endif

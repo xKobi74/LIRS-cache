@@ -36,6 +36,7 @@ struct dlinked_list_element {
 };
 
 /// A structure that stores the upper and down elements of the stack.
+/// \warning According to the description of the algorithm on the basis of which the implementation was based, the object is called a stack. But from the point of view of tasks and implementation, this name is not strict.
 struct stack {
     struct dlinked_list_element **upper_element; ///< Points to the upper element of the stack.
     struct dlinked_list_element **down_element; ///< Points to the down element of the stack.
@@ -48,12 +49,25 @@ struct list {
 };
 
 /// The structure of the element stored in the hash table.
-/// \warning According to the description of the algorithm on the basis of which the implementation was based, the object is called a stack. But from the point of view of tasks and implementation, this name is not strict.
 struct element_hash {
     int name; ///< Stores the name of the element.
     struct dlinked_list_element *stack; ///< Points to the element in the stack. If it is NULL, it's not in stack.
     struct dlinked_list_element *list; ///< Points to the element in the list . If it is NULL, it's not in list.
-    struct element_hash *next; ///< ???
+    struct element_hash *next; ///< Points to the next element in collision.
+};
+
+/// List structure in a hash table.
+struct hash_list {
+    struct element_hash *top; ///< Points to the top element in the hash table list.
+    float size; ///< The current size of the hash table list.
+};
+
+/// The hash table structure containing the array parameters and the hash table list structure.
+struct hash {
+    struct element_hash **array; ///< Array hash table.
+    int capacity; ///< Hash table array capacity.
+    float size; ///< The current number of elements in the hash table array.
+    struct hash_list list; ///< Hash table list structure.
 };
 
 #endif
