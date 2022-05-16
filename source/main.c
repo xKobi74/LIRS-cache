@@ -49,6 +49,15 @@ int main() {
     int filescount; // The variable that will be equeal to total count of requested files. 
     write_two_int(&cachesize, &filescount); // The input of two params.
 
+    if (cachesize <= 1) {
+        printf("The cache size cannot be less than 2x.");
+        abort();
+    }
+    if (filescount < 0) {
+        printf("The number of files cann't be negative numbers.");
+        abort();
+    }
+
     int lirsize, hirsize; // The variables that will be equal to total size of LIR and HIR parts of cache, respectively. 
     hirsize = (cachesize + 3) / 4; // Equating hirsize to a quarter of the total cache size with rounding up.
     lirsize = cachesize - hirsize; // Equating lirsize to to the remaining space in the cache (about three-quarters of it).
