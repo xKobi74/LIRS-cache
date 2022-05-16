@@ -1,6 +1,6 @@
 /** 
  \file 
- \brief File with the implementation of functions from the header file and static functions for the stack object
+ \brief File with the implementation of functions from the header file and static functions for the stack object.
 */
 
 #include <stdio.h>
@@ -137,7 +137,7 @@ static void *not_in_stack(int name, int len_LIR, struct stack stack, struct list
 /**
 Implementation of a part of the algorithm when an element comes to the input that is not written to the stack.
     \param[in]      name              The name of the input file.
-    \param[in]      state_element     The state element to add
+    \param[in]      state_element     The state element to add.
     \param[in]      location_in_cache The address where the element is stored in the cache
     \param[in, out] stack             The stack structure in which changes will occur.
     \param[in, out] hash              The hash table in which changes will occur.

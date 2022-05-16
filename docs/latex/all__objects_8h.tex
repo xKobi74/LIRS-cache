@@ -1,5 +1,5 @@
-\hypertarget{all__objects_8h}{}\doxysection{/mnt/c/\+Users/zenj2/\+L\+I\+R\+S-\/cache/include/all\+\_\+objects.h File Reference}
-\label{all__objects_8h}\index{/mnt/c/Users/zenj2/LIRS-\/cache/include/all\_objects.h@{/mnt/c/Users/zenj2/LIRS-\/cache/include/all\_objects.h}}
+\hypertarget{all__objects_8h}{}\doxysection{/\+Users/mary/\+Projects/final\+Progect/\+Check/\+LIRS-\/cache/include/all\+\_\+objects.h File Reference}
+\label{all__objects_8h}\index{/Users/mary/Projects/finalProgect/Check/LIRS-\/cache/include/all\_objects.h@{/Users/mary/Projects/finalProgect/Check/LIRS-\/cache/include/all\_objects.h}}
 
 
 A header file with a description of enumerations and structures that are needed in different files.  
@@ -26,15 +26,15 @@ struct \mbox{\hyperlink{structhash}{hash}}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902}{what\+\_\+object}} \{ \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902ad323e21f975d98abeddb6f8ff46f8ff5}{Stack}}, 
-\mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902ab62e104d38c9bf7a2efb6b244b4b9d3f}{List}}
+enum \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902}{what\+\_\+object}} \{ \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902ad323e21f975d98abeddb6f8ff46f8ff5}{Stack}}
+, \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902ab62e104d38c9bf7a2efb6b244b4b9d3f}{List}}
  \}
 \begin{DoxyCompactList}\small\item\em A set of possible object states showing which object will be worked with in functions that are universal for working with stack and list. \end{DoxyCompactList}\item 
-enum \mbox{\hyperlink{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}} \{ \mbox{\hyperlink{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a7ea368c444edaf9a2095a99b701f204c}{L\+IR}}, 
-\mbox{\hyperlink{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a531bb92ecb2ec62795e424305253d001}{Resident\+\_\+\+H\+IR}}, 
-\mbox{\hyperlink{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a8b9c7d9def75a7105b0e26052bb5f118}{Non\+\_\+resident\+\_\+\+H\+IR}}
+enum \mbox{\hyperlink{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}} \{ \mbox{\hyperlink{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a7ea368c444edaf9a2095a99b701f204c}{LIR}}
+, \mbox{\hyperlink{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a531bb92ecb2ec62795e424305253d001}{Resident\+\_\+\+HIR}}
+, \mbox{\hyperlink{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a8b9c7d9def75a7105b0e26052bb5f118}{Non\+\_\+resident\+\_\+\+HIR}}
  \}
-\begin{DoxyCompactList}\small\item\em A set of possible states of an object tracked by L\+I\+R\+S-\/algorithm. It will be worked with according to his condition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A set of possible states of an object tracked by LIRS-\/algorithm. It will be worked with according to his condition. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -51,19 +51,19 @@ A header file with a description of enumerations and structures that are needed 
 
 
 
-A set of possible states of an object tracked by L\+I\+R\+S-\/algorithm. It will be worked with according to his condition. 
+A set of possible states of an object tracked by LIRS-\/algorithm. It will be worked with according to his condition. 
 
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{LIR@{LIR}!all\_objects.h@{all\_objects.h}}\index{all\_objects.h@{all\_objects.h}!LIR@{LIR}}}\mbox{\Hypertarget{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a7ea368c444edaf9a2095a99b701f204c}\label{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a7ea368c444edaf9a2095a99b701f204c}} 
-L\+IR&The element is marked as L\+IR. \\
+LIR&The element is marked as LIR. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Resident\_HIR@{Resident\_HIR}!all\_objects.h@{all\_objects.h}}\index{all\_objects.h@{all\_objects.h}!Resident\_HIR@{Resident\_HIR}}}\mbox{\Hypertarget{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a531bb92ecb2ec62795e424305253d001}\label{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a531bb92ecb2ec62795e424305253d001}} 
-Resident\+\_\+\+H\+IR&The element is marked as Resident\+\_\+\+H\+IR. \\
+Resident\+\_\+\+HIR&The element is marked as Resident\+\_\+\+HIR. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Non\_resident\_HIR@{Non\_resident\_HIR}!all\_objects.h@{all\_objects.h}}\index{all\_objects.h@{all\_objects.h}!Non\_resident\_HIR@{Non\_resident\_HIR}}}\mbox{\Hypertarget{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a8b9c7d9def75a7105b0e26052bb5f118}\label{all__objects_8h_adc6e5733fc3c22f0a7b2914188c49c90a8b9c7d9def75a7105b0e26052bb5f118}} 
-Non\+\_\+resident\+\_\+\+H\+IR&The element is marked as Non\+\_\+resident\+\_\+\+H\+IR. \\
+Non\+\_\+resident\+\_\+\+HIR&The element is marked as Non\+\_\+resident\+\_\+\+HIR. \\
 \hline
 
 \end{DoxyEnumFields}

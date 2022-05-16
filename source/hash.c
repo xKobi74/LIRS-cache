@@ -1,6 +1,6 @@
 /** 
  \file 
- \brief File with the implementation of functions from the header file and static functions for the hash object
+ \brief File with the implementation of functions from the header file and static functions for the hash object.
 */
 
 #include <stdio.h>
@@ -47,7 +47,7 @@ Removes an element from a hash table collision.
     \param[in] name    The name of the input file.
     \param[in] address The address where the file is stored in the specified object.
     \param[in] object  The object whose address will be written.
-    \return Pointer to the created element of the hash table
+    \return Pointer to the created element of the hash table.
 */
 static struct element_hash *new_element(int name, struct dlinked_list_element *address, enum what_object object);
 

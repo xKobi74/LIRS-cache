@@ -33,7 +33,7 @@ void lirs_delete(struct lirs_t *lirs);
 
 /**
 The function that gives a pointer on the file location in memory.
-    \param[in] lirs The size of LIR part of cache
+    \param[in] lirs The size of LIR part of cache.
     \param[in] filenumber The name of the file which information is requested.
     \return A pointer on the file location in memory.
 */
@@ -41,7 +41,7 @@ void *lirs_getfile(struct lirs_t *lirs, int filenumber);
 
 /**
 The function that gives a pointer on the file location in memory and print log information.
-    \param[in] lirs The size of LIR part of cache
+    \param[in] lirs The size of LIR part of cache.
     \param[in] filenumber The name of the file which information is requested.
     \return A pointer on the file location in memory.
 */
@@ -56,7 +56,7 @@ float get_rate_of_lirs_cache_missing(struct lirs_t *lirs);
 
 /**
 The function that gives a count of cache hits.
-    \param[in] lirs The size of LIR part of cache
+    \param[in] lirs The size of LIR part of cache.
     \return A count of cache hits.
 */
 unsigned long long get_count_of_lirs_cache_hit(struct lirs_t *lirs);

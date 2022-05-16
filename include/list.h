@@ -22,7 +22,7 @@ Created a new element at the top of the list and deleted at the bottom. The new 
     \param[out] hash For change information about new and old elements in the hash.
     \return A copy of the deleted structure
 */
-struct element add_in_list(int name, struct list list, struct hash *hash); //return struct deleted element
+struct element add_in_list(int name, struct list list, struct hash *hash); //return struct deleted element.
 
 /**
 Moved the specified element to the top, return a copy of its structure.

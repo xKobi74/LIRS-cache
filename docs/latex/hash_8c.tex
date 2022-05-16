@@ -1,5 +1,5 @@
-\hypertarget{hash_8c}{}\doxysection{/mnt/c/\+Users/zenj2/\+L\+I\+R\+S-\/cache/source/hash.c File Reference}
-\label{hash_8c}\index{/mnt/c/Users/zenj2/LIRS-\/cache/source/hash.c@{/mnt/c/Users/zenj2/LIRS-\/cache/source/hash.c}}
+\hypertarget{hash_8c}{}\doxysection{/\+Users/mary/\+Projects/final\+Progect/\+Check/\+LIRS-\/cache/source/hash.c File Reference}
+\label{hash_8c}\index{/Users/mary/Projects/finalProgect/Check/LIRS-\/cache/source/hash.c@{/Users/mary/Projects/finalProgect/Check/LIRS-\/cache/source/hash.c}}
 
 
 File with the implementation of functions from the header file and static functions for the hash object.  
@@ -14,10 +14,10 @@ File with the implementation of functions from the header file and static functi
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{hash_8c_a0daaa01c95492013b852ba3d9dbaffc8}\label{hash_8c_a0daaa01c95492013b852ba3d9dbaffc8}} 
-\#define \mbox{\hyperlink{hash_8c_a0daaa01c95492013b852ba3d9dbaffc8}{M\+A\+X\+\_\+\+R\+A\+T\+IO}}~2
+\#define {\bfseries MAX\+\_\+\+RATIO}~2
 \begin{DoxyCompactList}\small\item\em The maximum possible ratio between the number of elements in the hash table list and the hash table array. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{hash_8c_a9adfe0de8329c7c59088cf53ade6e8b8}\label{hash_8c_a9adfe0de8329c7c59088cf53ade6e8b8}} 
-\#define \mbox{\hyperlink{hash_8c_a9adfe0de8329c7c59088cf53ade6e8b8}{S\+T\+A\+R\+T\+\_\+\+L\+E\+N\+\_\+\+H\+A\+SH}}~5000
+\#define {\bfseries START\+\_\+\+LEN\+\_\+\+HASH}~100000
 \begin{DoxyCompactList}\small\item\em Start hash array length. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -36,13 +36,13 @@ static void \mbox{\hyperlink{hash_8c_a653af7ea99bbf34dd9ecf865b0b094fa}{delete\+
 \item 
 static void \mbox{\hyperlink{hash_8c_a2c0be1dfc966a35be48c49e6e8cf900b}{first\+\_\+in\+\_\+collision}} (int name, int number, struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}} $\ast$address, struct \mbox{\hyperlink{structhash}{hash}} $\ast$\mbox{\hyperlink{structhash}{hash}}, enum \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902}{what\+\_\+object}} object)
 \item 
-struct \mbox{\hyperlink{structhash}{hash}} $\ast$ \mbox{\hyperlink{hash_8c_ab5a1a1c3bde4ae9420575c5b2d4bf5de}{make\+\_\+hash}} ()
+struct \mbox{\hyperlink{structhash}{hash}} $\ast$ \mbox{\hyperlink{hash_8c_a29ed3cd6bf316cc532d32c2675db8e65}{make\+\_\+hash}} ()
 \item 
 void \mbox{\hyperlink{hash_8c_aebfb73cc8629af223c4531ad8e5e16ed}{free\+\_\+hash}} (struct \mbox{\hyperlink{structhash}{hash}} $\ast$\mbox{\hyperlink{structhash}{hash}})
 \item 
 void \mbox{\hyperlink{hash_8c_ac02cca43824e49c4bd6cf9f535e7a1d8}{change\+\_\+in\+\_\+hash}} (int name, struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}} $\ast$address, struct \mbox{\hyperlink{structhash}{hash}} $\ast$\mbox{\hyperlink{structhash}{hash}}, enum \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902}{what\+\_\+object}} object)
 \item 
-struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}} $\ast$ \mbox{\hyperlink{hash_8c_a78184dd513a81dafb48bc06ec3adb9d2}{find\+\_\+element}} (int name, struct \mbox{\hyperlink{structhash}{hash}} $\ast$\mbox{\hyperlink{structhash}{hash}}, enum \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902}{what\+\_\+object}} object)
+struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}} $\ast$ \mbox{\hyperlink{hash_8c_a57be0814b7e6eb4b026f4701fcd38932}{find\+\_\+element}} (int name, struct \mbox{\hyperlink{structhash}{hash}} $\ast$\mbox{\hyperlink{structhash}{hash}}, enum \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902}{what\+\_\+object}} object)
 \item 
 void \mbox{\hyperlink{hash_8c_a560281423ee177bd986076b3b80cfe52}{print\+\_\+hash}} (struct \mbox{\hyperlink{structhash}{hash}} $\ast$\mbox{\hyperlink{structhash}{hash}})
 \end{DoxyCompactItemize}
@@ -86,11 +86,11 @@ When rehashing, removes an element and rebinds pointers if that element is not u
 \mbox{\texttt{ in,out}}  & {\em previous} & The previous element in the hash table list. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{hash_8c_a78184dd513a81dafb48bc06ec3adb9d2}\label{hash_8c_a78184dd513a81dafb48bc06ec3adb9d2}} 
+\mbox{\Hypertarget{hash_8c_a57be0814b7e6eb4b026f4701fcd38932}\label{hash_8c_a57be0814b7e6eb4b026f4701fcd38932}} 
 \index{hash.c@{hash.c}!find\_element@{find\_element}}
 \index{find\_element@{find\_element}!hash.c@{hash.c}}
 \doxysubsubsection{\texorpdfstring{find\_element()}{find\_element()}}
-{\footnotesize\ttfamily struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}}$\ast$ find\+\_\+element (\begin{DoxyParamCaption}\item[{int}]{name,  }\item[{struct \mbox{\hyperlink{structhash}{hash}} $\ast$}]{hash,  }\item[{enum \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902}{what\+\_\+object}}}]{object }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structdlinked__list__element}{dlinked\+\_\+list\+\_\+element}} $\ast$ find\+\_\+element (\begin{DoxyParamCaption}\item[{int}]{name,  }\item[{struct \mbox{\hyperlink{structhash}{hash}} $\ast$}]{hash,  }\item[{enum \mbox{\hyperlink{all__objects_8h_a813e55972e649648540e141d28f2f902}{what\+\_\+object}}}]{object }\end{DoxyParamCaption})}
 
 Searches for a pointer to an element in the specified object. 
 \begin{DoxyParams}[1]{Parameters}
@@ -102,7 +102,7 @@ Searches for a pointer to an element in the specified object.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A pointer to an element in the specified object. Or N\+U\+LL if there is no pointer. 
+A pointer to an element in the specified object. Or NULL if there is no pointer. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{hash_8c_a2c0be1dfc966a35be48c49e6e8cf900b}\label{hash_8c_a2c0be1dfc966a35be48c49e6e8cf900b}} 
 \index{hash.c@{hash.c}!first\_in\_collision@{first\_in\_collision}}
@@ -165,11 +165,11 @@ Checks if an element is in collision with hash value number.
 
 1 If element in this collision. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{hash_8c_ab5a1a1c3bde4ae9420575c5b2d4bf5de}\label{hash_8c_ab5a1a1c3bde4ae9420575c5b2d4bf5de}} 
+\mbox{\Hypertarget{hash_8c_a29ed3cd6bf316cc532d32c2675db8e65}\label{hash_8c_a29ed3cd6bf316cc532d32c2675db8e65}} 
 \index{hash.c@{hash.c}!make\_hash@{make\_hash}}
 \index{make\_hash@{make\_hash}!hash.c@{hash.c}}
 \doxysubsubsection{\texorpdfstring{make\_hash()}{make\_hash()}}
-{\footnotesize\ttfamily struct \mbox{\hyperlink{structhash}{hash}}$\ast$ make\+\_\+hash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structhash}{hash}} $\ast$ make\+\_\+hash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Creates the hash table. \begin{DoxyReturn}{Returns}
 Pointer to created hash table. 
@@ -190,7 +190,7 @@ Removes an element from a hash table collision.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Pointer to the created element of the hash table 
+Pointer to the created element of the hash table. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{hash_8c_a560281423ee177bd986076b3b80cfe52}\label{hash_8c_a560281423ee177bd986076b3b80cfe52}} 
 \index{hash.c@{hash.c}!print\_hash@{print\_hash}}
@@ -209,7 +209,7 @@ Prints to the console the elements in the hash table and their pointers to other
 \doxysubsubsection{\texorpdfstring{realloc\_hash()}{realloc\_hash()}}
 {\footnotesize\ttfamily static void realloc\+\_\+hash (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structhash}{hash}} $\ast$}]{hash }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Increases the length of the hash table array by S\+T\+A\+R\+T\+\_\+\+L\+E\+N\+\_\+\+H\+A\+SH. Fills all elements with N\+U\+LL. 
+Increases the length of the hash table array by START\+\_\+\+LEN\+\_\+\+HASH. Fills all elements with NULL. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in,out}}  & {\em hash} & The hash table in which changes will occur. \\
 \hline
@@ -220,7 +220,7 @@ Increases the length of the hash table array by S\+T\+A\+R\+T\+\_\+\+L\+E\+N\+\_
 \doxysubsubsection{\texorpdfstring{rehash()}{rehash()}}
 {\footnotesize\ttfamily static void rehash (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structhash}{hash}} $\ast$}]{hash }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Increases the length of the table\textquotesingle{}s hash array by S\+T\+A\+R\+T\+\_\+\+L\+E\+N\+\_\+\+H\+A\+SH, binds all the elements in the list, and binds them to the table. Clears elements that do not exist in any structure. 
+Increases the length of the table\textquotesingle{}s hash array by START\+\_\+\+LEN\+\_\+\+HASH, binds all the elements in the list, and binds them to the table. Clears elements that do not exist in any structure. 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in,out}}  & {\em hash} & The hash table in which changes will occur. \\
 \hline

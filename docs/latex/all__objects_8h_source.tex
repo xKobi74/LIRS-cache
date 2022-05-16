@@ -1,5 +1,5 @@
 \hypertarget{all__objects_8h_source}{}\doxysection{all\+\_\+objects.\+h}
-\label{all__objects_8h_source}\index{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/all\_objects.h@{/Users/mary/Projects/finalProgect/LIRS-\/cache/include/all\_objects.h}}
+\label{all__objects_8h_source}\index{/Users/mary/Projects/finalProgect/Check/LIRS-\/cache/include/all\_objects.h@{/Users/mary/Projects/finalProgect/Check/LIRS-\/cache/include/all\_objects.h}}
 \mbox{\hyperlink{all__objects_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 }
@@ -31,16 +31,16 @@
 \DoxyCodeLine{35     \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *\mbox{\hyperlink{structdlinked__list__element_a829f2e51181a90db162a1b955bb4fafd}{previous}}; }
 \DoxyCodeLine{36 \};}
 \DoxyCodeLine{37 }
-\DoxyCodeLine{39 \textcolor{keyword}{struct }\mbox{\hyperlink{structstack}{stack}} \{}
-\DoxyCodeLine{40     \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} **\mbox{\hyperlink{structstack_a96f29513d639fe1a04fb7b15ad59a45f}{upper\_element}}; }
-\DoxyCodeLine{41     \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} **\mbox{\hyperlink{structstack_a9e042fd58b3193fd8b4058095c74e95b}{down\_element}}; }
-\DoxyCodeLine{42 \};}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{45 \textcolor{keyword}{struct }\mbox{\hyperlink{structlist}{list}} \{}
-\DoxyCodeLine{46     \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} **\mbox{\hyperlink{structlist_a8f86c2d4cb314f3693543edeb4446c66}{upper\_element}}; }
-\DoxyCodeLine{47     \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} **\mbox{\hyperlink{structlist_a0eeb8a1a04a5ef88b34ee5070c78f4e0}{down\_element}}; }
-\DoxyCodeLine{48 \};}
-\DoxyCodeLine{49 }
+\DoxyCodeLine{40 \textcolor{keyword}{struct }\mbox{\hyperlink{structstack}{stack}} \{}
+\DoxyCodeLine{41     \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} **\mbox{\hyperlink{structstack_a96f29513d639fe1a04fb7b15ad59a45f}{upper\_element}}; }
+\DoxyCodeLine{42     \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} **\mbox{\hyperlink{structstack_a9e042fd58b3193fd8b4058095c74e95b}{down\_element}}; }
+\DoxyCodeLine{43 \};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{46 \textcolor{keyword}{struct }\mbox{\hyperlink{structlist}{list}} \{}
+\DoxyCodeLine{47     \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} **\mbox{\hyperlink{structlist_a8f86c2d4cb314f3693543edeb4446c66}{upper\_element}}; }
+\DoxyCodeLine{48     \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} **\mbox{\hyperlink{structlist_a0eeb8a1a04a5ef88b34ee5070c78f4e0}{down\_element}}; }
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 }
 \DoxyCodeLine{52 \textcolor{keyword}{struct }\mbox{\hyperlink{structelement__hash}{element\_hash}} \{}
 \DoxyCodeLine{53     \textcolor{keywordtype}{int} \mbox{\hyperlink{structelement__hash_aeb3ed4beeddd32f519c20526df210f8d}{name}}; }
 \DoxyCodeLine{54     \textcolor{keyword}{struct }\mbox{\hyperlink{structdlinked__list__element}{dlinked\_list\_element}} *\mbox{\hyperlink{structelement__hash_a45295c39e4fa4b9f84057a193376bea2}{stack}}; }
@@ -48,6 +48,18 @@
 \DoxyCodeLine{56     \textcolor{keyword}{struct }\mbox{\hyperlink{structelement__hash}{element\_hash}} *\mbox{\hyperlink{structelement__hash_a69841b865af0a7c20010f50eed1f73af}{next}}; }
 \DoxyCodeLine{57 \};}
 \DoxyCodeLine{58 }
-\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{60 \textcolor{keyword}{struct }\mbox{\hyperlink{structhash__list}{hash\_list}} \{}
+\DoxyCodeLine{61     \textcolor{keyword}{struct }\mbox{\hyperlink{structelement__hash}{element\_hash}} *\mbox{\hyperlink{structhash__list_addb7792944b8278f50cbbfeddeb22601}{top}}; }
+\DoxyCodeLine{62     \textcolor{keywordtype}{float} \mbox{\hyperlink{structhash__list_a719b46936b6001da6785e9ec5f729297}{size}}; }
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{66 \textcolor{keyword}{struct }\mbox{\hyperlink{structhash}{hash}} \{}
+\DoxyCodeLine{67     \textcolor{keyword}{struct }\mbox{\hyperlink{structelement__hash}{element\_hash}} **\mbox{\hyperlink{structhash_adad8ccd34dc71c47dc0033335df95d25}{array}}; }
+\DoxyCodeLine{68     \textcolor{keywordtype}{int} \mbox{\hyperlink{structhash_a6ba8417d01b4aae3f373d821d98ae9d6}{capacity}}; }
+\DoxyCodeLine{69     \textcolor{keywordtype}{float} \mbox{\hyperlink{structhash_aeaadf297384d8e71511f0d65247fd8a0}{size}}; }
+\DoxyCodeLine{70     \textcolor{keyword}{struct }\mbox{\hyperlink{structhash__list}{hash\_list}} \mbox{\hyperlink{structlist}{list}}; }
+\DoxyCodeLine{71 \};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -11,7 +11,7 @@
 /// A set of possible object states showing which object will be worked with in functions that are universal for working with stack and list.
 enum what_object{
     Stack, ///< Specifies that the element will be identified as a stack element.
-    List ///< Specifies that the element will be identified as a list element
+    List ///< Specifies that the element will be identified as a list element.
 };
 
 /// A set of possible states of an object tracked by LIRS-algorithm. It will be worked with according to his condition.
