@@ -11,7 +11,7 @@
 #include "all_objects.h"
 
 #define MAX_RATIO 2         ///< The maximum possible ratio between the number of elements in the hash table list and the hash table array.
-#define START_LEN_HASH 5000 ///< Start hash array length.
+#define START_LEN_HASH 100000 ///< Start hash array length.
 
 /**
 Increases the length of the table's hash array by START_LEN_HASH, binds all the elements in the list, and binds them to the table. 
@@ -85,6 +85,8 @@ struct hash *make_hash() {
 }
 
 static void rehash(struct hash *hash) {
+    static int iteration = 0;
+    printf("rehash: %d\n", ++iteration);
 
     realloc_hash(hash);
 
@@ -124,7 +126,7 @@ static void rehash(struct hash *hash) {
 
 static void realloc_hash(struct hash *hash) {
     
-    hash->capacity += START_LEN_HASH;
+    hash->capacity <<= 1;
     hash->size = 0;
     hash->array = (struct element_hash **) realloc(hash->array, (hash->capacity) * sizeof(struct element_hash *));
     if (hash->array == NULL) {
@@ -244,8 +246,7 @@ void change_in_hash(int name, struct dlinked_list_element *address, struct hash 
     new->next = *current;
     (*previous)->next = new;
 
-    while ((hash->list.size / hash->size) > MAX_RATIO) {
-        
+    if (hash->capacity <= 2 * hash->size) {
         rehash(hash);
     }
 }
